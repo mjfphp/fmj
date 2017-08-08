@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
     <title>FMJ/@yield('title')</title>
-    <link href="{{ asset('/css/bar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bar.css') }}" rel="stylesheet">
+    <script  src="{{ URL::asset('js/app.js') }}"></script>
     <script  src="{{ URL::asset('js/bar.js') }}"></script>
+    
     <link rel="icon" href="{!! asset('images/pomme.ico') !!}"/>
 </head>
 <body>
@@ -34,5 +36,6 @@
     <a class='button'></a>
        <div class="container">
          @yield('content')
+  <script src="{{ URL::asset('js/jquery-3.1.1.js') }}" ></script>
 </body>
 </html>
