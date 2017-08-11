@@ -18,8 +18,8 @@ class CreateArticlesTable extends Migration
             $table->string('ref');
             $table->string('name');
             $table->string('description');
-            $table->string('standarPrice');
-            $table->string('weightNet');
+            $table->float('standarPrice');
+            $table->float('weightNet');
             $table->string('type');
             $table->string('uomId');
             $table->string('state');
