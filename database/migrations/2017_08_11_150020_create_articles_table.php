@@ -20,7 +20,7 @@ class CreateArticlesTable extends Migration
             $table->string('description');
             $table->float('standarPrice');
             $table->float('weightNet');
-            $table->string('type');
+            $table->string('typ');
             $table->string('uomId');
             $table->string('state');
             $table->timestamps();
