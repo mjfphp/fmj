@@ -18,7 +18,7 @@ FMJ
        <br>
        <div class="container ">
        <div class="table-responsive text-center">
-       <table class="table table-borderless" id="table">
+       <table class="table table-bordered table-striped" id="table" border="0.5px">
            <thead>
                <tr>
                    <th class="text-center">#</th>
@@ -57,5 +57,10 @@ FMJ
      </table>
      </div>
      </div>
+     <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
+         <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+         <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
      <script  src="{{ URL::asset('js/editArticle.js') }}"></script>
+
 @endsection
