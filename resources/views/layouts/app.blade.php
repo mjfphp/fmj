@@ -41,7 +41,7 @@
       </li>
       </ul>
   </div>
-  <div class='content isOpen'>
+  <div class='content '>
     <a class='button'></a>
        <div class="container">
          @yield('content')
@@ -50,8 +50,10 @@
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-
-
+</div>
+</div>
+</div>
+    @yield('modalD')
+    @yield('modalE')
 </body>
 </html>

@@ -60,15 +60,18 @@ class ArticleC extends Controller
     public function update(Request $request, $id)
     {
         $article=Article::find($id);
-        $article->ref=$request->input('ref');
-        $article->name=$request->input('name');
-        $article->description=$request->input('description');
-        $article->standarPrice=$request->input('standarPrice');
-        $article->weightNet=$request->input('weightNet');
-        $article->typ=$request->input('type');
-        $article->uomId=$request->input('uomId');
-        $article->state=$request->input('state');
-        $article->save();
+        if($article) {
+            $article->ref=$request->input('ref');
+            $article->name=$request->input('name');
+            $article->description=$request->input('description');
+            $article->standarPrice=$request->input('standarPrice');
+            $article->weightNet=$request->input('weightNet');
+            $article->typ=$request->input('type');
+            $article->uomId=$request->input('uomId');
+            $article->state=$request->input('state');
+            $article->save();
+        }
+
 
         return redirect('/articles');
     }
@@ -76,7 +79,10 @@ class ArticleC extends Controller
 
     public function destroy($id)
     {
-        echo "ok";
+        $article=Article::find($id);
+        if($article)
+            $article->delete();
+        return redirect()->back();
     }
 
 }
