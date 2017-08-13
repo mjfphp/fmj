@@ -55,11 +55,7 @@ FMJ
      </table>
      </div>
      </div>
-     <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
-         <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-         <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-     <script  src="{{ URL::asset('js/editArticle.js') }}"></script>
+
 
 @endsection
 
@@ -87,6 +83,101 @@ FMJ
                                 </div>
                          </div>
                          </div>
+@endsection
+
+@section('modalE')
+               <div id="editA" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                   <div class="modal-dialog">
+                                           <div class="modal-content">
+                                               <div class="modal-header">
+                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                           <h4 class="modal-title">Edit</h4>
+                                               </div>
+                             <div class="modal-body">
+                                   <form class="form-horizontal" method="post">
+                                          {{ csrf_field()}}
+                                   <input name="_method" type="hidden" value="put">
+
+                                   <div class="form-group">
+                                   	  <label class="control-label col-sm-2" for="id">ID :</label>
+                                   	    <div class="col-sm-10">
+                                   		<input type="text" class="form-control" id="id" disabled>
+                                   		</div>
+                                   </div>
+
+                                    <div class="form-group">
+                                         <label class="control-label col-sm-2" for="ref">Reference :</label>
+                                         <div class="col-sm-10">
+                                         <input type="text" class="form-control" id="ref" name="ref" value="{{old('ref')}}">
+                                         </div>
+                                     </div>
+
+                                     <div class="form-group">
+                                         <label class="control-label col-sm-2" for="name">Name :</label>
+                                         <div class="col-sm-10">
+                                         <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+                                         </div>
+                                     </div>
+
+                                     <div class="form-group">
+                                         <label class="control-label col-sm-2" for="description">Description :</label>
+                                         <div class="col-sm-10">
+                                         <input type="text" class="form-control" id="description" name="description" value="{{old('description')}}">
+                                         </div>
+                                     </div>
+
+                                     <div class="form-group">
+                                         <label class="control-label col-sm-2" for="standarPrice">Standar Price ($):</label>
+                                         <div class="col-sm-10">
+                                         <input type="number" class="form-control" id="standarPrice" name="standarPrice" value="{{old('standarPrice')}}">
+                                         </div>
+                                     </div>
+
+                                      <div class="form-group">
+                                         <label class="control-label col-sm-2" for="weightNet">WeightNet :</label>
+                                         <div class="col-sm-10">
+                                         <input type="number" class="form-control" id="weightNet" name="weightNet" value="{{old('weightNet')}}">
+                                         </div>
+                                     </div>
+
+                                     <div class="form-group">
+                                         <label class="control-label col-sm-2" for="type">type :</label>
+                                         <div class="col-sm-10">
+                                         <input type="text" class="form-control" id="typ" name="type" value="{{old('type')}}">
+                                         </div>
+                                     </div>
+
+                                      <div class="form-group">
+                                         <label class="control-label col-sm-2" for="uomId">uom ID :</label>
+                                         <div class="col-sm-10">
+                                         <input type="text" class="form-control" id="uomId" name="uomId" value="{{old('uomId')}}">
+                                         </div>
+                                     </div>
+
+                                      <div class="form-group">
+                                         <label class="control-label col-sm-2" for="state">State :</label>
+                                         <div class="col-sm-10">
+                                         <input type="text" class="form-control" id="state" name="state" value="{{old('state')}}">
+                                         </div>
+                                     </div>
+
+                                      <div class="modal-footer">
+                                                 <button type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-check"></span> Edit</button>
+                                                 <button type="button" class="btn btn-warning" data-dismiss="modal">
+                                                             <span class='glyphicon glyphicon-remove'></span> Annuler
+                                                 </button>
+                                      </div>
+                             </form>
+                                        </div>
+                                        </div>
+                                        </div>
+
+
+
+@endsection
+
+@section('js')
+   <script  src="{{ URL::asset('js/article.js')}}"> </script>
 @endsection
 
 

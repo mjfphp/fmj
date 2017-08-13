@@ -15,9 +15,8 @@ class ArticleC extends Controller
         return view('article.article')->with('articles',$articles);
     }
 
-    public function create(Request $request)
+    public function create()
     {
-        $request->session()->forget('article');
         return view('article.add');
     }
 
@@ -44,17 +43,7 @@ class ArticleC extends Controller
     }
 
 
-    public function edit($id,Request $request)
-    {
-        $article=Article::find($id);
-        if($article)
-        {
-            $request->session()->put('article',$article->id);
-            return view('articles.add')->with('article',$article);
-        }
-        else
-            return redirect('/articles');
-    }
+
 
 
     public function update(Request $request, $id)

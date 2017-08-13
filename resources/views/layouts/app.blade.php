@@ -15,7 +15,6 @@
     <link href="{{ asset('css/bar.css') }}" rel="stylesheet">
 
 
-
     <link rel="icon" href="{!! asset('images/pomme.ico') !!}"/>
 </head>
 <body>
@@ -46,14 +45,16 @@
        <div class="container">
          @yield('content')
 
-  <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 </div>
 </div>
 </div>
     @yield('modalD')
     @yield('modalE')
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+         <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+          <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    @yield('js')
 </body>
 </html>
