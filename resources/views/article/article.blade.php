@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-FMJ
+Articles
 @endsection
 
 @section('content')
@@ -11,14 +11,16 @@ FMJ
       <h1>Gestion Des articles :</h1>
        </div>
        <div class="col-md-5"></div>
-      <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"> Ajouter un article</span></a>
+      <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span> Add an article</a>
 
       </div>
-       <br>
-       <br>
+
+
        <div class="container ">
        <div class="table-responsive text-center">
-       <table class="table table-bordered table-striped" id="table" border="0.5px">
+       <table class="table table-bordered table-striped display" id="table" border="0.5px">
+       <br>
+       <br>
            <thead>
                <tr>
                    <th class="text-center">#</th>
@@ -36,15 +38,15 @@ FMJ
      @foreach($articles as $item)
      <tr class="item{{$item->id}}">
          <td>{{$item->id}}</td>
-         <td>{{$item->name}}</td>
          <td>{{$item->ref}}</td>
+         <td>{{$item->name}}</td>
          <td>{{$item->description}}</td>
          <td>{{$item->standarPrice}}</td>
          <td>{{$item->weightNet}}</td>
          <td>{{$item->typ}}</td>
          <td>{{$item->uomId}}</td>
          <td>{{$item->state}}</td>
-         <td><button class="edit-modal btn btn-info">
+         <td><button class="edit-modal btn btn-info" >
                  <span class="glyphicon glyphicon-edit"></span> Edit
              </button>
              <button class="delete-modal btn btn-danger">
@@ -86,8 +88,8 @@ FMJ
 @endsection
 
 @section('modalE')
-               <div id="editA" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                   <div class="modal-dialog">
+               <div id="editA" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                   <div class="modal-dialog " style="width:500px;">
                                            <div class="modal-content">
                                                <div class="modal-header">
                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -99,64 +101,64 @@ FMJ
                                    <input name="_method" type="hidden" value="put">
 
                                    <div class="form-group">
-                                   	  <label class="control-label col-sm-2" for="id">ID :</label>
-                                   	    <div class="col-sm-10">
+                                   	  <label class="control-label col-md-2" for="id">ID :</label>
+                                   	    <div class="col-sm-10 col-md-8">
                                    		<input type="text" class="form-control" id="id" disabled>
                                    		</div>
                                    </div>
 
                                     <div class="form-group">
-                                         <label class="control-label col-sm-2" for="ref">Reference :</label>
-                                         <div class="col-sm-10">
+                                         <label class="control-label col-md-2" for="ref">Reference :</label>
+                                         <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="ref" name="ref" value="{{old('ref')}}">
                                          </div>
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-sm-2" for="name">Name :</label>
-                                         <div class="col-sm-10">
+                                         <label class="control-label col-md-2" for="name">Name :</label>
+                                         <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
                                          </div>
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-sm-2" for="description">Description :</label>
-                                         <div class="col-sm-10">
+                                         <label class="control-label col-md-2" for="description">Description :</label>
+                                         <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="description" name="description" value="{{old('description')}}">
                                          </div>
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-sm-2" for="standarPrice">Standar Price ($):</label>
-                                         <div class="col-sm-10">
+                                         <label class="control-label col-md-2" for="standarPrice">Standar Price ($):</label>
+                                         <div class="col-sm-10 col-md-8">
                                          <input type="number" class="form-control" id="standarPrice" name="standarPrice" value="{{old('standarPrice')}}">
                                          </div>
                                      </div>
 
                                       <div class="form-group">
-                                         <label class="control-label col-sm-2" for="weightNet">WeightNet :</label>
-                                         <div class="col-sm-10">
+                                         <label class="control-label col-md-2" for="weightNet">WeightNet :</label>
+                                         <div class="col-sm-10 col-md-8">
                                          <input type="number" class="form-control" id="weightNet" name="weightNet" value="{{old('weightNet')}}">
                                          </div>
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-sm-2" for="type">type :</label>
-                                         <div class="col-sm-10">
+                                         <label class="control-label col-md-2" for="type">type :</label>
+                                         <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="typ" name="type" value="{{old('type')}}">
                                          </div>
                                      </div>
 
                                       <div class="form-group">
-                                         <label class="control-label col-sm-2" for="uomId">uom ID :</label>
-                                         <div class="col-sm-10">
+                                         <label class="control-label col-md-2" for="uomId">uom ID :</label>
+                                         <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="uomId" name="uomId" value="{{old('uomId')}}">
                                          </div>
                                      </div>
 
                                       <div class="form-group">
-                                         <label class="control-label col-sm-2" for="state">State :</label>
-                                         <div class="col-sm-10">
+                                         <label class="control-label col-md-2" for="state">State :</label>
+                                         <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="state" name="state" value="{{old('state')}}">
                                          </div>
                                      </div>
@@ -164,7 +166,7 @@ FMJ
                                       <div class="modal-footer">
                                                  <button type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-check"></span> Edit</button>
                                                  <button type="button" class="btn btn-warning" data-dismiss="modal">
-                                                             <span class='glyphicon glyphicon-remove'></span> Annuler
+                                                   <span class='glyphicon glyphicon-remove'></span> Annuler
                                                  </button>
                                       </div>
                              </form>
