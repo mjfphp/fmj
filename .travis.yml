@@ -1,5 +1,5 @@
 {
-  "language": "ruby",
+  "language": "php",
   "group": "stable",
   "dist": "trusty",
   "os": "windows"
