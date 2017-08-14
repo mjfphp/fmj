@@ -36,7 +36,7 @@
         <a href="/articles" title="Article">Article</a>
       </li>
       <li>
-        <a href="/operation" title="Operation">Operation</a>
+        <a href="/opps" title="Operation">Operation</a>
       </li>
       </ul>
   </div>

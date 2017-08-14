@@ -7,5 +7,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/articles','ArticleC');
-
-
+Route::resource('/opps','OppC');

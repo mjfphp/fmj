@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('title')
-Articles
+Operation de production
 @endsection
 
 @section('content')
 
       <div class="row">
        <div class="col-md-4">
-      <h1>Gestion Des articles :</h1>
+      <h1>Gestion De La Production :</h1>
        </div>
        <div class="col-md-5"></div>
-      <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span> Add an article</a>
+      <a href="{{route('opps.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>Ajouter une operation</a>
 
       </div>
 
@@ -23,35 +23,36 @@ Articles
        <br>
            <thead>
                <tr>
-                   <th class="text-center">#</th>
-                   <th class="text-center">Reference</th>
+                    <th class="text-center">#</th>
                    <th class="text-center">Nom</th>
                    <th class="text-center">Description</th>
-                   <th class="text-center">Prix ($)</th>
-                   <th class="text-center">Poids</th>
-                   <th class="text-center">Type</th>
-                   <th class="text-center">Unité de mesure</th>
+                   <th class="text-center">Date</th>
                    <th class="text-center">Etat</th>
+                   <th class="text-center">Montant</th>
+                   <th class="text-center">Produit finie</th>
+                   <th class="text-center">Quantité</th>
                    <th class="text-center">Actions</th>
-               </tr>
+
+                </tr>
+
+
            </thead>
-     @foreach($articles as $item)
+     @foreach($opps as $item)
      <tr class="item{{$item->id}}">
-         <td>{{$item->id}}</td>
-         <td>{{$item->ref}}</td>
-         <td>{{$item->name}}</td>
-         <td>{{$item->description}}</td>
-         <td>{{$item->standarPrice}}</td>
-         <td>{{$item->weightNet}}</td>
-         <td>{{$item->typ}}</td>
-         <td>{{$item->uomId}}</td>
-         <td>{{$item->state}}</td>
-         <td><button class="edit-modal btn btn-info" >
-                 <span class="glyphicon glyphicon-edit"></span> Modifier
-             </button>
-             <button class="delete-modal btn btn-danger">
-                 <span class="glyphicon glyphicon-trash"></span> Effacer
-             </button></td>
+       <td>{{$item->id}}</td>
+          <td>{{$item->	name}}</td>
+          <td>{{$item->description}}</td>
+          <td>{{$item->dateOp}}</td>
+          <td>{{$item->etat}}</td>
+          <td>{{$item->montant}}</td>
+          <td>{{$item->produitF}}</td>
+          <td>{{$item->qte}}</td>
+           <td><button class="edit-modal btn btn-info" >
+                   <span class="glyphicon glyphicon-edit"></span> Modifier
+               </button>
+               <button class="delete-modal btn btn-danger">
+                   <span class="glyphicon glyphicon-trash"></span> Effacer
+               </button></td>
      </tr>
      @endforeach
      </table>
@@ -62,7 +63,7 @@ Articles
 @endsection
 
 @section('modalD')
-                    <div id="deleteA" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div id="deleteO" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                              <div class="modal-dialog">
                                      <div class="modal-content">
                                          <div class="modal-header">
@@ -73,7 +74,7 @@ Articles
                                 <form class="pure-form pure-form-stacked" method="post">
                                   {{ csrf_field()}}
                                   <input name="_method" type="hidden" value="DELETE">
-                                  <h4>Vous voulez vraiment supprimer cet article ?</h4>
+                                  <h4>Vous voulez vraiment supprimer cette operation ?</h4>
                               <div class="modal-footer">
                                 <button type="submit" class="btn btn-danger"> <span class="glyphicon glyphicon-trash"></span> Confirmer</button>
                                 <button type="button" class="btn btn-warning" data-dismiss="modal">
@@ -88,7 +89,7 @@ Articles
 @endsection
 
 @section('modalE')
-               <div id="editA" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+               <div id="editO" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                    <div class="modal-dialog " style="width:500px;">
                                            <div class="modal-content">
                                                <div class="modal-header">
@@ -107,12 +108,6 @@ Articles
                                    		</div>
                                    </div>
 
-                                    <div class="form-group">
-                                         <label class="control-label col-md-2" for="ref">Reference:</label>
-                                         <div class="col-sm-10 col-md-8">
-                                         <input type="text" class="form-control" id="ref" name="ref" value="{{old('ref')}}">
-                                         </div>
-                                     </div>
 
                                      <div class="form-group">
                                          <label class="control-label col-md-2" for="name">Nom :</label>
@@ -129,37 +124,37 @@ Articles
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="standarPrice">Prix ($):</label>
+                                         <label class="control-label col-md-2" for="dateOp">Date :</label>
                                          <div class="col-sm-10 col-md-8">
-                                         <input type="number" class="form-control" id="standarPrice" name="standarPrice" value="{{old('standarPrice')}}">
+                                         <input type="date" class="form-control" id="dateOp" name="dateOp" value="{{old('dateOp')}}">
                                          </div>
                                      </div>
 
                                       <div class="form-group">
-                                         <label class="control-label col-md-2" for="weightNet">Poids :</label>
+                                         <label class="control-label col-md-2" for="etat">Etat :</label>
                                          <div class="col-sm-10 col-md-8">
-                                         <input type="number" class="form-control" id="weightNet" name="weightNet" value="{{old('weightNet')}}">
+                                         <input type="text" class="form-control" id="etat" name="etat" value="{{old('etat')}}">
                                          </div>
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="type">type :</label>
+                                         <label class="control-label col-md-2" for="montant">Montant :</label>
                                          <div class="col-sm-10 col-md-8">
-                                         <input type="text" class="form-control" id="typ" name="type" value="{{old('type')}}">
+                                         <input type="number" class="form-control" id="montant" name="montant" value="{{old('montant')}}">
                                          </div>
                                      </div>
 
                                       <div class="form-group">
-                                         <label class="control-label col-md-2" for="uomId">Unité de mesure :</label>
+                                         <label class="control-label col-md-2" for="produitF">Produit finie :</label>
                                          <div class="col-sm-10 col-md-8">
-                                         <input type="text" class="form-control" id="uomId" name="uomId" value="{{old('uomId')}}">
+                                         <input type="text" class="form-control" id="produitF" name="produitF" value="{{old('produitF')}}">
                                          </div>
                                      </div>
 
                                       <div class="form-group">
-                                         <label class="control-label col-md-2" for="state">Etat :</label>
+                                         <label class="control-label col-md-2" for="qte">Quantité :</label>
                                          <div class="col-sm-10 col-md-8">
-                                         <input type="text" class="form-control" id="state" name="state" value="{{old('state')}}">
+                                         <input type="number" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
                                          </div>
                                      </div>
 
@@ -179,5 +174,5 @@ Articles
 @endsection
 
 @section('js')
-   <script  src="{{ URL::asset('js/article.js')}}"> </script>
+   <script  src="{{ URL::asset('js/opp.js')}}"> </script>
 @endsection
