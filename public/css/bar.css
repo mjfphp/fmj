@@ -13,7 +13,7 @@ html, body {
 body {
   font: 600 12px/1 'Open Sans', sans-serif;
   color: #333;
-  background: #333;
+  background: #3097D1;
   overflow-x: hidden;
 }
 
@@ -144,7 +144,7 @@ h2 {
 .modal:before {
     content: '';
     display: inline-block;
-    height: 40%;
+    height: 50%;
     vertical-align: middle;
     margin-right: -4px;
 }

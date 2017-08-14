@@ -11,7 +11,7 @@ Articles
       <h1>Gestion Des articles :</h1>
        </div>
        <div class="col-md-5"></div>
-      <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span> Add an article</a>
+      <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span> Ajouter un article</a>
 
       </div>
 

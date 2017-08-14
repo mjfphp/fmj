@@ -7,7 +7,7 @@
 
     <div class="row">
          <div class="col-md-4">
-        <h1>Add an article :</h1>
+        <h1>Ajouter un article :</h1>
          </div>
          <div class="col-md-4"></div>
         <a href="{{route('articles.index')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon glyphicon-arrow-left "> </span>   Retour</a>
