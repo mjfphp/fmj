@@ -30,7 +30,7 @@
         <a href="/" title="principale">Principale</a>
       </li>
       <li>
-        <a href="/operateur" title="Operateur">Operateur</a>
+        <a href="/operators" title="Operateur">Operateur</a>
       </li>
       <li>
         <a href="/articles" title="Article">Article</a>
