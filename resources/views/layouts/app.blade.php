@@ -19,42 +19,40 @@
 </head>
 <body>
 
-<div class='wrapper'>
-  <div class='sidebar'>
-    <div class='title'>
-      FMJ
-    </div>
+     <nav id="header" class="navbar navbar-fixed-top">
+            <div id="header-container" class="container navbar-container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a id="brand" class="navbar-brand" href="/">FMJ PRODUCTION</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/"><span class=" glyphicon glyphicon glyphicon-home"></span>  Home</a></li>
+                        <li><a href="/articles"><span class=" glyphicon glyphicon glyphicon-apple"></span>   Articles</a></li>
+                        <li><a href="/operators"><span class=" glyphicon glyphicon glyphicon-user"></span>  Operateurs</a></li>
+                        <li><a href="/opps"><span class=" glyphicon glyphicon glyphicon-fire"></span>  Operations</a></li>
+                    </ul>
+                </div><!-- /.nav-collapse -->
+            </div><!-- /.container -->
+        </nav><!-- /.navbar -->
 
-    <ul class='nav'>
-      <li>
-        <a href="/" title="principale">Principale</a>
-      </li>
-      <li>
-        <a href="/operators" title="Operateur">Operateur</a>
-      </li>
-      <li>
-        <a href="/articles" title="Article">Article</a>
-      </li>
-      <li>
-        <a href="/opps" title="Operation">Operation</a>
-      </li>
-      </ul>
-  </div>
-  <div class='content '>
-    <a class='button'></a>
        <div class="container">
          @yield('content')
 
 
 </div>
-</div>
-</div>
+
     @yield('modalD')
     @yield('modalE')
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-         <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-          <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script  src="{{ URL::asset('js/jquery-3.2.1.min.js') }}"></script>
+    <script  src="{{ URL::asset('js/jquery.dataTables.min.js') }}"></script>
+    <script  src="{{ URL::asset('js/dataTables.bootstrap.min.js') }}"></script>
+    <script  src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     @yield('js')
 </body>
 </html>

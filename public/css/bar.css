@@ -1,141 +1,56 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-*, *:before, *:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-html, body {
-  height: 100vh;
-}
-
+html,
 body {
-  font: 600 12px/1 'Open Sans', sans-serif;
-  color: #333;
-  background: #3097D1;
-  overflow-x: hidden;
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
+    background-color: rgba(245, 245, 255, 0);
+}
+body {
+    padding-top: 100px;
+}
+footer {
+    padding: 30px 0;
 }
 
-.wrapper {
-  display: flex;
-  min-height: 100%;
+th{
+    background-color: #080808;
+    color: white;
 }
 
-.sidebar {
-  position: absolute;
-  width: 220px;
+/*
+ * Custom styles
+ */
+.navbar-brand {
+    font-size: 24px;
 }
 
-.content {
-  flex: 1;
-  padding: 30px;
-  background: #eee;
-  box-shadow: 0 0 5px black;
-  transform: translate3d(0, 0, 0);
-  transition: transform .3s;
+.navbar-container {
+    padding: 20px 0 20px 0;
 }
 
-.content.isOpen {
-   -webkit-transform: translate3d(220px, 0, 0);
-    -moz-transform: translate3d(220px, 0, 0);
-    -o-transform: translate3d(220px, 0, 0);
-    -ms-transform: translate3d(220px, 0, 0);
-    transform: translate3d(220px, 0, 0);
+.navbar.navbar-fixed-top.fixed-theme {
+    background-color: #222;
+    border-color: #080808;
+    box-shadow: 0 0 5px rgba(0,0,0,.8);
 }
 
-.button {
-  cursor: pointer;
+.navbar-brand.fixed-theme {
+    font-size: 18px;
 }
 
-.button:before {
-  content: '\f0c9';
-  font: 42px fontawesome;
+.navbar-container.fixed-theme {
+    padding: 0;
 }
 
-/* Demo Navigation */
-.title {
-  font-size: 16px;
-  line-height: 50px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 7px;
-  color: #eee;
-  border-bottom: 1px solid #222;
-  background: #2a2a2a;
+.navbar-brand.fixed-theme,
+.navbar-container.fixed-theme,
+.navbar.navbar-fixed-top.fixed-theme,
+.navbar-brand,
+.navbar-container{
+    transition: 0.8s;
+    -webkit-transition:  0.8s;
 }
-
-.nav li a {
-  position: relative;
-  display: block;
-  padding: 20px 0 20px 50px;
-  font-size: 12px;
-  color: #eee;
-  border-bottom: 1px solid #222;
-}
-
-.nav li a:before {
-  font: 14px fontawesome;
-  position: absolute;
-  top: 19px;
-  left: 20px;
-}
-
-.nav li:nth-child(1) a:before {
-  content: '\f245';
-}
-
-.nav li:nth-child(2) a:before {
-  content: '\f007';
-}
-
-.nav li:nth-child(3) a:before {
-  content: '\f179';
-}
-
-.nav li:nth-child(4) a:before {
-  content: '\f0c3';
-}
-
-.nav li:nth-child(5) a:before {
-  content: '\f022';
-}
-
-.nav li:nth-child(6) a:before {
-  content: '\f115';
-}
-
-.nav li:nth-child(7) a:before {
-  content: '\f085';
-}
-
-.nav li:nth-child(8) a:before {
-  content: '\f023';
-  left: 23px;
-}
-
-.nav li a:hover {
-  background: #444;
-}
-
-.nav li a.active {
-  box-shadow: inset 5px 0 0 #5b5, inset 6px 0 0 #222;
-  background: #444;
-}
-
-/* Demo Description */
-h1 {
-  margin: 25px 0 15px;
-  font-size: 28px;
-  font-weight: 400;
-}
-
-h2 {
-  font-size: 18px;
-  font-weight: 400;
-  color: #999;
-}
-
 .modal {
     text-align: center;
     padding: 0!important;

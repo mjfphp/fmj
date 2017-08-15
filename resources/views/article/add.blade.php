@@ -7,7 +7,7 @@
 
     <div class="row">
          <div class="col-md-4">
-        <h1>Ajouter un article :</h1>
+        <h2>Ajouter un article :</h2>
          </div>
          <div class="col-md-4"></div>
         <a href="{{route('articles.index')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon glyphicon-arrow-left "> </span>   Retour</a>
@@ -83,10 +83,15 @@
        <div class="row">
 
                               <div class="form-group">
-                                 <label for="type" class="col-md-3 control-label">type</label>
-                                  <div class="col-md-4">
-                                      <input type="text"  placeholder="type" class="form-control" value="{{old('type')}}" name="type" autofocus required>
-                                  </div>
+                              <label for="type" class="col-md-3 control-label">type</label>
+                              <div class="col-md-4">
+
+                                  <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}" name="type" type="text"  placeholder="type" autofocus required>
+                                     <option value="Consomable">Consomable</option>
+                                     <option value="Produit finie">Produit finie</option>
+                                  </select>
+
+                              </div>
                                <div class="col-md-4"></div>
                               </div>
                     </div>

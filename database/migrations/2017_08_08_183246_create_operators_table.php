@@ -15,19 +15,19 @@ class CreateOperatorsTable extends Migration
     {
         Schema::create('operators', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('imm');
+            $table->string('imm')->unique();
             $table->string('name');
-            $table->string('cin');
-            $table->integer('n_phone');
-            $table->string('n_pass');
-            $table->date('birthDate');
-            $table->string('ville');
+            $table->string('cin')->unique();
+            $table->integer('n_phone')->unique();
+            $table->string('n_pass')->nullable();
+            $table->date('birthDate')->nullable();
+            $table->string('ville')->nullable();
             $table->date('debutC');
             $table->date('finC');
-            $table->string('examMedical');
-            $table->string('poste');
-            $table->string('active');
-            $table->string('n_depart');
+            $table->string('examMedical')->nullable();
+            $table->string('poste')->nullable();
+            $table->boolean('active');
+            $table->string('depart')->nullable();
             $table->timestamps();
         });
     }

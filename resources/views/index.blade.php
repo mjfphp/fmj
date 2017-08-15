@@ -5,5 +5,5 @@ FMJ
 @endsection
 
 @section('content')
-    <h1>FMJ PRODUCTION</h1>
+    <h2>FMJ PRODUCTION</h2>
 @endsection

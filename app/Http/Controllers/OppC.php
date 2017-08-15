@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use Illuminate\Http\Request;
 use App\Opp;
 use App\Http\Controllers\Controller;
@@ -16,7 +17,10 @@ class OppC extends Controller
     public function index()
     {
         $opps=Opp::all();
-        return view('opp.opp')->with('opps',$opps);
+        $articles=Article::where('typ','=','Produit finie')->get();
+        return view('opp.opp')
+            ->with('articles',$articles)
+            ->with('opps',$opps);
     }
 
     /**
@@ -26,8 +30,9 @@ class OppC extends Controller
      */
     public function create()
     {
-        //
-        return view('opp.add');
+        $articles=Article::where('typ','=','Produit finie')->get();
+        return view('opp.add')
+            ->with('articles',$articles);
     }
 
     /**
@@ -60,7 +65,8 @@ class OppC extends Controller
      */
     public function show($id)
     {
-        //
+
+
     }
 
     /**

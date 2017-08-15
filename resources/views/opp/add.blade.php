@@ -7,7 +7,7 @@
 
     <div class="row">
          <div class="col-md-4">
-        <h1>Ajouter une opperation :</h1>
+        <h2>Ajouter une opperation :</h2>
          </div>
          <div class="col-md-4"></div>
         <a href="{{route('opps.index')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon glyphicon-arrow-left "> </span>   Retour</a>
@@ -86,7 +86,13 @@
                               <div class="form-group">
                                  <label for="ref" class="col-md-3 control-label">Produit finie</label>
                                   <div class="col-md-4">
-                                      <input type="text"  placeholder="Produit finie" class="form-control" value="{{old('produitF')}}" name="produitF" autofocus required>
+                                       <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}"    id="produitF" name="produitF" value="{{old('produitF')}}"  autofocus required>
+                                                    @if($articles)
+                                                    @foreach($articles as $article)
+                                                              <option value="{{$article->name}}">{{$article->name}}</option>
+                                                    @endforeach
+                                                    @endif
+                                       </select>
                                   </div>
                                <div class="col-md-4"></div>
                               </div>

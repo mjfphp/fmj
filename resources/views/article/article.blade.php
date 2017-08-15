@@ -8,10 +8,10 @@ Articles
 
       <div class="row">
        <div class="col-md-4">
-      <h1>Gestion Des articles :</h1>
+      <h2>Gestion Des articles :</h2>
        </div>
        <div class="col-md-5"></div>
-      <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span> Ajouter un article</a>
+      <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>   Ajouter un article</a>
 
       </div>
 
@@ -145,7 +145,10 @@ Articles
                                      <div class="form-group">
                                          <label class="control-label col-md-2" for="type">type :</label>
                                          <div class="col-sm-10 col-md-8">
-                                         <input type="text" class="form-control" id="typ" name="type" value="{{old('type')}}">
+                                          <select class="selectpicker show-menu-arrow form-control"  id="typ" value="{{old('type')}}" name="type" type="text"  placeholder="type" autofocus required>
+                                                       <option value="Consomable">Consomable</option>
+                                                       <option value="Produit finie">Produit finie</option>
+                                         </select>
                                          </div>
                                      </div>
 

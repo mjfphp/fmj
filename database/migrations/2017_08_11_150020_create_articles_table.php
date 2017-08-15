@@ -15,14 +15,14 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ref');
+            $table->string('ref')->unique();
             $table->string('name');
-            $table->string('description');
-            $table->float('standarPrice');
-            $table->float('weightNet');
+            $table->string('description')->nullable();
+            $table->float('standarPrice')->nullable();
+            $table->float('weightNet')->nullable();
             $table->string('typ');
             $table->string('uomId');
-            $table->string('state');
+            $table->string('state')->nullable();
             $table->timestamps();
         });
     }

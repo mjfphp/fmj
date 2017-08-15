@@ -8,10 +8,10 @@ Operation de production
 
       <div class="row">
        <div class="col-md-4">
-      <h1>Gestion De La Production :</h1>
+      <h2>Gestion de la production :</h2>
        </div>
        <div class="col-md-5"></div>
-      <a href="{{route('opps.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>Ajouter une operation</a>
+      <a href="{{route('opps.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>  Ajouter une operation</a>
 
       </div>
 
@@ -40,7 +40,7 @@ Operation de production
      @foreach($opps as $item)
      <tr class="item{{$item->id}}">
        <td>{{$item->id}}</td>
-          <td>{{$item->	name}}</td>
+          <td><a href="/">{{$item->	name}}</a></td>
           <td>{{$item->description}}</td>
           <td>{{$item->dateOp}}</td>
           <td>{{$item->etat}}</td>
@@ -147,7 +147,14 @@ Operation de production
                                       <div class="form-group">
                                          <label class="control-label col-md-2" for="produitF">Produit finie :</label>
                                          <div class="col-sm-10 col-md-8">
-                                         <input type="text" class="form-control" id="produitF" name="produitF" value="{{old('produitF')}}">
+
+                                         <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}"    id="produitF" name="produitF" value="{{old('produitF')}}"  autofocus required>
+                                             @if($articles)
+                                                  @foreach($articles as $article)
+                                                   <option value="{{$article->name}}">{{$article->name}}</option>
+                                                 @endforeach
+                                             @endif
+                                            </select>
                                          </div>
                                      </div>
 

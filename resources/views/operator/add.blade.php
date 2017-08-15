@@ -7,7 +7,7 @@
 
     <div class="row">
          <div class="col-md-4">
-        <h1>ajouter un operateur :</h1>
+        <h2>ajouter un operateur :</h2>
          </div>
          <div class="col-md-4"></div>
         <a href="{{route('operators.index')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon glyphicon-arrow-left "> </span>   Retour</a>
