@@ -1,24 +1,12 @@
 language: php
 
 php:
-  - 5.5.9
+  - 5.6.25
 
-env:
-  global:
-    - setup=basic
-    - APP_ENV=local
-    - APP_DEBUG=true
-    - APP_KEY=base64:KHdulWvCdIS+Tmq8C+EnhMl4YoA0F/+r7+BaXAD5Y28=
-    - DB_CONNECTION=mysql
-    - CACHE_DRIVER=file
-    - SESSION_DRIVER=file
-    - QUEUE_DRIVER=sync
-
-sudo: false
-
-install:
-- if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-source; fi
-- if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-source --no-interaction --prefer-stable; fi
-- if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-source --no-interaction --prefer-lowest --prefer-stable; fi
+before_script:
+   -cp .env.travis .env
+   - mysql -e 'create database homestead_test;'
+   - composer self-update
+   - composer install --no-interaction
 
 script: vendor/bin/phpunit
