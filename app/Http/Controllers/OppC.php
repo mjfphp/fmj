@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Article;
 use Illuminate\Http\Request;
 use App\Opp;
+use Validator;
+
 use App\Http\Controllers\Controller;
 
 class OppC extends Controller

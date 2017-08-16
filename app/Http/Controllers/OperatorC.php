@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Operator;
+use Validator;
 use App\Http\Controllers\Controller;
 
 class OperatorC extends Controller

@@ -131,14 +131,14 @@ Articles
                                      <div class="form-group">
                                          <label class="control-label col-md-2" for="standarPrice">Prix ($):</label>
                                          <div class="col-sm-10 col-md-8">
-                                         <input type="number" class="form-control" id="standarPrice" name="standarPrice" value="{{old('standarPrice')}}">
+                                         <input type="number" step="0.01" class="form-control" id="standarPrice" name="standarPrice" value="{{old('standarPrice')}}">
                                          </div>
                                      </div>
 
                                       <div class="form-group">
                                          <label class="control-label col-md-2" for="weightNet">Poids :</label>
                                          <div class="col-sm-10 col-md-8">
-                                         <input type="number" class="form-control" id="weightNet" name="weightNet" value="{{old('weightNet')}}">
+                                         <input type="number" step="0.01" class="form-control" id="weightNet" name="weightNet" value="{{old('weightNet')}}">
                                          </div>
                                      </div>
 

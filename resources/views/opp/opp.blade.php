@@ -140,7 +140,7 @@ Operation de production
                                      <div class="form-group">
                                          <label class="control-label col-md-2" for="montant"><span style="color:crimson;font-size:32px;">*</span>Montant :</label><br>
                                          <div class="col-sm-10 col-md-8">
-                                         <input type="number" class="form-control" id="montant" name="montant" value="{{old('montant')}}">
+                                         <input type="number" step="0.01" class="form-control" id="montant" name="montant" value="{{old('montant')}}">
                                          </div>
                                      </div>
 
@@ -161,7 +161,7 @@ Operation de production
                                       <div class="form-group">
                                          <label class="control-label col-md-2" for="qte"><span style="color:crimson;font-size:32px;">*</span>Quantité :</label><br>
                                          <div class="col-sm-10 col-md-8">
-                                         <input type="number" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
+                                         <input type="number" step="0.01" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
                                          </div>
                                      </div>
 
