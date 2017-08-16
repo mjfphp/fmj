@@ -5,17 +5,16 @@ $(document).ready(function() {
 
 $(".delete-modal").on('click',function() {
     $('#deleteO').modal('show');
-    var el = $(this).parent().prevAll();
-    $('#deleteO form').attr('action','/opps/' + el[7].innerText);
+    var id=$(this).attr('id');
+    $('#deleteO form').attr('action','/opps/' + id);
 
 });
 
 $(".edit-modal").on('click',function() {
     $('#editO').modal('show');
     var el = $(this).parent().prevAll();
-
-    $('#editO form').attr('action','/opps/' + el[7].innerText);
-      $('#editO #id').val(el[7].innerText);
+    var id=$(this).attr('id');
+    $('#editO form').attr('action','/opps/' + id);
     $('#editO #name').val(el[6].innerText);
     $('#editO #description').val(el[5].innerText);
     $('#editO #dateOp').val(el[4].innerText);

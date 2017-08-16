@@ -21,11 +21,11 @@ Postes
           <br>
 
        <thead>
-                     <tr>
-                         <th class="text-center">Reference</th>
-                         <th class="text-center">Intitule</th>
-                         <th class="text-center">Actions</th>
-                   </tr>
+             <tr>
+                 <th class="text-center">Reference</th>
+                 <th class="text-center">Intitule</th>
+                  <th class="text-center">Actions</th>
+             </tr>
        </thead>
         @if($postes)
             @foreach($postes as $item)

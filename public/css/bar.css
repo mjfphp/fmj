@@ -59,18 +59,11 @@ th{
 .modal:before {
     content: '';
     display: inline-block;
-    height: 50%;
+    height: 20%;
     vertical-align: middle;
     margin-right: -4px;
 }
 
-
-
-.modal-dialog {
-    display: inline-block;
-    text-align: left;
-    vertical-align: middle;
-}
 
 
 

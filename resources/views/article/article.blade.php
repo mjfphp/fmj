@@ -20,8 +20,10 @@ Articles
 
        <div class="container ">
        <div class="table-responsive text-center">
-       <table class="table table-bordered table-striped display" id="table" border="0.5px">
+       <table class="table table-bordered table-striped display" id="table" border="0.5px" >
        <br>
+
+
        <br>
            <thead>
                <tr>

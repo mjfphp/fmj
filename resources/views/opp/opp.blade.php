@@ -23,7 +23,6 @@ Operation de production
        <br>
            <thead>
                <tr>
-                    <th class="text-center">#</th>
                    <th class="text-center">Nom</th>
                    <th class="text-center">Description</th>
                    <th class="text-center">Date</th>
@@ -39,7 +38,6 @@ Operation de production
            </thead>
      @foreach($opps as $item)
      <tr class="item{{$item->id}}">
-       <td>{{$item->id}}</td>
           <td><a href="/">{{$item->	name}}</a></td>
           <td>{{$item->description}}</td>
           <td>{{$item->dateOp}}</td>
@@ -48,9 +46,9 @@ Operation de production
           <td>{{$item->produitF}}</td>
           <td>{{$item->qte}}</td>
            <td><button class="edit-modal btn btn-info" >
-                   <span class="glyphicon glyphicon-edit"></span> Modifier
+                   <span class="glyphicon glyphicon-edit" id="{{$item->id}}"></span> Modifier
                </button>
-               <button class="delete-modal btn btn-danger">
+               <button class="delete-modal btn btn-danger" id="{{$item->id}}">
                    <span class="glyphicon glyphicon-trash"></span> Effacer
                </button></td>
      </tr>
@@ -101,12 +99,7 @@ Operation de production
                                           {{ csrf_field()}}
                                    <input name="_method" type="hidden" value="put">
 
-                                   <div class="form-group">
-                                   	  <label class="control-label col-md-2" for="id"><span style="color:crimson;font-size:32px;">*</span>ID :</label><br>
-                                   	    <div class="col-sm-10 col-md-8">
-                                   		<input type="text" class="form-control" id="id" disabled>
-                                   		</div>
-                                   </div>
+
 
 
                                      <div class="form-group">
