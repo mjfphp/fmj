@@ -102,7 +102,7 @@ Operation de production
                                    <input name="_method" type="hidden" value="put">
 
                                    <div class="form-group">
-                                   	  <label class="control-label col-md-2" for="id">ID :</label>
+                                   	  <label class="control-label col-md-2" for="id"><span style="color:crimson;font-size:32px;">*</span>ID :</label><br>
                                    	    <div class="col-sm-10 col-md-8">
                                    		<input type="text" class="form-control" id="id" disabled>
                                    		</div>
@@ -110,7 +110,7 @@ Operation de production
 
 
                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="name">Nom :</label>
+                                         <label class="control-label col-md-2" for="name"><span style="color:crimson;font-size:32px;">*</span>Nom :</label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
                                          </div>
@@ -124,28 +124,28 @@ Operation de production
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="dateOp">Date :</label>
+                                         <label class="control-label col-md-2" for="dateOp"><span style="color:crimson;font-size:32px;">*</span>Date :</label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="date" class="form-control" id="dateOp" name="dateOp" value="{{old('dateOp')}}">
                                          </div>
                                      </div>
 
                                       <div class="form-group">
-                                         <label class="control-label col-md-2" for="etat">Etat :</label>
+                                         <label class="control-label col-md-2" for="etat"><span style="color:crimson;font-size:32px;">*</span>Etat :</label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="etat" name="etat" value="{{old('etat')}}">
                                          </div>
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="montant">Montant :</label>
+                                         <label class="control-label col-md-2" for="montant"><span style="color:crimson;font-size:32px;">*</span>Montant :</label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="number" class="form-control" id="montant" name="montant" value="{{old('montant')}}">
                                          </div>
                                      </div>
 
                                       <div class="form-group">
-                                         <label class="control-label col-md-2" for="produitF">Produit finie :</label>
+                                         <label class="control-label col-md-2" for="produitF"><span style="color:crimson;font-size:32px;">*</span>Produit finie :</label><br>
                                          <div class="col-sm-10 col-md-8">
 
                                          <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}"    id="produitF" name="produitF" value="{{old('produitF')}}"  autofocus required>
@@ -159,7 +159,7 @@ Operation de production
                                      </div>
 
                                       <div class="form-group">
-                                         <label class="control-label col-md-2" for="qte">Quantité :</label>
+                                         <label class="control-label col-md-2" for="qte"><span style="color:crimson;font-size:32px;">*</span>Quantité :</label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="number" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
                                          </div>

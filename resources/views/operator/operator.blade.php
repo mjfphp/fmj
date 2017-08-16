@@ -111,7 +111,7 @@ Operateurs
                                    <input name="_method" type="hidden" value="put">
 
                                    <div class="form-group">
-                                   	  <label class="control-label col-md-2" for="id">ID :</label>
+                                   	  <label class="control-label col-md-2" for="id"><span style="color:crimson;font-size:32px;">*</span>ID :</label><br>
                                    	    <div class="col-sm-10 col-md-8">
                                    		<input type="text" class="form-control" id="id" disabled>
                                    		</div>
@@ -119,28 +119,28 @@ Operateurs
 
 
                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="imm">Immatriculation:</label>
+                                         <label class="control-label col-md-2" for="imm"><span style="color:crimson;font-size:32px;">*</span>Immatriculation:</label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="imm" name="imm" value="{{old('imm')}}">
                                          </div>
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="name">Nom complet:</label>
+                                         <label class="control-label col-md-2" for="name"><span style="color:crimson;font-size:32px;">*</span>Nom complet:</label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
                                          </div>
                                      </div>
 
                                       <div class="form-group">
-                                         <label class="control-label col-md-2" for="cin">CIN :</label>
+                                         <label class="control-label col-md-2" for="cin"><span style="color:crimson;font-size:32px;">*</span>CIN :</label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="cin" name="cin" value="{{old('cin')}}">
                                          </div>
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="n_phone">N° de télephone:</label>
+                                         <label class="control-label col-md-2" for="n_phone"><span style="color:crimson;font-size:32px;">*</span>N° de télephone:</label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="number" class="form-control" id="n_phone" name="n_phone" value="{{old('n_phone')}}">
                                          </div>
@@ -169,7 +169,7 @@ Operateurs
 
 
                                     <div class="form-group">
-                                       <label class="control-label col-md-2" for="debutC">Début du contrat:</label>
+                                       <label class="control-label col-md-2" for="debutC"><span style="color:crimson;font-size:32px;">*</span>Début du contrat:</label><br>
                                        <div class="col-sm-10 col-md-8">
                                        <input type="date" class="form-control" id="debutC" name="debutC" value="{{old('debutC')}}">
                                        </div>
@@ -177,7 +177,7 @@ Operateurs
 
 
                                    <div class="form-group">
-                                      <label class="control-label col-md-2" for="finC">Fin du contrat:</label>
+                                      <label class="control-label col-md-2" for="finC"><span style="color:crimson;font-size:32px;">*</span>Fin du contrat:</label><br>
                                       <div class="col-sm-10 col-md-8">
                                       <input type="date" class="form-control" id="finC" name="finC" value="{{old('finC')}}">
                                       </div>
@@ -198,7 +198,7 @@ Operateurs
                                 </div>
 
                                 <div class="form-group">
-                                   <label class="control-label col-md-2" for="active">Active:</label>
+                                   <label class="control-label col-md-2" for="active"><span style="color:crimson;font-size:32px;">*</span>Active:</label><br>
                                    <div class="col-sm-10 col-md-8">
                                    <input type="text" class="form-control" id="active" name="active" value="{{old('active')}}">
                                    </div>

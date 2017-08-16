@@ -31,7 +31,7 @@ Articles
                    <th class="text-center">Poids</th>
                    <th class="text-center">Type</th>
                    <th class="text-center">Unité de mesure</th>
-                   <th class="text-center">Etat</th>
+                   <th class="text-center">etat</th>
                    <th class="text-center">Actions</th>
                </tr>
            </thead>
@@ -101,14 +101,14 @@ Articles
                                    <input name="_method" type="hidden" value="put">
 
                                    <div class="form-group">
-                                   	  <label class="control-label col-md-2" for="id">ID :</label>
+                                   	  <label class="control-label col-md-2" for="id"><span style="color:crimson;font-size:32px;">*</span>ID :</label><br>
                                    	    <div class="col-sm-10 col-md-8">
                                    		<input type="text" class="form-control" id="id" disabled>
                                    		</div>
                                    </div>
 
                                     <div class="form-group">
-                                         <label class="control-label col-md-2" for="ref">Reference:</label>
+                                         <label class="control-label col-md-2" for="ref"><span style="color:crimson;font-size:32px;">*</span>Reference:</label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="ref" name="ref" value="{{old('ref')}}">
                                          </div>
@@ -143,7 +143,7 @@ Articles
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="type">type :</label>
+                                         <label class="control-label col-md-2" for="type"><span style="color:crimson;font-size:32px;">*</span>type :</label><br>
                                          <div class="col-sm-10 col-md-8">
                                           <select class="selectpicker show-menu-arrow form-control"  id="typ" value="{{old('type')}}" name="type" type="text"  placeholder="type" autofocus required>
                                                        <option value="Consomable">Consomable</option>
@@ -153,14 +153,14 @@ Articles
                                      </div>
 
                                       <div class="form-group">
-                                         <label class="control-label col-md-2" for="uomId">Unité de mesure :</label>
+                                         <label class="control-label col-md-2" for="uomId"><span style="color:crimson;font-size:32px;">*</span>Unité de mesure :</label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="uomId" name="uomId" value="{{old('uomId')}}">
                                          </div>
                                      </div>
 
                                       <div class="form-group">
-                                         <label class="control-label col-md-2" for="state">Etat :</label>
+                                         <label class="control-label col-md-2" for="state">etat :</label>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="state" name="state" value="{{old('state')}}">
                                          </div>
