@@ -22,6 +22,23 @@ class ArticleC extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'ref' => 'required|unique:articles',
+            'name' => 'required',
+            'description'=>'nullable',
+            'standarPrice'=>'nullable',
+            'weightNet'=>'nullable',
+            'uomId'=>'required',
+            'state'=>'nullable'
+        ]);
+
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $article=new Article;
         $article->ref=$request->input('ref');
         $article->name=$request->input('name');
@@ -48,6 +65,23 @@ class ArticleC extends Controller
 
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'ref' => 'required|unique:articles,ref,'.$id,
+            'name' => 'required',
+            'description'=>'nullable',
+            'standarPrice'=>'nullable',
+            'weightNet'=>'nullable',
+            'uomId'=>'required',
+            'state'=>'nullable'
+        ]);
+
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $article=Article::find($id);
         if($article) {
             $article->ref=$request->input('ref');
