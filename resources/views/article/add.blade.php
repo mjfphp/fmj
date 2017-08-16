@@ -63,7 +63,7 @@
                      <div class="form-group">
                      <label for="standarPrice" class="col-md-3 control-label">Prix </label>
                      <div class="col-md-4">
-                       <input type="text"  placeholder="prix unitaire de l'article" class="form-control" value="{{old('standarPrice')}}" name="standarPrice" autofocus required>
+                       <input type="number"  placeholder="prix unitaire de l'article" class="form-control" value="{{old('standarPrice')}}" name="standarPrice" autofocus required>
                     </div>
                        <div class="col-md-4"></div>
                     </div>

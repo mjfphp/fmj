@@ -6,13 +6,15 @@ Articles
 
 @section('content')
 
+
+       <div class="container ">
       <div class="row">
-       <div class="col-md-4">
-      <h2>Gestion Des articles :</h2>
-       </div>
+      <div class="col-md-4">
+      <h2>   Gestion Des articles :</h2>
+      </div>
        <div class="col-md-5"></div>
       <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>   Ajouter un article</a>
-
+      </div>
       </div>
 
 
@@ -23,7 +25,6 @@ Articles
        <br>
            <thead>
                <tr>
-                   <th class="text-center">#</th>
                    <th class="text-center">Reference</th>
                    <th class="text-center">Nom</th>
                    <th class="text-center">Description</th>
@@ -35,9 +36,10 @@ Articles
                    <th class="text-center">Actions</th>
                </tr>
            </thead>
+     @if($articles)
      @foreach($articles as $item)
      <tr class="item{{$item->id}}">
-         <td>{{$item->id}}</td>
+         <td class="hidden">{{$item->id}}</td>
          <td>{{$item->ref}}</td>
          <td>{{$item->name}}</td>
          <td>{{$item->description}}</td>
@@ -54,6 +56,7 @@ Articles
              </button></td>
      </tr>
      @endforeach
+     @endif
      </table>
      </div>
      </div>
@@ -100,12 +103,7 @@ Articles
                                           {{ csrf_field()}}
                                    <input name="_method" type="hidden" value="put">
 
-                                   <div class="form-group">
-                                   	  <label class="control-label col-md-2" for="id"><span style="color:crimson;font-size:32px;">*</span>ID :</label><br>
-                                   	    <div class="col-sm-10 col-md-8">
-                                   		<input type="text" class="form-control" id="id" disabled>
-                                   		</div>
-                                   </div>
+
 
                                     <div class="form-group">
                                          <label class="control-label col-md-2" for="ref"><span style="color:crimson;font-size:32px;">*</span>Reference:</label><br>
@@ -131,7 +129,7 @@ Articles
                                      <div class="form-group">
                                          <label class="control-label col-md-2" for="standarPrice">Prix ($):</label>
                                          <div class="col-sm-10 col-md-8">
-                                         <input type="number" class="form-control" id="standarPrice" name="standarPrice" value="{{old('standarPrice')}}">
+                                         <input type="number" class="form-control" step="0.01" id="standarPrice" name="standarPrice" value="{{old('standarPrice')}}">
                                          </div>
                                      </div>
 
