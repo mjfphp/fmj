@@ -55,8 +55,12 @@ Operateurs
                   <td>{{$item->examMedical}}</td>
                   <td>{{$item->poste}}</td>
                   <td>{{$item->active}}</td>
+<<<<<<< HEAD
+                  <td >{{$item->n_depart}}</td>
+=======
+>>>>>>> 20c516f504591638daa4bc208e64db2f02e808e0
 
-         <td><button class="edit-modal btn btn-info" >
+         <td ><button class="edit-modal btn btn-info " >
                  <span class="glyphicon glyphicon-edit"></span> Modifier
              </button>
              <button class="delete-modal btn btn-danger">
@@ -200,7 +204,7 @@ Operateurs
                                 <div class="form-group">
                                    <label class="control-label col-md-2" for="active"><span style="color:crimson;font-size:32px;">*</span>Active:</label><br>
                                    <div class="col-sm-10 col-md-8">
-                                   <input type="text" class="form-control" id="active" name="active" value="{{old('active')}}">
+                                   <input type="boolean" class="form-control" id="active" name="active" value="{{old('active')}}">
                                    </div>
                                </div>
 
