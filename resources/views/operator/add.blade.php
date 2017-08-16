@@ -163,16 +163,7 @@
                    </div>
 
 
-                 <div class="row">
 
-                                        <div class="form-group ">
-                                           <label for="n_depart" class="col-md-3 control-label">N° de department</label>
-                                            <div class="col-md-4">
-                                                <input type="number"  placeholder="N° de department" class="form-control" value="{{old('n_depart')}}" name="n_depart" autofocus required>
-                                            </div>
-                                         <div class="col-md-4"></div>
-                                        </div>
-                   </div>
 
 
 

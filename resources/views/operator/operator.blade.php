@@ -36,7 +36,6 @@ Operateurs
                     <th class="text-center">Examen médicale</th>
                     <th class="text-center">Poste</th>
                     <th class="text-center">Active</th>
-                    <th class="text-center">N° de department</th>
                    <th class="text-center">Actions</th>
                </tr>
            </thead>
@@ -56,7 +55,6 @@ Operateurs
                   <td>{{$item->examMedical}}</td>
                   <td>{{$item->poste}}</td>
                   <td>{{$item->active}}</td>
-                  <td>{{$item->n_depart}}</td>
 
          <td><button class="edit-modal btn btn-info" >
                  <span class="glyphicon glyphicon-edit"></span> Modifier
@@ -206,12 +204,7 @@ Operateurs
                                    </div>
                                </div>
 
-                               <div class="form-group">
-                                  <label class="control-label col-md-2" for="n_depart">N° de department:</label>
-                                  <div class="col-sm-10 col-md-8">
-                                  <input type="text" class="form-control" id="n_depart" name="n_depart" value="{{old('n_depart')}}">
-                                  </div>
-                              </div>
+
 
 
 
