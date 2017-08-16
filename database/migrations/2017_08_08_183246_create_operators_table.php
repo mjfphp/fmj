@@ -18,7 +18,7 @@ class CreateOperatorsTable extends Migration
             $table->string('imm')->unique();
             $table->string('name');
             $table->string('cin')->unique();
-            $table->integer('n_phone')->unique();
+            $table->string('n_phone')->unique();
             $table->string('n_pass')->nullable();
             $table->date('birthDate')->nullable();
             $table->string('ville')->nullable();
@@ -27,7 +27,6 @@ class CreateOperatorsTable extends Migration
             $table->string('examMedical')->nullable();
             $table->string('poste')->nullable();
             $table->boolean('active');
-            $table->string('depart')->nullable();
             $table->timestamps();
         });
     }

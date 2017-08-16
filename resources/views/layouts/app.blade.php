@@ -32,10 +32,11 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/"><span class=" glyphicon glyphicon glyphicon-home"></span>  Home</a></li>
-                        <li><a href="/articles"><span class=" glyphicon glyphicon glyphicon-apple"></span>   Articles</a></li>
-                        <li><a href="/operators"><span class=" glyphicon glyphicon glyphicon-user"></span>  Operateurs</a></li>
-                        <li><a href="/opps"><span class=" glyphicon glyphicon glyphicon-fire"></span>  Operations</a></li>
+                        <li class="active"><a href="/"><span class=" glyphicon  glyphicon-home"></span>  Home</a></li>
+                        <li><a href="/articles"><span class=" glyphicon  glyphicon-apple"></span>   Articles</a></li>
+                        <li><a href="/operators"><span class=" glyphicon  glyphicon-user"></span>  Operateurs</a></li>
+                        <li><a href="/opps"><span class=" glyphicon  glyphicon-fire"></span>  Operations</a></li>
+                        <li><a href="/postes"><span class=" glyphicon   glyphicon-lock"></span>  Postes</a></li>
                     </ul>
                 </div><!-- /.nav-collapse -->
             </div><!-- /.container -->

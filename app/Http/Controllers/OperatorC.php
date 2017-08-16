@@ -39,7 +39,6 @@ class OperatorC extends Controller
       $operator->examMedical=$request->input('examMedical');
       $operator->poste=$request->input('poste');
       $operator->active=$request->input('active');
-      $operator->n_depart=$request->input('n_depart');
       $operator->save();
 
       return redirect()->back();
@@ -68,7 +67,6 @@ class OperatorC extends Controller
         $operator->examMedical=$request->input('examMedical');
         $operator->poste=$request->input('poste');
         $operator->active=$request->input('active');
-        $operator->n_depart=$request->input('n_depart');
         $operator->save();
       }
 
