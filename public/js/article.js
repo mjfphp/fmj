@@ -5,9 +5,8 @@ $(document).ready(function() {
 
 $(".delete-modal").on('click',function() {
     $('#deleteA').modal('show');
-    var el = $(this).parent().prevAll();
-    $('#deleteA form').attr('action','/articles/' + el[8].innerText);
-
+    var el = $(this).parent().prevAll().last();
+    $('#deleteA form').attr('action','/articles/'+el.innerText);
 });
 
 $(".edit-modal").on('click',function() {

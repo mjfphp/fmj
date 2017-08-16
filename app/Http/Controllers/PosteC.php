@@ -60,7 +60,7 @@ class PosteC extends Controller
     {
         $validator = Validator::make($request->all(), [
             'ref' => 'required|unique:postes,ref,'.$id,
-            'intitule' => 'required|unique:postes',
+            'intitule' => 'required|unique:postes,intitule,'.$id,
         ]);
 
         if ($validator->fails()) {
@@ -80,9 +80,7 @@ class PosteC extends Controller
 
     public function destroy($id)
     {
-        $p=Poste::find($id);
-        if($p)
-            $p->delete();
-        return redirect()->back();
+       // $p=Poste::find($id) ;$p->delete(); return redirect()->back();
+         echo $id;
     }
 }

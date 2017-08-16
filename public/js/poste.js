@@ -1,6 +1,3 @@
-/**
- * Created by inconnu on 16/08/2017.
- */
 $(document).ready(function() {
     $('#table').DataTable();
 } );
@@ -16,7 +13,6 @@ $(".edit-modal").on('click',function() {
     $('#editP').modal('show');
     var el = $(this).parent().prevAll();
     $('#editP form').attr('action','/postes/' + el[2].innerText);
-    $('#editP #id').val(el[2].innerText);
     $('#editP #ref').val(el[1].innerText);
     $('#editP #intitule').val(el[0].innerText);
 });

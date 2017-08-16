@@ -73,7 +73,7 @@ Articles
                                                      <h4 class="modal-title">Confirmation</h4>
                                          </div>
                               <div class="modal-body">
-                                <form class="pure-form pure-form-stacked" method="post">
+                                <form  method="post">
                                   {{ csrf_field()}}
                                   <input name="_method" type="hidden" value="DELETE">
                                   <h4>Vous voulez vraiment supprimer cet article ?</h4>
