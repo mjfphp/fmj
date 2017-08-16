@@ -11,7 +11,7 @@ Operateurs
       <h2>Gestion Des operateurs :</h2>
        </div>
        <div class="col-md-5"></div>
-      <a href="{{route('operators.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>   Ajouter un operateur</a>
+      <a href="{{route('operators.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>Ajouter un operateur</a>
 
       </div>
 
@@ -23,7 +23,6 @@ Operateurs
        <br>
            <thead>
                <tr>
-                   <th class="text-center">#</th>
                    <th class="text-center">Immatriculation</th>
                     <th class="text-center">Nom complet</th>
                     <th class="text-center">CIN</th>
@@ -39,10 +38,11 @@ Operateurs
                    <th class="text-center">Actions</th>
                </tr>
            </thead>
+
      @foreach($operators as $item)
 
      <tr class="item{{$item->id}}">
-                 <td>{{$item->id}}</td>
+                 <td class="hidden">{{$item->id}}</td>
                   <td>{{$item->imm}}</td>
                   <td>{{$item->name}}</td>
                   <td>{{$item->cin}}</td>
@@ -55,10 +55,6 @@ Operateurs
                   <td>{{$item->examMedical}}</td>
                   <td>{{$item->poste}}</td>
                   <td>{{$item->active}}</td>
-<<<<<<< HEAD
-                  <td >{{$item->n_depart}}</td>
-=======
->>>>>>> 20c516f504591638daa4bc208e64db2f02e808e0
 
          <td ><button class="edit-modal btn btn-info " >
                  <span class="glyphicon glyphicon-edit"></span> Modifier

@@ -55,7 +55,7 @@
                      <div class="form-group @if($errors->has('dateOp')) has-error @endif">
                      <label for="standarPrice" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Date</label><br>
                      <div class="col-md-4">
-                       <input type="text"  placeholder="date de l'operation" class="form-control" value="{{old('dateOp')}}" name="dateOp" autofocus required>
+                       <input type="date"  placeholder="date de l'operation" class="form-control" value="{{old('dateOp')}}" name="dateOp" autofocus required>
                     </div>
 
                     @if($errors->has('dateOp'))

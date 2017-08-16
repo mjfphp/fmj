@@ -174,7 +174,7 @@
                                         <div class="form-group @if($errors->has('active')) has-error @endif">
                                            <label for="active" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Active</label><br>
                                             <div class="col-md-4">
-                                                <input type="boolean"  placeholder="Active" class="form-control" value="{{old('active')}}" name="active" autofocus required>
+                                                <input type="text"  placeholder="Active" class="form-control" value="{{old('active')}}" name="active" autofocus required>
                                             </div>
 
                                             @if($errors->has('active'))

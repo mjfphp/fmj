@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Article;
 use Validator;
 use App\Http\Controllers\Controller;
-use Validator;
+
 
 class ArticleC extends Controller
 {
