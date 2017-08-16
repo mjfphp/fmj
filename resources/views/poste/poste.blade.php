@@ -34,6 +34,7 @@ Postes
                 <td class="hidden">{{$item->id}}</td>
                 <td>{{$item->ref}}</td>
                 <td>{{$item->intitule}}</td>
+
                 <td><button class="edit-modal btn btn-info" >
                          <span class="glyphicon glyphicon-edit"></span> Modifier
                     </button>

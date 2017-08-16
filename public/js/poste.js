@@ -9,16 +9,16 @@ $(document).ready(function() {
 $(".delete-modal").on('click',function() {
     $('#deleteP').modal('show');
     var el = $(this).parent().prevAll().last();
-    $('#deleteA form').attr('action','/postes/' + el.innerText);
+    $('#deleteP form').attr('action','/postes/' + el.innerText);
 });
 
 $(".edit-modal").on('click',function() {
-    $('#editA').modal('show');
+    $('#editP').modal('show');
     var el = $(this).parent().prevAll();
-    $('#editA form').attr('action','/postes/' + el[2].innerText);
-    $('#editA #id').val(el[2].innerText);
-    $('#editA #ref').val(el[1].innerText);
-    $('#editA #intitule').val(el[0].innerText);
+    $('#editP form').attr('action','/postes/' + el[2].innerText);
+    $('#editP #id').val(el[2].innerText);
+    $('#editP #ref').val(el[1].innerText);
+    $('#editP #intitule').val(el[0].innerText);
 });
 
 $(function () {
