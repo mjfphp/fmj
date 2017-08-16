@@ -27,7 +27,8 @@
       <div class="row">
 
                        <div class="form-group">
-                          <label for="ref" class="col-md-3 control-label">Reference</label>
+
+                          <label for="ref" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Reference</label><br>
                            <div class="col-md-4">
                                <input type="text"  placeholder="reference" class="form-control" value="{{old('ref')}}" name="ref" autofocus required>
                            </div>
@@ -39,9 +40,9 @@
       <div class="row">
 
                  <div class="form-group">
-                    <label for="name" class="col-md-3 control-label">Name</label>
+                    <label for="name" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Nom</label><br>
                      <div class="col-md-4">
-                         <input type="text"  placeholder="name" class="form-control" value="{{old('name')}}" name="name" autofocus required>
+                         <input type="text"  placeholder="nom de l'article" class="form-control" value="{{old('name')}}" name="name" autofocus required>
                      </div>
                   <div class="col-md-4"></div>
                  </div>
@@ -60,9 +61,9 @@
 
        <div class="row">
                      <div class="form-group">
-                     <label for="standarPrice" class="col-md-3 control-label">standar Price</label>
+                     <label for="standarPrice" class="col-md-3 control-label">Prix </label>
                      <div class="col-md-4">
-                       <input type="text"  placeholder="standar Price" class="form-control" value="{{old('standarPrice')}}" name="standarPrice" autofocus required>
+                       <input type="text"  placeholder="prix unitaire de l'article" class="form-control" value="{{old('standarPrice')}}" name="standarPrice" autofocus required>
                     </div>
                        <div class="col-md-4"></div>
                     </div>
@@ -72,9 +73,9 @@
        <div class="row">
 
                               <div class="form-group">
-                                 <label for="weightNet" class="col-md-3 control-label">weight Net</label>
+                                 <label for="weightNet" class="col-md-3 control-label"></span>Poids</label>
                                   <div class="col-md-4">
-                                      <input type="text"  placeholder="weight Net" class="form-control" value="{{old('weightNet')}}" name="weightNet" autofocus required>
+                                      <input type="text"  placeholder="poids de l'article" class="form-control" value="{{old('weightNet')}}" name="weightNet" autofocus required>
                                   </div>
                                <div class="col-md-4"></div>
                               </div>
@@ -83,7 +84,7 @@
        <div class="row">
 
                               <div class="form-group">
-                              <label for="type" class="col-md-3 control-label">type</label>
+                              <label for="type" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>type</label><br>
                               <div class="col-md-4">
 
                                   <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}" name="type" type="text"  placeholder="type" autofocus required>
@@ -99,9 +100,9 @@
        <div class="row">
 
                               <div class="form-group">
-                                 <label for="ref" class="col-md-3 control-label">uom Id</label>
+                                 <label for="ref" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Unité de mesure</label><br>
                                   <div class="col-md-4">
-                                      <input type="text"  placeholder="uom Id" class="form-control" value="{{old('uomId')}}" name="uomId" autofocus required>
+                                      <input type="text"  placeholder="unité de mesure" class="form-control" value="{{old('uomId')}}" name="uomId" autofocus required>
                                   </div>
                                <div class="col-md-4"></div>
                               </div>
@@ -110,9 +111,9 @@
        <div class="row">
 
                               <div class="form-group ">
-                                 <label for="state" class="col-md-3 control-label">state</label>
+                                 <label for="state" class="col-md-3 control-label">etat</label>
                                   <div class="col-md-4">
-                                      <input type="text"  placeholder="state" class="form-control" value="{{old('state')}}" name="state" autofocus required>
+                                      <input type="text"  placeholder="l'etat de l'article" class="form-control" value="{{old('state')}}" name="state" autofocus required>
                                   </div>
                                <div class="col-md-4"></div>
                               </div>
