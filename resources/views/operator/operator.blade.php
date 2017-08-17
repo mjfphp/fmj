@@ -122,13 +122,6 @@ Operateurs
                                        </div>
                                    </div>
 
-
-
-
-
-
-
-
                                    <div class="form-group">
                                        <label class="control-label col-md-2" for="n_phone"><span style="color:crimson;font-size:32px;">*</span>N° de télephone:</label><br>
                                        <div class="col-sm-5 col-md-4">

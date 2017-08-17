@@ -39,64 +39,7 @@
       </div>
 
 
-
-      <div class="row">
-                        <div class="form-group">
-                           <label for="description" class="col-md-3 control-label">Description</label>
-                            <div class="col-md-4">
-                                <input type="text"  placeholder="description" class="form-control" value="{{old('description')}}" name="description">
-                            </div>
-                         <div class="col-md-4"></div>
-                        </div>
-       </div>
-
-
-       <div class="row">
-                     <div class="form-group @if($errors->has('dateOp')) has-error @endif">
-                     <label for="standarPrice" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Date</label><br>
-                     <div class="col-md-4">
-                       <input type="date"  placeholder="date de l'operation" class="form-control" value="{{old('dateOp')}}" name="dateOp" autofocus required>
-                    </div>
-
-                    @if($errors->has('dateOp'))
-                                        <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('dateOp') }}</div>
-                    @endif
-                       <div class="col-md-4"></div>
-                    </div>
-        </div>
-
-
-       <div class="row">
-
-                              <div class="form-group @if($errors->has('etat')) has-error @endif">
-                                 <label for="weightNet" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>etat</label><br>
-                                  <div class="col-md-4">
-                                      <input type="text"  placeholder="l'etat de l'operation" class="form-control" value="{{old('etat')}}" name="etat" autofocus required>
-                                  </div>
-
-                                  @if($errors->has('etat'))
-                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('etat') }}</div>
-                                  @endif
-                               <div class="col-md-4"></div>
-                              </div>
-                    </div>
-
-       <div class="row">
-
-                              <div class="form-group @if($errors->has('montant')) has-error @endif">
-                                 <label for="type" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Montant</label><br>
-                                  <div class="col-md-4">
-                                      <input type="number" step="0.01" placeholder="le montant total de l'operation" class="form-control" value="{{old('montant')}}" name="montant" autofocus required>
-                                  </div>
-
-                                  @if($errors->has('montant'))
-                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('montant') }}</div>
-                                  @endif
-                               <div class="col-md-4"></div>
-                              </div>
-                    </div>
-
-       <div class="row">
+ <div class="row">
 
                               <div class="form-group @if($errors->has('produitF')) has-error @endif">
                                  <label for="ref" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Produit finie</label><br>
@@ -116,6 +59,10 @@
                               </div>
                     </div>
 
+
+
+
+
        <div class="row">
 
                               <div class="form-group @if($errors->has('qte')) has-error @endif">
@@ -129,6 +76,72 @@
                                <div class="col-md-4"></div>
                               </div>
          </div>
+
+
+
+       <div class="row">
+
+                              <div class="form-group @if($errors->has('montant')) has-error @endif">
+                                 <label for="type" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Montant</label><br>
+                                  <div class="col-md-4">
+                                      <input type="number" step="0.01" placeholder="le montant total de l'operation" class="form-control" value="{{old('montant')}}" name="montant" autofocus required>
+                                  </div>
+
+                                  @if($errors->has('montant'))
+                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('montant') }}</div>
+                                  @endif
+                               <div class="col-md-4"></div>
+                              </div>
+                    </div>
+
+
+
+
+
+        <div class="row">
+
+                              <div class="form-group @if($errors->has('etat')) has-error @endif">
+                                 <label for="weightNet" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>etat</label><br>
+                                  <div class="col-md-4">
+                                      <input type="text"  placeholder="l'etat de l'operation" class="form-control" value="{{old('etat')}}" name="etat" autofocus required>
+                                  </div>
+
+                                  @if($errors->has('etat'))
+                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('etat') }}</div>
+                                  @endif
+                               <div class="col-md-4"></div>
+                              </div>
+                    </div>
+
+
+
+       <div class="row">
+                     <div class="form-group @if($errors->has('dateOp')) has-error @endif">
+                     <label for="standarPrice" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Date</label><br>
+                     <div class="col-md-4">
+                       <input type="date"  placeholder="date de l'operation" class="form-control" value="{{old('dateOp')}}" name="dateOp" autofocus required>
+                    </div>
+
+                    @if($errors->has('dateOp'))
+                                        <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('dateOp') }}</div>
+                    @endif
+                       <div class="col-md-4"></div>
+                    </div>
+        </div>
+
+
+      
+            <div class="row">
+                        <div class="form-group">
+                           <label for="description" class="col-md-3 control-label">Description</label>
+                            <div class="col-md-4">
+                                <input type="text"  placeholder="description" class="form-control" value="{{old('description')}}" name="description">
+                            </div>
+                         <div class="col-md-4"></div>
+                        </div>
+       </div>s
+      
+
 
 
                  <div class="form-group">

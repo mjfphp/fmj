@@ -81,6 +81,52 @@
         </div>
 
 
+        <div class="row">
+
+                               <div class="form-group @if($errors->has('debutC')) has-error @endif">
+                                  <label for="debutC" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Début du contrat</label><br>
+                                   <div class="col-md-4">
+                                       <input type="date"  placeholder="la date de début du contrat" class="form-control" value="{{old('debutC')}}" name="debutC" autofocus required>
+                                   </div>
+                                   @if($errors->has('debutC'))
+                                                <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('debutC') }}</div>
+                            @endif
+                                <div class="col-md-4"></div>
+                               </div>
+          </div>
+
+          <div class="row">
+
+                                 <div class="form-group @if($errors->has('finC')) has-error @endif">
+                                    <label for="finC" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Fin du contrat</label><br>
+                                     <div class="col-md-4">
+                                         <input type="date"  placeholder="la date de fin du contrat" class="form-control" value="{{old('finC')}}" name="finC" autofocus required>
+                                     </div>
+                                     @if($errors->has('finC'))
+                                                <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('finC') }}</div>
+                            @endif
+                                  <div class="col-md-4"></div>
+                                 </div>
+            </div>
+
+
+
+            <div class="row">
+
+                                   <div class="form-group @if($errors->has('active')) has-error @endif">
+                                      <label for="active" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Active</label><br>
+                                       <div class="col-md-4">
+                                           <input type="text"  placeholder="Active" class="form-control" value="{{old('active')}}" name="active" autofocus required>
+                                       </div>
+
+                                       @if($errors->has('active'))
+                                          <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('active') }}</div>
+                      @endif
+                                    <div class="col-md-4"></div>
+                                   </div>
+              </div>
+
+
        <div class="row">
 
                               <div class="form-group">
@@ -114,34 +160,6 @@
                               </div>
                     </div>
 
-       <div class="row">
-
-                              <div class="form-group @if($errors->has('debutC')) has-error @endif">
-                                 <label for="debutC" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Début du contrat</label><br>
-                                  <div class="col-md-4">
-                                      <input type="date"  placeholder="la date de début du contrat" class="form-control" value="{{old('debutC')}}" name="debutC" autofocus required>
-                                  </div>
-                                  @if($errors->has('debutC'))
-                                               <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('debutC') }}</div>
-                           @endif
-                               <div class="col-md-4"></div>
-                              </div>
-         </div>
-
-         <div class="row">
-
-                                <div class="form-group @if($errors->has('finC')) has-error @endif">
-                                   <label for="finC" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Fin du contrat</label><br>
-                                    <div class="col-md-4">
-                                        <input type="date"  placeholder="la date de fin du contrat" class="form-control" value="{{old('finC')}}" name="finC" autofocus required>
-                                    </div>
-                                    @if($errors->has('finC'))
-                                               <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('finC') }}</div>
-                           @endif
-                                 <div class="col-md-4"></div>
-                                </div>
-           </div>
-
 
            <div class="row">
 
@@ -169,20 +187,7 @@
                  </div>
 
 
-                 <div class="row">
 
-                                        <div class="form-group @if($errors->has('active')) has-error @endif">
-                                           <label for="active" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Active</label><br>
-                                            <div class="col-md-4">
-                                                <input type="text"  placeholder="Active" class="form-control" value="{{old('active')}}" name="active" autofocus required>
-                                            </div>
-
-                                            @if($errors->has('active'))
-                                               <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('active') }}</div>
-                           @endif
-                                         <div class="col-md-4"></div>
-                                        </div>
-                   </div>
 
 
 

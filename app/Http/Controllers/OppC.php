@@ -32,7 +32,24 @@ class OppC extends Controller
 
     public function store(Request $request)
     {
-        //
+
+         $validator = Validator::make($request->all(), [
+            'name' => 'required:articles',
+            'description'=>'nullable',
+            'dateOp' => 'required',
+            'etat'=>'required',
+            'montant'=>'required',
+            'qte'=>'required',
+            
+        ]);
+
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+    
         $opp=new Opp;
         $opp->name=$request->input('name') ;
         $opp->description=$request->input('description');
@@ -56,7 +73,7 @@ class OppC extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+
         $opp=Opp::find($id);
         if($opp){
 

@@ -26,6 +26,29 @@ class OperatorC extends Controller
 
     public function store(Request $request)
     {
+
+      $validator = Validator::make($request->all(), [
+          'imm' => 'required|unique:operators',
+          'name' => 'required',
+          'cin' => 'required|unique:operators',
+          'n_phone' => 'required|unique:operators',
+          'n_pass'=>'nullable',
+          'birthDate'=>'nullable',
+          'ville'=>'nullable',
+          'debutC' => 'required',
+          'finC' => 'required',
+          'examMedical'=>'nullable',
+          'poste'=>'nullable',
+          'active' => 'required',
+      ]);
+
+
+      if ($validator->fails()) {
+          return redirect()->back()
+              ->withErrors($validator)
+              ->withInput();
+      }
+
       $operator=new Operator;
       $operator->imm=$request->input('imm');
       $operator->name=$request->input('name');

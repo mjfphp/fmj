@@ -24,12 +24,13 @@ Operation de production
            <thead>
                <tr>
                    <th class="text-center">Nom</th>
-                   <th class="text-center">Description</th>
-                   <th class="text-center">Date</th>
-                   <th class="text-center">Etat</th>
-                   <th class="text-center">Montant</th>
                    <th class="text-center">Produit finie</th>
-                   <th class="text-center">Quantité</th>
+                   <th class="text-center">Quantité </th>
+                   <th class="text-center">Prix </th>
+                   <th class="text-center">Montant</th>
+                   <th class="text-center">etat</th>
+                   <th class="text-center">Date</th>
+                   <th class="text-center">Description</th>
                    <th class="text-center">Actions</th>
 
                 </tr>
@@ -39,22 +40,33 @@ Operation de production
      @foreach($opps as $item)
      <tr class="item{{$item->id}}">
           <td><a href="/">{{$item->	name}}</a></td>
-          <td>{{$item->description}}</td>
-          <td>{{$item->dateOp}}</td>
-          <td>{{$item->etat}}</td>
-          <td>{{$item->montant}}</td>
           <td>
                  @if($item->article)
                    {{$item->article->name}}
                  @endif
           </td>
           <td>{{$item->qte}}</td>
+          <td>
+            @if($item->article)
+              {{$item->article->standarPrice}}
+            @endif</td>
+          <td>{{$item->montant}}</td>
+          <td>{{$item->etat}}</td>
+          <td>{{$item->dateOp}}</td>
+          <td>{{$item->description}}</td>
+
+
+
+
+
+
            <td><button class="edit-modal btn btn-info" >
                    <span class="glyphicon glyphicon-edit" id="{{$item->id}}"></span> Modifier
                </button>
                <button class="delete-modal btn btn-danger" id="{{$item->id}}">
                    <span class="glyphicon glyphicon-trash"></span> Effacer
                </button></td>
+
      </tr>
      @endforeach
      </table>
@@ -91,8 +103,9 @@ Operation de production
 @endsection
 
 @section('modalE')
-               <div id="editO" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                   <div class="modal-dialog " style="width:500px;">
+
+<div id="editO" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                   <div class="modal-dialog " style="width:800px;">
                                            <div class="modal-content">
                                                <div class="modal-header">
                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -105,13 +118,58 @@ Operation de production
 
 
 
-
-                                     <div class="form-group">
+                                    <div class="form-group">
                                          <label class="control-label col-md-2" for="name"><span style="color:crimson;font-size:32px;">*</span>Nom :</label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
                                          </div>
                                      </div>
+
+                                     <div class="form-group">
+                                        <label class="control-label col-md-2" for="produitF"><span style="color:crimson;font-size:32px;">*</span>Produit finie :</label><br>
+                                        <div class="col-sm-10 col-md-8">
+
+                                        <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}"    id="produitF" name="article_id" value="{{old('produitF')}}"  autofocus required>
+                                            @if($articles)
+                                                 @foreach($articles as $article)
+                                                  <option value="{{$article->id}}">{{$article->name}}</option>
+                                                @endforeach
+                                            @endif
+                                           </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                       <label class="control-label col-md-2" for="qte"><span style="color:crimson;font-size:32px;">*</span>Quantité :</label><br>
+                                       <div class="col-sm-10 col-md-8">
+                                       <input type="number" step="0.01" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
+                                       </div>
+                                   </div>
+
+                                  <div class="form-group">
+                                    <label class="control-label col-md-2" for="montant"><span style="color:crimson;font-size:32px;">*</span>Montant :</label><br>
+                                    <div class="col-sm-10 col-md-8">
+                                      <input type="number" step="0.01" class="form-control" id="montant" name="montant" value="{{old('montant')}}">
+                                      </div>
+                                      </div>
+
+
+                                      <div class="form-group">
+                                         <label class="control-label col-md-2" for="etat"><span style="color:crimson;font-size:32px;">*</span>etat :</label><br>
+                                         <div class="col-sm-10 col-md-8">
+                                         <input type="text" class="form-control" id="etat" name="etat" value="{{old('etat')}}">
+                                         </div>
+                                     </div>
+
+
+                        <div class="form-group">
+                          <label class="control-label col-md-2" for="dateOp"><span style="color:crimson;font-size:32px;">*</span>Date :</label><br>
+                          <div class="col-sm-10 col-md-8">
+                            <input type="date" class="form-control" id="dateOp" name="dateOp" value="{{old('dateOp')}}">
+                              </div>
+                          </div>
+
+
 
                                      <div class="form-group">
                                          <label class="control-label col-md-2" for="description">Description:</label>
@@ -120,47 +178,6 @@ Operation de production
                                          </div>
                                      </div>
 
-                                     <div class="form-group">
-                                         <label class="control-label col-md-2" for="dateOp"><span style="color:crimson;font-size:32px;">*</span>Date :</label><br>
-                                         <div class="col-sm-10 col-md-8">
-                                         <input type="date" class="form-control" id="dateOp" name="dateOp" value="{{old('dateOp')}}">
-                                         </div>
-                                     </div>
-
-                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="etat"><span style="color:crimson;font-size:32px;">*</span>Etat :</label><br>
-                                         <div class="col-sm-10 col-md-8">
-                                         <input type="text" class="form-control" id="etat" name="etat" value="{{old('etat')}}">
-                                         </div>
-                                     </div>
-
-                                     <div class="form-group">
-                                         <label class="control-label col-md-2" for="montant"><span style="color:crimson;font-size:32px;">*</span>Montant :</label><br>
-                                         <div class="col-sm-10 col-md-8">
-                                         <input type="number" step="0.01" class="form-control" id="montant" name="montant" value="{{old('montant')}}">
-                                         </div>
-                                     </div>
-
-                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="produitF"><span style="color:crimson;font-size:32px;">*</span>Produit finie :</label><br>
-                                         <div class="col-sm-10 col-md-8">
-
-                                         <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}"    id="produitF" name="article_id" value="{{old('produitF')}}"  autofocus required>
-                                             @if($articles)
-                                                  @foreach($articles as $article)
-                                                   <option value="{{$article->id}}">{{$article->name}}</option>
-                                                 @endforeach
-                                             @endif
-                                            </select>
-                                         </div>
-                                     </div>
-
-                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="qte"><span style="color:crimson;font-size:32px;">*</span>Quantité :</label><br>
-                                         <div class="col-sm-10 col-md-8">
-                                         <input type="number" step="0.01" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
-                                         </div>
-                                     </div>
 
                                       <div class="modal-footer">
                                                  <button type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-check"></span> Modifier</button>

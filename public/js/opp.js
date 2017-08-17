@@ -15,19 +15,24 @@ $(".edit-modal").on('click',function() {
     var el = $(this).parent().prevAll();
     var id=$(this).attr('id');
     $('#editO form').attr('action','/opps/' + id);
-    $('#editO #name').val(el[6].innerText);
-    $('#editO #description').val(el[5].innerText);
-    $('#editO #dateOp').val(el[4].innerText);
-    $('#editO #etat').val(el[3].innerText);
-    $('#editO #montant').val(el[2].innerText);
+    $('#editO #name').val(el[7].innerText);
+
+
+
+
     $('#editO #produitF').find("option").each(function(){
-        if($(this).text() === el[1].innerText){
+        if($(this).text() === el[6].innerText){
             $(this).attr('selected','selected');
         }else{
             $(this).removeAttr('selected');
         }
     });
-    $('#editO #qte').val(el[0].innerText);
+
+    $('#editO #qte').val(el[5].innerText);
+    $('#editO #montant').val(el[3].innerText);
+    $('#editO #etat').val(el[2].innerText);
+    $('#editO #dateOp').val(el[1].innerText);
+    $('#editO #description').val(el[0].innerText);
 
 });
 
