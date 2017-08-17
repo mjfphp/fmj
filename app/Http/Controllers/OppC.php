@@ -78,12 +78,16 @@ class OppC extends Controller
         if($opp){
 
           $opp->name=$request->input('name') ;
-          $opp->description=$request->input('description');
-          $opp->dateOp=$request->input('dateOp');
-          $opp->etat=$request->input('etat');
-          $opp->montant=$request->input('montant');
           $opp->article_id=$request->input('article_id');
+         
           $opp->qte=$request->input('qte');
+           $opp->montant=$request->input('montant');
+           $opp->etat=$request->input('etat');
+          
+          $opp->dateOp=$request->input('dateOp');
+          $opp->description=$request->input('description');
+          
+          
           $opp->save();
         }
 

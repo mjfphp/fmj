@@ -35,6 +35,6 @@
 
 
 @endsection
-
+@include('partials.matiere')
 
 @include('partials.tache')

@@ -54,12 +54,6 @@ Operation de production
           <td>{{$item->etat}}</td>
           <td>{{$item->dateOp}}</td>
           <td>{{$item->description}}</td>
-
-
-
-
-
-
            <td><button class="edit-modal btn btn-info" >
                    <span class="glyphicon glyphicon-edit" id="{{$item->id}}"></span> Modifier
                </button>
@@ -180,7 +174,7 @@ Operation de production
 
 
                                       <div class="modal-footer">
-                                                 <button type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-check"></span> Modifier</button>
+                                                 <button type="submit" class="btn btn-success" > <span class="glyphicon glyphicon-check"></span> Modifier</button>
                                                  <button type="button" class="btn btn-warning" data-dismiss="modal">
                                                    <span class='glyphicon glyphicon-remove'></span> Annuler
                                                  </button>
