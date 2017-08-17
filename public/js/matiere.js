@@ -1,6 +1,3 @@
-/**
- * Created by inconnu on 17/08/2017.
- */
 $(document).ready(function() {
     $('#table').DataTable();
 } );
@@ -22,7 +19,7 @@ $("#add").on('click',function(){
     $(".method").after(el);
     $(".method").remove();
     $(".add ").html('  <span class=\"glyphicon glyphicon-check\"></span> ajouter');
-    $('#editM form').attr('action','/matieres' );
+    $('#editM form').attr('action','/times' );
 });
 
 
@@ -31,6 +28,7 @@ $(".edit-modal").on('click',function() {
     $('#editM').modal('show');
     var el = $(this).parent().prevAll();
     var id=$(this).attr('id');
+    $('#editM form').attr('action','/matieres/' + id);
     $('#editM #article_id').find("option").each(function(){
         if($(this).text() === el[3].innerText){
             $(this).attr('selected','selected');

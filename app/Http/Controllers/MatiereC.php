@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Matiere;
+use App\Article;
 class MatiereC extends Controller
 {
     /**
@@ -14,7 +15,7 @@ class MatiereC extends Controller
      */
     public function index()
     {
-         $matieres=Matiere::all();
+        $matieres=Matiere::all();
         $articles=Article::where('typ','=','Consomable')->get();
         return view('partials.matiere')
             ->with('articles',$articles)

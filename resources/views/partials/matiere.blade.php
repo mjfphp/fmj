@@ -10,6 +10,7 @@
                  <th class="text-center">Poste</th>
                   <th class="text-center">Operation</th>
                   <th class="text-center">Quantite</th>
+                  <th class="text-center">Actions</th>
              </tr>
        </thead>
        @if($matieres)
@@ -30,6 +31,7 @@
                            {{$item->opp->name}}
                         @endif
                        </td>
+                       <td>{{$item->qte}}</td>
                        <td><button class="edit-modal btn btn-info" id="{{$item->id}}" >
                                 <span class="glyphicon glyphicon-edit"></span> Modifier
                            </button>
