@@ -63,6 +63,8 @@ th{
     vertical-align: middle;
     margin-right: -4px;
 }
+.pull-left {float:left;}
+.pull-right {float:right;}
 
 
 

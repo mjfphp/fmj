@@ -4,7 +4,7 @@
   <meta charset="utf-8">
     <title>FMJ/@yield('title')</title>
 
-
+     @yield('meta')
     <script  src="{{ URL::asset('js/app.js') }}"></script>
     <script  src="{{ URL::asset('js/bar.js') }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +44,7 @@
 
        <div class="container">
          @yield('content')
-
+         @yield('table')
 
 </div>
 
