@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOppsTable extends Migration
+class CreateTimesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateOppsTable extends Migration
      */
     public function up()
     {
-        Schema::create('opps', function (Blueprint $table) {
+        Schema::create('times', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('description')->nullable();
-            $table->date('dateOp');
-            $table->string('etat');
-            $table->float('montant');
-            $table->integer('article_id')->unsigned();
-            $table->float('qte');
+            $table->string('description');
+            $table->float('vh');
+            $table->integer('opp_id')->unsigned();
+            $table->integer('operator_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ class CreateOppsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('opps');
+        Schema::dropIfExists('times');
     }
 }

@@ -101,10 +101,10 @@
                               <div class="form-group @if($errors->has('produitF')) has-error @endif">
                                  <label for="ref" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Produit finie</label><br>
                                   <div class="col-md-4">
-                                       <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}"    id="produitF" name="produitF" value="{{old('produitF')}}"  autofocus required>
+                                       <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}"    id="produitF" name="article_id" value="{{old('produitF')}}"  autofocus required>
                                                     @if($articles)
                                                     @foreach($articles as $article)
-                                                              <option value="{{$article->name}}">{{$article->name}}</option>
+                                                              <option value="{{$article->id}}">{{$article->name}}</option>
                                                     @endforeach
                                                     @endif
                                        </select>
