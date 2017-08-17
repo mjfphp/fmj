@@ -43,7 +43,11 @@ Operation de production
           <td>{{$item->dateOp}}</td>
           <td>{{$item->etat}}</td>
           <td>{{$item->montant}}</td>
-          <td>{{$item->produitF}}</td>
+          <td>
+                 @if($item->article)
+                   {{$item->article->name}}
+                 @endif
+          </td>
           <td>{{$item->qte}}</td>
            <td><button class="edit-modal btn btn-info" >
                    <span class="glyphicon glyphicon-edit" id="{{$item->id}}"></span> Modifier
@@ -141,10 +145,10 @@ Operation de production
                                          <label class="control-label col-md-2" for="produitF"><span style="color:crimson;font-size:32px;">*</span>Produit finie :</label><br>
                                          <div class="col-sm-10 col-md-8">
 
-                                         <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}"    id="produitF" name="produitF" value="{{old('produitF')}}"  autofocus required>
+                                         <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}"    id="produitF" name="article_id" value="{{old('produitF')}}"  autofocus required>
                                              @if($articles)
                                                   @foreach($articles as $article)
-                                                   <option value="{{$article->name}}">{{$article->name}}</option>
+                                                   <option value="{{$article->id}}">{{$article->name}}</option>
                                                  @endforeach
                                              @endif
                                             </select>

@@ -9,8 +9,19 @@ class Opp extends Model
 {
     protected $tables="opps";
 
-    public function lps()
+    public function times()
     {
-        return $this->hasMany('App\Lp');
+        return $this->hasMany('App\Time');
     }
+
+    public function matieres()
+    {
+        return $this->hasMany('App\Matiere');
+    }
+
+    public function article()
+    {
+        return $this->belongsTo('App\Article','article_id');
+    }
+
 }

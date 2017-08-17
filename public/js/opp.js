@@ -20,7 +20,13 @@ $(".edit-modal").on('click',function() {
     $('#editO #dateOp').val(el[4].innerText);
     $('#editO #etat').val(el[3].innerText);
     $('#editO #montant').val(el[2].innerText);
-    $('#editO #produitF').val(el[1].innerText);
+    $('#editO #produitF').find("option").each(function(){
+        if($(this).text() === el[1].innerText){
+            $(this).attr('selected','selected');
+        }else{
+            $(this).removeAttr('selected');
+        }
+    });
     $('#editO #qte').val(el[0].innerText);
 
 });

@@ -39,7 +39,7 @@ class OppC extends Controller
         $opp->dateOp=$request->input('dateOp');
         $opp->etat=$request->input('etat');
         $opp->montant=$request->input('montant');
-        $opp->produitF=$request->input('produitF');
+        $opp->article_id=$request->input('article_id');
         $opp->qte=$request->input('qte');
         $opp->save();
         return redirect()->back();
@@ -65,7 +65,7 @@ class OppC extends Controller
           $opp->dateOp=$request->input('dateOp');
           $opp->etat=$request->input('etat');
           $opp->montant=$request->input('montant');
-          $opp->produitF=$request->input('produitF');
+          $opp->article_id=$request->input('article_id');
           $opp->qte=$request->input('qte');
           $opp->save();
         }

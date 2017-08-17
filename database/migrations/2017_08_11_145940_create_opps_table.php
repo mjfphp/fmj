@@ -20,7 +20,7 @@ class CreateOppsTable extends Migration
             $table->date('dateOp');
             $table->string('etat');
             $table->float('montant');
-            $table->string('produitF');
+            $table->integer('article_id')->unsigned();
             $table->float('qte');
             $table->timestamps();
         });
