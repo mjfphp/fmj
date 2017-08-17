@@ -43,7 +43,6 @@ Operateurs
      @foreach($operators as $item)
 
      <tr class="item{{$item->id}}">
-       
                   <td>{{$item->imm}}</td>
                   <td>{{$item->name}}</td>
                   <td>{{$item->cin}}</td>
@@ -100,7 +99,7 @@ Operateurs
 
 @section('modalE')
                <div id="editOp" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                   <div class="modal-dialog " style="width:970px;">
+                                   <div class="modal-dialog " style="width:1000px;">
                                            <div class="modal-content">
                                                <div class="modal-header">
                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -111,97 +110,107 @@ Operateurs
                                           {{ csrf_field()}}
                                    <input name="_method" type="hidden" value="put">
 
-<<<<<<< HEAD
-=======
+                                   <div class="form-group">
+                                       <label class="control-label col-md-2" for="name"><span style="color:crimson;font-size:32px;">*</span>Nom complet:</label><br>
+                                       <div class="col-sm-5 col-md-4">
+                                       <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+                                       </div>
 
->>>>>>> 027088376ae849835295402c15aa683f399fa90b
-
-
-                                     <div class="form-group">
-                                         <label class="control-label col-md-2" for="imm"><span style="color:crimson;font-size:32px;">*</span>Immatriculation :</label><br>
-                                         <div class="col-sm-10 col-md-8">
-                                         <input type="text" class="form-control" id="imm" name="imm" value="{{old('imm')}}">
-                                         </div>
-                                     </div>
-
-                                     <div class="form-group">
-                                         <label class="control-label col-md-2" for="name"><span style="color:crimson;font-size:32px;">*</span>Nom complet :</label><br>
-                                         <div class="col-sm-10 col-md-8">
-                                         <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
-                                         </div>
-                                     </div>
-
-                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="cin"><span style="color:crimson;font-size:32px;">*</span>CIN : </label><br>
-                                         <div class="col-sm-10 col-md-8">
-                                         <input type="text" class="form-control" id="cin" name="cin" value="{{old('cin')}}">
-                                         </div>
-                                     </div>
-
-                                     <div class="form-group">
-                                         <label class="control-label col-md-2" for="n_phone"><span style="color:crimson;font-size:32px;">*</span>N° de télephone :</label><br>
-                                         <div class="col-sm-10 col-md-8">
-                                         <input type="number" class="form-control" id="n_phone" name="n_phone" value="{{old('n_phone')}}">
-                                         </div>
-                                     </div>
-
-                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="n_pass">N° de passport :</label>
-                                         <div class="col-sm-10 col-md-8">
-                                         <input type="text" class="form-control" id="n_pass" name="n_pass" value="{{old('n_pass')}}">
-                                         </div>
-                                     </div>
-
-                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="birthDate">Date de naissance :</label>
-                                         <div class="col-sm-10 col-md-8">
-                                         <input type="date" class="form-control" id="birthDate" name="birthDate" value="{{old('birthDate')}}">
-                                         </div>
-                                     </div>
-
-                                     <div class="form-group">
-                                        <label class="control-label col-md-2" for="ville">Ville :</label>
-                                        <div class="col-sm-10 col-md-8">
-                                        <input type="text" class="form-control" id="ville" name="ville" value="{{old('ville')}}">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                       <label class="control-label col-md-2" for="debutC"><span style="color:crimson;font-size:32px;">*</span>Début du contrat :</label><br>
-                                       <div class="col-sm-10 col-md-8">
-                                       <input type="date" class="form-control" id="debutC" name="debutC" value="{{old('debutC')}}">
+                                       <label class="control-label col-md-2" for="ville">Ville :</label>
+                                       <div class="col-sm-5 col-md-4">
+                                       <input type="text" class="form-control" id="ville" name="ville" value="{{old('ville')}}">
                                        </div>
                                    </div>
 
 
+
+
+
+
+
+
                                    <div class="form-group">
-                                      <label class="control-label col-md-2" for="finC"><span style="color:crimson;font-size:32px;">*</span>Fin du contrat :</label><br>
-                                      <div class="col-sm-10 col-md-8">
-                                      <input type="date" class="form-control" id="finC" name="finC" value="{{old('finC')}}">
-                                      </div>
-                                  </div>
+                                       <label class="control-label col-md-2" for="n_phone"><span style="color:crimson;font-size:32px;">*</span>N° de télephone:</label><br>
+                                       <div class="col-sm-5 col-md-4">
+                                       <input type="number" class="form-control" id="n_phone" name="n_phone" value="{{old('n_phone')}}">
+                                       </div>
 
-                                  <div class="form-group">
-                                     <label class="control-label col-md-2" for="examMedical">Examen médicale :</label>
-                                     <div class="col-sm-10 col-md-8">
-                                     <input type="text" class="form-control" id="examMedical" name="examMedical" value="{{old('examMedical')}}">
-                                     </div>
-                                 </div>
+                                       <label class="control-label col-md-2" for="poste">Poste :</label>
+                                       <div class="col-sm-5 col-md-4">
+                                       <input type="text" class="form-control" id="poste" name="poste" value="{{old('poste')}}">
+                                       </div>
 
-                                 <div class="form-group">
-                                    <label class="control-label col-md-2" for="poste">Poste :</label>
-                                    <div class="col-sm-10 col-md-8">
-                                    <input type="text" class="form-control" id="poste" name="poste" value="{{old('poste')}}">
-                                    </div>
-                                </div>
 
-                                <div class="form-group">
-                                   <label class="control-label col-md-2" for="active"><span style="color:crimson;font-size:32px;">*</span>Active :</label><br>
-                                   <div class="col-sm-10 col-md-8">
-                                   <input type="text" class="form-control" id="active" name="active" value="{{old('active')}}">
                                    </div>
-                               </div>
+
+
+                                     <div class="form-group">
+                                         <label class="control-label col-md-2" for="imm"><span style="color:crimson;font-size:32px;">*</span>Immatriculation:</label><br>
+                                         <div class="col-sm-5 col-md-4">
+                                         <input type="text" class="form-control" id="imm" name="imm" value="{{old('imm')}}">
+                                         </div>
+                                         <label class="control-label col-md-2" for="birthDate">Date de naissance :</label>
+                                         <div class="col-sm-5 col-md-4">
+                                         <input type="date" class="form-control" id="birthDate" name="birthDate" value="{{old('birthDate')}}">
+                                         </div>
+
+
+                                     </div>
+
+
+
+
+
+
+
+
+                                      <div class="form-group">
+                                        <label class="control-label col-md-2" for="cin"><span style="color:crimson;font-size:32px;">*</span>CIN: </label><br>
+                                        <div class="col-sm-5 col-md-4">
+                                        <input type="text" class="form-control" id="cin" name="cin" value="{{old('cin')}}">
+                                        </div>
+
+
+                                         <label class="control-label col-md-2" for="n_pass">N° de passport:</label>
+                                         <div class="col-sm-5 col-md-4">
+                                         <input type="text" class="form-control" id="n_pass" name="n_pass" value="{{old('n_pass')}}">
+                                         </div>
+                                     </div>
+
+
+                                     <div class="form-group">
+                                        <label class="control-label col-md-2" for="active"><span style="color:crimson;font-size:32px;">*</span>Active :</label><br>
+                                        <div class="col-sm-5 col-md-4">
+                                        <input type="text" class="form-control" id="active" name="active" value="{{old('active')}}">
+                                        </div>
+
+                                        <label class="control-label col-md-2" for="examMedical">Examen médicale :</label>
+                                        <div class="col-sm-5 col-md-4">
+                                        <input type="text" class="form-control" id="examMedical" name="examMedical" value="{{old('examMedical')}}">
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="debutC"></span>Début du contrat :</label>
+                                        <div class="col-sm-5 col-md-4">
+                                        <input type="text" class="form-control" id="debutC" name="debutC" value="{{old('debutC')}}">
+                                        </div>
+                                        <label class="control-label col-md-2" for="finC"></span>Fin du contrat : </label>
+                                        <div class="col-sm-5 col-md-4">
+                                        <input type="text" class="form-control" id="finC" name="finC" value="{{old('finC')}}">
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
 
 
 

@@ -67,7 +67,7 @@ Articles
 
 @section('modalD')
                     <div id="deleteA" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                             <div class="modal-dialog">
+                             <div class="modal-dialog" style="width:1000px;">
                                      <div class="modal-content">
                                          <div class="modal-header">
                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -108,21 +108,28 @@ Articles
 
                                     <div class="form-group">
                                          <label class="control-label col-md-2" for="ref"><span style="color:crimson;font-size:32px;">*</span>Reference:</label><br>
-                                         <div class="col-sm-10 col-md-8">
+                                         <div class="col-sm-5 col-md-4">
                                          <input type="text" class="form-control" id="ref" name="ref" value="{{old('ref')}}">
                                          </div>
-                                     </div>
 
-                                     <div class="form-group">
                                          <label class="control-label col-md-2" for="name">Nom :</label>
-                                         <div class="col-sm-10 col-md-8">
+                                         <div class="col-sm-5 col-md-4">
                                          <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
                                          </div>
                                      </div>
 
+
                                      <div class="form-group">
+
+                                       <label class="control-label col-md-2" for="type"><span style="color:crimson;font-size:32px;">*</span>type :</label><br>
+                                       <div class="col-sm-5 col-md-4">
+                                        <select class="selectpicker show-menu-arrow form-control"  id="typ" value="{{old('type')}}" name="type" type="text"  placeholder="type" autofocus required>
+                                                     <option value="Consomable">Consomable</option>
+                                                     <option value="Produit finie">Produit finie</option>
+                                       </select>
+                                       </div>
                                          <label class="control-label col-md-2" for="description">Description:</label>
-                                         <div class="col-sm-10 col-md-8">
+                                         <div class="col-sm-5 col-md-4">
                                          <input type="text" class="form-control" id="description" name="description" value="{{old('description')}}">
                                          </div>
                                      </div>
@@ -141,15 +148,6 @@ Articles
                                          </div>
                                      </div>
 
-                                     <div class="form-group">
-                                         <label class="control-label col-md-2" for="type"><span style="color:crimson;font-size:32px;">*</span>type :</label><br>
-                                         <div class="col-sm-10 col-md-8">
-                                          <select class="selectpicker show-menu-arrow form-control"  id="typ" value="{{old('type')}}" name="type" type="text"  placeholder="type" autofocus required>
-                                                       <option value="Consomable">Consomable</option>
-                                                       <option value="Produit finie">Produit finie</option>
-                                         </select>
-                                         </div>
-                                     </div>
 
                                       <div class="form-group">
                                          <label class="control-label col-md-2" for="uomId"><span style="color:crimson;font-size:32px;">*</span>Unité de mesure :</label><br>
