@@ -23,19 +23,17 @@
 <br>
 
 <div class="row">
-       <div class="col-md-1 col-xs-1"></div>
-       <div class="col-md-4 col-xs-4">
-                 <h3>   Gestion des taches :</h3>
-       </div>
+       <div class="col-md-5 col-xs-5"></div>
        <div class="col-md-4 col-xs-4"></div>
-       <button id="add" class="btn btn-success col-md-2 col-xs-2"><span class="glyphicon glyphicon-plus"></span>ajouter une tache</button>
+       <button id="add" class="btn btn-success col-md-2 col-xs-2"><span class="glyphicon glyphicon-plus"></span>ajouter une matiere</button>
       <div class="col-md-1 col-xs-1"></div>
 </div>
 
 
 
 @endsection
-
-@if(isset($times))
+@if(isset($matieres))
+@include('partials.matiere')
+@else
 @include('partials.tache')
 @endif
