@@ -36,5 +36,6 @@
 
 @endsection
 
-
+@if(isset($times))
 @include('partials.tache')
+@endif
