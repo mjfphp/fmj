@@ -7,7 +7,7 @@ body {
     background-color: rgba(245, 245, 255, 0);
 }
 body {
-    padding-top: 100px;
+    padding-top: 70px;
 }
 footer {
     padding: 30px 0;
@@ -59,15 +59,11 @@ th{
 .modal:before {
     content: '';
     display: inline-block;
-    height: 50%;
+    height: 20%;
     vertical-align: middle;
     margin-right: -4px;
 }
 
 
 
-.modal-dialog {
-    display: inline-block;
-    text-align: left;
-    vertical-align: middle;
-}
+

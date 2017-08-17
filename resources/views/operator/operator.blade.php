@@ -23,6 +23,7 @@ Operateurs
        <br>
            <thead>
                <tr>
+
                    <th class="text-center">Immatriculation</th>
                     <th class="text-center">Nom complet</th>
                     <th class="text-center">CIN</th>
@@ -42,7 +43,7 @@ Operateurs
      @foreach($operators as $item)
 
      <tr class="item{{$item->id}}">
-                 <td class="hidden">{{$item->id}}</td>
+       
                   <td>{{$item->imm}}</td>
                   <td>{{$item->name}}</td>
                   <td>{{$item->cin}}</td>
@@ -56,10 +57,10 @@ Operateurs
                   <td>{{$item->poste}}</td>
                   <td>{{$item->active}}</td>
 
-         <td ><button class="edit-modal btn btn-info " >
+         <td ><button class="edit-modal btn btn-info " id="{{$item->id}}">
                  <span class="glyphicon glyphicon-edit"></span> Modifier
              </button>
-             <button class="delete-modal btn btn-danger">
+             <button class="delete-modal btn btn-danger" id="{{$item->id}}">
                  <span class="glyphicon glyphicon-trash"></span> Effacer
              </button></td>
      </tr>
@@ -110,6 +111,10 @@ Operateurs
                                           {{ csrf_field()}}
                                    <input name="_method" type="hidden" value="put">
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 027088376ae849835295402c15aa683f399fa90b
 
 
                                      <div class="form-group">

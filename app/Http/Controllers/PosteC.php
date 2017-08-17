@@ -69,7 +69,7 @@ class PosteC extends Controller
                 ->withInput();
         }
 
-        $poste=new Poste();
+        $poste=Poste::find($id);
         $poste->ref=$request->input('ref') ;
         $poste->intitule=$request->input('intitule');
         $poste->save();
@@ -80,7 +80,8 @@ class PosteC extends Controller
 
     public function destroy($id)
     {
-       // $p=Poste::find($id) ;$p->delete(); return redirect()->back();
-         echo $id;
+       $p=Poste::find($id);
+            $p->delete();
+        return redirect()->back();
     }
 }

@@ -12,7 +12,6 @@ Postes
         </div>
           <div class="col-md-5"></div>
          <a href="{{route('postes.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>   Ajouter un poste</a>
-
          </div>
 
     <div class="container">
@@ -22,22 +21,21 @@ Postes
           <br>
 
        <thead>
-                     <tr>
-                         <th class="text-center">Reference</th>
-                         <th class="text-center">Intitule</th>
-                         <th class="text-center">Actions</th>
-                   </tr>
+             <tr>
+                 <th class="text-center">Reference</th>
+                 <th class="text-center">Intitule</th>
+                  <th class="text-center">Actions</th>
+             </tr>
        </thead>
         @if($postes)
             @foreach($postes as $item)
             <tr class="item{{$item->id}}">
-                <td class="hidden">{{$item->id}}</td>
                 <td>{{$item->ref}}</td>
                 <td>{{$item->intitule}}</td>
-                <td><button class="edit-modal btn btn-info" >
+                <td><button class="edit-modal btn btn-info" id="{{$item->id}}" >
                          <span class="glyphicon glyphicon-edit"></span> Modifier
                     </button>
-                    <button class="delete-modal btn btn-danger">
+                    <button class="delete-modal btn btn-danger" id="{{$item->id}}">
                         <span class="glyphicon glyphicon-trash"></span> Effacer
                     </button></td>
            </tr>
@@ -49,43 +47,44 @@ Postes
 @endsection
 @section('modalD')
                     <div id="deleteP" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                             <div class="modal-dialog">
-                                     <div class="modal-content">
-                                         <div class="modal-header">
-                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                     <h4 class="modal-title">Confirmation</h4>
-                                         </div>
+                        <div class="modal-dialog">
+                           <div class="modal-content">
+                                   <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Confirmation</h4>
+                                  </div>
                               <div class="modal-body">
-                                <form method="post">
+                                <form method="post" >
                                   {{ csrf_field()}}
                                   <input name="_method" type="hidden" value="DELETE">
                                   <h4>Vous voulez vraiment supprimer cet article ?</h4>
-                              <div class="modal-footer">
-                                <button type="submit" class="btn btn-danger"> <span class="glyphicon glyphicon-trash"></span> Confirmer</button>
-                                <button type="button" class="btn btn-warning" data-dismiss="modal">
-                                	<span class='glyphicon glyphicon-remove'></span> Annuler
-                                </button>
+                                  <div class="modal-footer">
+                                  <button type="submit" class="btn btn-danger"> <span class="glyphicon glyphicon-trash"></span> Confirmer </button>
+                                  <button type="button" class="btn btn-warning" data-dismiss="modal">
+                                       <span class='glyphicon glyphicon-remove'></span> Annuler
+                                  </button>
+                                    </div>
+                                </form>
                               </div>
-                            </form>
-                                </div>
-                                </div>
                          </div>
-                         </div>
+                     </div>
+                   </div>
 @endsection
 
 
 @section('modalE')
                <div id="editP" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                   <div class="modal-dialog " style="width:500px;">
-                                           <div class="modal-content">
-                                               <div class="modal-header">
-                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                           <h4 class="modal-title">Modifier</h4>
-                                               </div>
-                             <div class="modal-body">
-                                   <form class="form-horizontal" method="post">
+                          <div class="modal-dialog " style="width:500px;">
+                               <div class="modal-content">
+                                     <div class="modal-header">
+                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                         <h4 class="modal-title">Modifier <span id="id"></span>r</h4>
+                                     </div>
+                            <div class="modal-body">
+                                <form class="form-horizontal" method="post">
                                           {{ csrf_field()}}
-                                   <input name="_method" type="hidden" value="put">
+                                   <input name="_method" type="hidden" value="PUT">
+
 
 
 
@@ -101,23 +100,21 @@ Postes
                                          <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="intitule" name="intitule" value="{{old('intitule')}}">
                                          </div>
-                                     </div>
-                                       <div class="modal-footer">
+                                    </div>
+
+                                  <div class="modal-footer">
                                              <button type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-check"></span> Modifier</button>
                                              <button type="button" class="btn btn-warning" data-dismiss="modal">
                                                <span class='glyphicon glyphicon-remove'></span> Annuler
                                              </button>
-                                       </div>
-                                    </form>
-                           </div>
-                           </div>
-                           </div>
-                           </div>
+                                   </div>
+                               </form>
+                          </div>
+                        </div>
+                     </div>
+                   </div>
+@endsection
 
-
-
-      @endsection
-
-      @section('js')
+@section('js')
          <script  src="{{ URL::asset('js/poste.js')}}"> </script>
-      @endsection
+@endsection

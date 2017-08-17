@@ -1,19 +1,17 @@
 $(document).ready(function() {
     $('#table').DataTable();
 } );
-
-
 $(".delete-modal").on('click',function() {
     $('#deleteA').modal('show');
-    var el = $(this).parent().prevAll().last();
-    $('#deleteA form').attr('action','/articles/'+el.innerText);
+    var id=$(this).attr('id');
+    $('#deleteA form').attr('action','/articles/' + id);
 });
 
 $(".edit-modal").on('click',function() {
     $('#editA').modal('show');
     var el = $(this).parent().prevAll();
-    $('#editA form').attr('action','/articles/' + el[8].innerText);
-    $('#editA #id').val(el[8].innerText);
+    var id=$(this).attr('id');
+    $('#editA form').attr('action','/articles/' + id);
     $('#editA #ref').val(el[7].innerText);
     $('#editA #name').val(el[6].innerText);
     $('#editA #description').val(el[5].innerText);

@@ -20,8 +20,10 @@ Articles
 
        <div class="container ">
        <div class="table-responsive text-center">
-       <table class="table table-bordered table-striped display" id="table" border="0.5px">
+       <table class="table table-bordered table-striped display" id="table" border="0.5px" >
        <br>
+
+
        <br>
            <thead>
                <tr>
@@ -39,7 +41,6 @@ Articles
      @if($articles)
      @foreach($articles as $item)
      <tr class="item{{$item->id}}">
-         <td class="hidden">{{$item->id}}</td>
          <td>{{$item->ref}}</td>
          <td>{{$item->name}}</td>
          <td>{{$item->description}}</td>
@@ -48,10 +49,10 @@ Articles
          <td>{{$item->typ}}</td>
          <td>{{$item->uomId}}</td>
          <td>{{$item->state}}</td>
-         <td><button class="edit-modal btn btn-info" >
+         <td><button class="edit-modal btn btn-info" id="{{$item->id}}">
                  <span class="glyphicon glyphicon-edit"></span> Modifier
              </button>
-             <button class="delete-modal btn btn-danger">
+             <button class="delete-modal btn btn-danger" id="{{$item->id}}">
                  <span class="glyphicon glyphicon-trash"></span> Effacer
              </button></td>
      </tr>
