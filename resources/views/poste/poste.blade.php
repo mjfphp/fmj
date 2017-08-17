@@ -34,7 +34,6 @@ Postes
                 <td class="hidden">{{$item->id}}</td>
                 <td>{{$item->ref}}</td>
                 <td>{{$item->intitule}}</td>
-
                 <td><button class="edit-modal btn btn-info" >
                          <span class="glyphicon glyphicon-edit"></span> Modifier
                     </button>
@@ -57,7 +56,7 @@ Postes
                                                      <h4 class="modal-title">Confirmation</h4>
                                          </div>
                               <div class="modal-body">
-                                <form class="pure-form pure-form-stacked" method="post">
+                                <form method="post">
                                   {{ csrf_field()}}
                                   <input name="_method" type="hidden" value="DELETE">
                                   <h4>Vous voulez vraiment supprimer cet article ?</h4>
@@ -91,14 +90,14 @@ Postes
 
 
                                     <div class="form-group">
-                                         <label class="control-label col-md-2" for="ref"><span style="color:crimson;font-size:32px;">*</span>Reference:</label><br>
+                                         <label class="control-label col-md-2" for="ref"><span style="color:crimson;font-size:32px;">*</span>Reference: </label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="ref" name="ref" value="{{old('ref')}}">
                                          </div>
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="intitule">intitule :</label>
+                                         <label class="control-label col-md-2" for="intitule"><span style="color:crimson;font-size:32px;">*</span>intitule: </label><br>
                                          <div class="col-sm-10 col-md-8">
                                          <input type="text" class="form-control" id="intitule" name="intitule" value="{{old('intitule')}}">
                                          </div>

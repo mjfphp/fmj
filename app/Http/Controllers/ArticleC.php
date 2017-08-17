@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use Validator;
+
 use App\Http\Controllers\Controller;
-
-
 class ArticleC extends Controller
 {
 

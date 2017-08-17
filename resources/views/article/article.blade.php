@@ -13,7 +13,7 @@ Articles
       <h2>   Gestion Des articles :</h2>
       </div>
        <div class="col-md-5"></div>
-      <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>   Ajouter un article</a>
+      <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>Ajouter un article</a>
       </div>
       </div>
 
@@ -73,7 +73,7 @@ Articles
                                                      <h4 class="modal-title">Confirmation</h4>
                                          </div>
                               <div class="modal-body">
-                                <form class="pure-form pure-form-stacked" method="post">
+                                <form  method="post">
                                   {{ csrf_field()}}
                                   <input name="_method" type="hidden" value="DELETE">
                                   <h4>Vous voulez vraiment supprimer cet article ?</h4>
