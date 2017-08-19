@@ -72,7 +72,7 @@ Operateurs
 @endsection
 
 @section('modalD')
-                    <div id="deleteOp" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div id="deleteS" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                              <div class="modal-dialog">
                                      <div class="modal-content">
                                          <div class="modal-header">
@@ -98,7 +98,7 @@ Operateurs
 @endsection
 
 @section('modalE')
-               <div id="editOp" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+               <div id="editS" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                    <div class="modal-dialog " style="width:1000px;">
                                            <div class="modal-content">
                                                <div class="modal-header">

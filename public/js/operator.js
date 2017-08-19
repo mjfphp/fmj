@@ -4,29 +4,29 @@ $(document).ready(function() {
 
 
 $(".delete-modal").on('click',function() {
-    $('#deleteOp').modal('show');
+    $('#deleteS').modal('show');
     var id=$(this).attr('id');
-    $('#deleteOp form').attr('action','/operators/' + id);
+    $('#deleteS form').attr('action','/operators/' + id);
 
 });
 
 $(".edit-modal").on('click',function() {
-    $('#editOp').modal('show');
+    $('#editS').modal('show');
     var el = $(this).parent().prevAll();
     var id=$(this).attr('id');
-    $('#editOp form').attr('action','/operators/' + id);
-    $('#editOp #imm').val(el[11].innerText);
-    $('#editOp #name').val(el[10].innerText);
-    $('#editOp #cin').val(el[9].innerText);
-    $('#editOp #n_phone').val(el[8].innerText);
-    $('#editOp #n_pass').val(el[7].innerText);
-    $('#editOp #birthDate').val(el[6].innerText);
-    $('#editOp #ville').val(el[5].innerText);
-    $('#editOp #debutC').val(el[4].innerText);
-    $('#editOp #finC').val(el[3].innerText);
-    $('#editOp #examMedical').val(el[2].innerText);
-    $('#editOp #poste').val(el[1].innerText);
-    $('#editOp #active').val(el[0].innerText);
+    $('#editS form').attr('action','/operators/' + id);
+    $('#editS #imm').val(el[11].innerText);
+    $('#editS #name').val(el[10].innerText);
+    $('#editS #cin').val(el[9].innerText);
+    $('#editS #n_phone').val(el[8].innerText);
+    $('#editS #n_pass').val(el[7].innerText);
+    $('#editS #birthDate').val(el[6].innerText);
+    $('#editS #ville').val(el[5].innerText);
+    $('#editS #debutC').val(el[4].innerText);
+    $('#editS #finC').val(el[3].innerText);
+    $('#editS #examMedical').val(el[2].innerText);
+    $('#editS #poste').val(el[1].innerText);
+    $('#editS #active').val(el[0].innerText);
 });
 
 

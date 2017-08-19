@@ -21,21 +21,27 @@
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
        <div class="row">
-                        <div class="form-group">
+                        <div class="form-group @if($errors->has('ref')) has-error @endif">
                            <label for="ref" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>reference :</label><br>
                             <div class="col-md-4">
                                 <input type="text"  placeholder="Reference" class="form-control" value="{{old('ref')}}" name="ref" autofocus required>
                             </div>
+                             @if($errors->has('ref'))
+                                     <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('ref') }}</div>
+                        @endif
                          <div class="col-md-4"></div>
                         </div>
        </div>
 
        <div class="row">
-                         <div class="form-group">
+                         <div class="form-group @if($errors->has('intitule')) has-error @endif">
                             <label for="intitule" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>intitule :</label><br>
                              <div class="col-md-4">
                                  <input type="text"  placeholder="description" class="form-control" value="{{old('intitule')}}" name="intitule" autofocus required>
                              </div>
+                             @if($errors->has('intitule'))
+                                     <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('intitule') }}</div>
+                        @endif
                           <div class="col-md-4"></div>
                          </div>
         </div>

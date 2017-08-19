@@ -4,18 +4,18 @@ $(document).ready(function() {
 
 
 $(".delete-modal").on('click',function() {
-    $('#deleteP').modal('show');
+    $('#deleteS').modal('show');
     var id=$(this).attr('id');
-    $('#deleteP form').attr('action','/postes/' + id);
+    $('#deleteS form').attr('action','/postes/' + id);
 });
 
 $(".edit-modal").on('click',function() {
-    $('#editP').modal('show');
+    $('#editS').modal('show');
     var el = $(this).parent().prevAll();
     var id=$(this).attr('id');
-    $('#editP form').attr('action','/postes/' + id);
-    $('#editP #ref').val(el[1].innerText);
-    $('#editP #intitule').val(el[0].innerText);
+    $('#editS form').attr('action','/postes/' + id);
+    $('#editS #ref').val(el[1].innerText);
+    $('#editS #intitule').val(el[0].innerText);
 });
 
 $(function () {

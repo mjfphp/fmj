@@ -66,7 +66,7 @@ Articles
 @endsection
 
 @section('modalD')
-                    <div id="deleteA" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div id="deleteS" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                              <div class="modal-dialog" style="width:1000px;">
                                      <div class="modal-content">
                                          <div class="modal-header">
@@ -92,7 +92,7 @@ Articles
 @endsection
 
 @section('modalE')
-               <div id="editA" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+               <div id="editS" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                    <div class="modal-dialog " style="width:800px;">
                                            <div class="modal-content">
                                                <div class="modal-header">
