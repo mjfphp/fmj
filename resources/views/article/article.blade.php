@@ -93,7 +93,7 @@ Articles
 
 @section('modalE')
                <div id="editS" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                   <div class="modal-dialog " style="width:800px;">
+                                   <div class="modal-dialog " style="width:600px;">
                                            <div class="modal-content">
                                                <div class="modal-header">
                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -121,58 +121,47 @@ Articles
 
                                      <div class="form-group">
                                         <label class="control-label col-md-3" for="uomId"><span style="color:crimson;font-size:32px;">*</span>Unité de mesure :</label><br>
-                                        <div class="col-sm-10 col-md-9">
+                                        <div class="col-sm-5 col-md-4">
                                         <input type="text" class="form-control" id="uomId" name="uomId" value="{{old('uomId')}}">
                                         </div>
+                                         <label class="control-label col-md-1" for="standarPrice">Prix($):</label>
+                                         <div class="col-sm-1 col-md-4">
+                                         <input type="number" step="0.01" class="form-control" id="standarPrice" name="standarPrice" value="{{old('standarPrice')}}">
+                                         </div>
                                     </div>
                                     
 
                                      <div class="form-group">
 
                                        <label class="control-label col-md-3" for="type"><span style="color:crimson;font-size:32px;">*</span>type :</label><br>
-                                       <div class="col-sm-10 col-md-9">
+                                       <div class="col-sm-5 col-md-4">
                                         <select class="selectpicker show-menu-arrow form-control"  id="typ" value="{{old('type')}}" name="type" type="text"  placeholder="type" autofocus required>
                                                      <option value="Consomable">Consomable</option>
                                                      <option value="Produit finie">Produit finie</option>
                                        </select>
                                        </div>
-
-                                     </div>
-
-
-
-
-                                     <div class="form-group">
-                                         <label class="control-label col-md-3" for="standarPrice">Prix ($):</label>
-                                         <div class="col-sm-10 col-md-9">
-                                         <input type="number" step="0.01" class="form-control" id="standarPrice" name="standarPrice" value="{{old('standarPrice')}}">
-                                         </div>
-                                     </div>
-
-                                      <div class="form-group">
-                                         <label class="control-label col-md-3" for="weightNet">Poids :</label>
-                                         <div class="col-sm-10 col-md-9">
+                                       <label class="control-label col-md-1" for="weightNet">Poids:</label>
+                                         <div class="col-sm-1 col-md-4">
                                          <input type="number" step="0.01" class="form-control" id="weightNet" name="weightNet" value="{{old('weightNet')}}">
                                          </div>
-                                     </div>
 
+                                     </div>
 
 
                                       <div class="form-group">
                                          <label class="control-label col-md-3" for="state">etat :</label>
-                                         <div class="col-sm-10 col-md-9">
+                                         <div class="col-sm-5 col-md-4">
                                          <input type="text" class="form-control" id="state" name="state" value="{{old('state')}}">
                                          </div>
+
+                                         <label class="control-label col-md-1" for="description">Description:</label>
+                                      <div class="col-sm-1 col-md-4">
+                                      <input type="text" class="form-control" id="description" name="description" value="{{old('description')}}">
+                                      </div>
                                      </div>
 
 
-                                    <div class="form-group">
-
-                                      <label class="control-label col-md-3" for="description">Description:</label>
-                                      <div class="col-sm-10 col-md-9">
-                                      <input type="text" class="form-control" id="description" name="description" value="{{old('description')}}">
-                                      </div>
-                                        </div>
+                                 
 
 
                                       <div class="modal-footer">
