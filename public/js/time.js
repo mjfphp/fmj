@@ -1,16 +1,8 @@
 /**
  * Created by inconnu on 17/08/2017.
  */
-$(document).ready(function() {
-    $('#table').DataTable();
-} );
 
 
-$(".delete-modal").on('click',function() {
-    $('#deleteS').modal('show');
-    var id=$(this).attr('id');
-    $('#deleteS form').attr('action','/times/' + id);
-});
 
 
 $("#add").on('click',function(){
@@ -41,8 +33,4 @@ $(".edit-modal").on('click',function() {
         }
     });
 
-});
-
-$(function () {
-    $('#modal').modal(toggle)
 });

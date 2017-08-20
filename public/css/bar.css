@@ -59,7 +59,7 @@ th{
 .modal:before {
     content: '';
     display: inline-block;
-    height: 20%;
+    height: 5%;
     vertical-align: middle;
     margin-right: -4px;
 }

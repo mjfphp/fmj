@@ -32,8 +32,5 @@
 
 
 @endsection
-@if(isset($matieres))
-@include('partials.matiere')
-@else
+
 @include('partials.tache')
-@endif
