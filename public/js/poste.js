@@ -1,23 +1,16 @@
-$(document).ready(function() {
-    $('#table').DataTable();
-} );
 
 
-$(".delete-modal").on('click',function() {
-    $('#deleteS').modal('show');
-    var id=$(this).attr('id');
-    $('#deleteS form').attr('action','/postes/' + id);
-});
+var actions=function(i){
+    var action=$(".delete-modal").attr('data-info');
+    var id=$(".delete-modal").attr('id');
+    $(i).attr('action',action  + id);
+}
 
 $(".edit-modal").on('click',function() {
     $('#editS').modal('show');
     var el = $(this).parent().prevAll();
-    var id=$(this).attr('id');
-    $('#editS form').attr('action','/postes/' + id);
+    actions("#editS form")
     $('#editS #ref').val(el[1].innerText);
     $('#editS #intitule').val(el[0].innerText);
 });
 
-$(function () {
-    $('#modal').modal(toggle)
-});
