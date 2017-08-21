@@ -2,18 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Operator;
+use App\Opp;
 use App\Time;
 use Illuminate\Http\Request;
 
 class TimesC extends Controller
 {
-
-    public function index()
-    {
-
-    }
-
-
 
 
 
@@ -28,35 +23,17 @@ class TimesC extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
-        //
+        $opp=Opp::find($id);
+        $operators=Operator::all();
+        return view('sp.sp')
+            ->with('opp',$opp)
+            ->with('operators',$operators);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $time=Time::find($id);
@@ -67,15 +44,10 @@ class TimesC extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        Time::find($id)->delete();
-        return redirect()->back();
+        $time=Time::find($id);
+            $time->delete();
+           return redirect()->back();
     }
 }

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Matiere;
+use App\Operator;
+use App\Poste;
+use App\Time;
 use Illuminate\Http\Request;
 use App\Opp;
 use Validator;
@@ -67,6 +71,10 @@ class OppC extends Controller
     public function show($id)
     {
 
+    }
+
+    public function matiere($id)
+    {
 
     }
 
@@ -91,7 +99,7 @@ class OppC extends Controller
           $opp->save();
         }
 
-        return redirect('/opps');
+        return redirect()->back();
     }
 
 

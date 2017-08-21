@@ -12,10 +12,6 @@ $(".edit-modal").on('click',function() {
     var el = $(this).parent().prevAll();
     actions("editS form");
     $('#editS #name').val(el[7].innerText);
-
-
-
-
     $('#editS #produitF').find("option").each(function(){
         if($(this).text() === el[6].innerText){
             $(this).attr('selected','selected');
@@ -23,13 +19,11 @@ $(".edit-modal").on('click',function() {
             $(this).removeAttr('selected');
         }
     });
-
     $('#editS #qte').val(el[5].innerText);
     $('#editS #montant').val(el[3].innerText);
     $('#editS #etat').val(el[2].innerText);
     $('#editS #dateOp').val(el[1].innerText);
     $('#editS #description').val(el[0].innerText);
-
 });
 
 

@@ -39,7 +39,7 @@ Operation de production
            </thead>
      @foreach($opps as $item)
      <tr class="item{{$item->id}}">
-          <td><a href="/">{{$item->	name}}</a></td>
+          <td><a href="{{route('times.show',['id'=>$item->id])}}">{{$item->name}}</a></td>
           <td>
                  @if($item->article)
                    {{$item->article->name}}
@@ -83,7 +83,7 @@ Operation de production
                                                </div>
                              <div class="modal-body">
                                    <form class="form-horizontal" method="post">
-                                          {{ csrf_field()}}
+                                          {{ csrf_field() }}
                                    <input name="_method" type="hidden" value="put">
 
 
@@ -159,7 +159,7 @@ Operation de production
                                         </div>
                                         </div>
                                         </div>
-
+  </div>
 
 
 @endsection
