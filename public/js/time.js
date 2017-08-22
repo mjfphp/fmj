@@ -1,12 +1,13 @@
-/**
- * Created by inconnu on 17/08/2017.
- */
+$(".delete-modal").on('click',function() {
+    $('#deleteS').modal('show');
+    var id=$(this).attr('id');
+    $('#deleteS form').attr('action','/times/' + id);
+});
 
 
 
 
 $("#add").on('click',function(){
-
     $("#editS").modal('show');
     var opp=$(".table").attr('data-id');
    var el= "<input type=\"hidden\" value=\" "+opp+" \" name=\"opp_id\" />";

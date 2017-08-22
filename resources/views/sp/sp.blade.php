@@ -25,12 +25,13 @@
 <div class="row">
        <div class="col-md-5 col-xs-5"></div>
        <div class="col-md-4 col-xs-4"></div>
-       <button id="add" class="btn btn-success col-md-2 col-xs-2"><span class="glyphicon glyphicon-plus"></span>ajouter une matiere</button>
+       <button id="add" class="btn btn-success col-md-2 col-xs-2"><span class="glyphicon glyphicon-plus"></span> ajouter</button>
       <div class="col-md-1 col-xs-1"></div>
 </div>
 
 
 
 @endsection
+
 
 @include('partials.tache')

@@ -1,7 +1,7 @@
 @section('table')
  <div class="container" >
           <div class="table-responsive text-center">
-          <table class="table table-bordered table-striped display" id="table" border="0.5px" data-id="1" >
+          <table class="table table-bordered table-striped display" id="table" border="0.5px" data-id="{{$opp->id}}" >
           <br>
 
        <thead>
@@ -12,8 +12,8 @@
                   <th class="text-center">actions</th>
              </tr>
        </thead>
-       @if($times)
-                   @foreach($times as $item)
+       @if($opp->times)
+                   @foreach($opp->times as $item)
                    <tr class="item{{$item->id}}">
                        <td>{{$item->description}}</td>
                        <td>{{$item->vh}}</td>

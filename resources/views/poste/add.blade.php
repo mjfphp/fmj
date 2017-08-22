@@ -53,7 +53,7 @@
                          <div class="form-group">
                           <div class="col-md-3"></div>
                              <div class="col-md-4">
-                                 <button type="submit" class="btn btn-primary btn-block">Ajouter une opperation</button>
+                                 <button type="submit" class="btn btn-primary btn-block">Ajouter un poste</button>
                              </div>
                          </div>
 
