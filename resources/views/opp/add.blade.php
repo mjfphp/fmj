@@ -23,11 +23,25 @@
    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 
+<div class="row">
+
+                      <div class="form-group @if($errors->has('ref')) has-error @endif">
+                          <label for="ref" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Référence</label><br>
+                           <div class="col-md-4">
+                               <input type="text"  placeholder="la référence de l'opération" class="form-control" value="{{old('ref')}}" name="ref" autofocus required>
+                           </div>
+                           @if($errors->has('ref'))
+                                               <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('ref') }}</div>
+                           @endif
+                        <div class="col-md-4"></div>
+                       </div>
+      </div>
+
 
       <div class="row">
 
                       <div class="form-group @if($errors->has('name')) has-error @endif">
-                          <label for="ref" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Nom</label><br>
+                          <label for="name" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Nom</label><br>
                            <div class="col-md-4">
                                <input type="text"  placeholder="le nom de l'operation" class="form-control" value="{{old('name')}}" name="name" autofocus required>
                            </div>
@@ -42,9 +56,9 @@
  <div class="row">
 
                               <div class="form-group @if($errors->has('produitF')) has-error @endif">
-                                 <label for="ref" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Produit finie</label><br>
+                                 <label for="produitF" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Produit finie</label><br>
                                   <div class="col-md-4">
-                                       <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}"    id="produitF" name="article_id" value="{{old('produitF')}}"  autofocus required>
+                                       <select class="selectpicker show-menu-arrow form-control" value="{{old('produitF')}}"    id="produitF" name="article_id" value="{{old('produitF')}}"  autofocus required>
                                                     @if($articles)
                                                     @foreach($articles as $article)
                                                               <option value="{{$article->id}}">{{$article->name}}</option>
@@ -66,7 +80,7 @@
        <div class="row">
 
                               <div class="form-group @if($errors->has('qte')) has-error @endif">
-                                 <label for="state" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Quantité</label><br>
+                                 <label for="qte" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Quantité</label><br>
                                   <div class="col-md-4">
                                       <input type="number" step="0.01"  placeholder="Quantité" class="form-control" value="{{old('qte')}}" name="qte" autofocus required>
                                   </div>
@@ -82,7 +96,7 @@
        <div class="row">
 
                               <div class="form-group @if($errors->has('montant')) has-error @endif">
-                                 <label for="type" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Montant</label><br>
+                                 <label for="montant" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Montant</label><br>
                                   <div class="col-md-4">
                                       <input type="number" step="0.01" placeholder="le montant total de l'operation" class="form-control" value="{{old('montant')}}" name="montant" autofocus required>
                                   </div>
@@ -101,7 +115,7 @@
         <div class="row">
 
                               <div class="form-group @if($errors->has('etat')) has-error @endif">
-                                 <label for="weightNet" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>etat</label><br>
+                                 <label for="etat" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>etat</label><br>
                                   <div class="col-md-4">
                                       <input type="text"  placeholder="l'etat de l'operation" class="form-control" value="{{old('etat')}}" name="etat" autofocus required>
                                   </div>
@@ -117,7 +131,7 @@
 
        <div class="row">
                      <div class="form-group @if($errors->has('dateOp')) has-error @endif">
-                     <label for="standarPrice" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Date</label><br>
+                     <label for="dateOp" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Date</label><br>
                      <div class="col-md-4">
                        <input type="date"  placeholder="date de l'operation" class="form-control" value="{{old('dateOp')}}" name="dateOp" autofocus required>
                     </div>

@@ -24,6 +24,7 @@ Operation de production
            <thead>
                <tr>
                    <th class="text-center">Nom</th>
+                   <th class="text-center">Référence</th>
                    <th class="text-center">Produit finie</th>
                    <th class="text-center">Quantité </th>
                    <th class="text-center">Prix </th>
@@ -40,6 +41,7 @@ Operation de production
      @foreach($opps as $item)
      <tr class="item{{$item->id}}">
           <td><a href="{{route('times.show',['id'=>$item->id])}}">{{$item->name}}</a></td>
+          <td>{{$item->ref}}</td>
           <td>
                  @if($item->article)
                    {{$item->article->name}}

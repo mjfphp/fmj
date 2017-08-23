@@ -15,6 +15,7 @@ class CreateOppsTable extends Migration
     {
         Schema::create('opps', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('ref')->unique();
             $table->string('name');
             $table->string('description')->nullable();
             $table->date('dateOp');

@@ -39,6 +39,7 @@ class OppC extends Controller
 
          $validator = Validator::make($request->all(), [
             'name' => 'required:articles',
+            'ref' => 'required|unique:opps',
             'description'=>'nullable',
             'dateOp' => 'required',
             'etat'=>'required',
@@ -56,6 +57,7 @@ class OppC extends Controller
     
         $opp=new Opp;
         $opp->name=$request->input('name') ;
+        $opp->ref=$request->input('ref') ;
         $opp->description=$request->input('description');
         $opp->dateOp=$request->input('dateOp');
         $opp->etat=$request->input('etat');
@@ -86,6 +88,7 @@ class OppC extends Controller
         if($opp){
 
           $opp->name=$request->input('name') ;
+          $opp->ref=$request->input('ref') ;
           $opp->article_id=$request->input('article_id');
          
           $opp->qte=$request->input('qte');
