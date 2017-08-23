@@ -7,8 +7,9 @@
        <thead>
              <tr>
                  <th class="text-center">Description</th>
-                 <th class="text-center">temps</th>
+                 <th class="text-center">temps(h)</th>
                   <th class="text-center">Operateur</th>
+                  <th class="text-center">Poste</th>
                   <th class="text-center">actions</th>
              </tr>
        </thead>
@@ -20,6 +21,11 @@
                        <td>
                         @if($item->operator)
                            {{$item->operator->name}}
+                        @endif
+                       </td>
+                       <td>
+                          @if($item->operator)
+                           {{$item->operator->poste}}
                         @endif
                        </td>
                        <td><button class="edit-modal btn btn-info" id="{{$item->id}}" >
@@ -66,12 +72,26 @@
                                    </div>
 
                                   <div class="form-group">
-                                        <label class="control-label col-md-2" for="operator_id"><span style="color:crimson;font-size:32px;">*</span>Operators : </label><br>
+                                        <label class="control-label col-md-2" for="operator_id"><span style="color:crimson;font-size:32px;">*</span>Operateur : </label><br>
                                         <div class="col-sm-10 col-md-8">
                                         <select  class="selectpicker show-menu-arrow form-control" id="operator_id" name="operator_id" value="{{old('operator_id')}}">
                                               @if($operators)
                                                  @foreach($operators as $el)
                                                   <option value="{{$el->id}}">{{$el->name}}</option>
+                                                @endforeach
+                                             @endif
+                                        </select>
+                                        </div>
+                                   </div>
+
+
+                                   <div class="form-group">
+                                        <label class="control-label col-md-2" for="poste"><span style="color:crimson;font-size:32px;">*</span>Poste : </label><br>
+                                        <div class="col-sm-10 col-md-8">
+                                        <select  class="selectpicker show-menu-arrow form-control" id="poste" name="poste" value="{{old('poste')}}">
+                                              @if($operators)
+                                                 @foreach($operators as $el)
+                                                  <option value="{{$el->id}}">{{$el->poste}}</option>
                                                 @endforeach
                                              @endif
                                         </select>
@@ -93,5 +113,4 @@
 
 @section('js')
          <script  src="{{ URL::asset('js/time.js')}}"> </script>
-           <script  src="{{ URL::asset('js/bootstrap-toggle.min.js')}}"> </script>
 @endsection

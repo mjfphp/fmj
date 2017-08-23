@@ -19,6 +19,7 @@ class CreateTimesTable extends Migration
             $table->float('vh');
             $table->integer('opp_id')->unsigned();
             $table->integer('operator_id')->unsigned();
+            $table->string('poste');
             $table->timestamps();
         });
     }

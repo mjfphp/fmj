@@ -9,7 +9,7 @@ $(".delete-modal").on('click',function() {
 
 $("#add").on('click',function(){
     $("#editS").modal('show');
-    var opp=$(".table").attr('data-id');
+    var opp=$("#table").attr('data-id');
     var el= "<input type=\"hidden\" value=\" "+opp+" \" name=\"opp_id\" />";
     $("#operation").text('Ajouter une matiere :');
     $(".method").after(el);
@@ -24,15 +24,16 @@ $(".edit-modal").on('click',function() {
     $('#editS').modal('show');
     var el = $(this).parent().prevAll();
     var id=$(this).attr('id');
-    $('#editS form').attr('action','/matieres/' + id);
-    $('#editS #article_id').find("option").each(function(){
+     $('#editS #poste_id').find("option").each(function(){
         if($(this).text() === el[2].innerText){
             $(this).attr('selected','selected');
         }else{
             $(this).removeAttr('selected');
         }
     });
-     $('#editS #poste_id').find("option").each(function(){
+    
+    $('#editS form').attr('action','/matieres/' + id);
+    $('#editS #article_id').find("option").each(function(){
         if($(this).text() === el[1].innerText){
             $(this).attr('selected','selected');
         }else{

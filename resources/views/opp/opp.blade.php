@@ -42,7 +42,7 @@ Operation de production
      <tr class="item{{$item->id}}">
           <td><a href="{{route('times.show',['id'=>$item->id])}}">{{$item->name}}</a></td>
           <td>{{$item->ref}}</td>
-          <td>
+          <td ><a href="{{route('articles.index',['id'=>$item->id])}}">
                  @if($item->article)
                    {{$item->article->name}}
                  @endif

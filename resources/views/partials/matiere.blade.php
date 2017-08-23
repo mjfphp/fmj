@@ -6,8 +6,8 @@
 
        <thead>
              <tr>
+                <th class="text-center">Poste</th>
                  <th class="text-center">Article</th>
-                 <th class="text-center">Poste</th>
                   <th class="text-center">Quantite</th>
                   <th class="text-center">Actions</th>
              </tr>
@@ -15,16 +15,18 @@
        @if($opp->matieres)
                    @foreach($opp->matieres as $item)
                    <tr class="item{{$item->id}}">
+
+                   <td>
+                        @if($item->poste)
+                           {{$item->poste->intitule}}
+                        @endif
+                       </td>
                        <td>
                         @if($item->article)
                            {{$item->article->name}}
                         @endif
                        </td>
-                       <td>
-                        @if($item->poste)
-                           {{$item->poste->intitule}}
-                        @endif
-                       </td>
+                       
                        <td>{{$item->qte}}</td>
                        <td><button class="edit-modal btn btn-info" id="{{$item->id}}" >
                                 <span class="glyphicon glyphicon-edit"></span> Modifier
@@ -56,19 +58,9 @@
                                    <input name="_method" type="hidden" value="PUT" class="method">
 
 
-                                  <div class="form-group">
-                                        <label class="control-label col-md-2" for="article_id"><span style="color:crimson;font-size:32px;">*</span>Article : </label><br>
-                                        <div class="col-sm-10 col-md-8">
-                                        <select  class="selectpicker show-menu-arrow form-control" id="article_id" name="article_id" value="{{old('article_id')}}">
-                                              @if($articles)
-                                                 @foreach($articles as $el)
-                                                  <option value="{{$el->id}}">{{$el->name}}</option>
-                                                @endforeach
-                                             @endif
-                                        </select>
-                                        </div>
-                                   </div>
 
+
+                                   
                                    <div class="form-group">
                                         <label class="control-label col-md-2" for="poste_id"><span style="color:crimson;font-size:32px;">*</span>Poste: </label><br>
                                         <div class="col-sm-10 col-md-8">
@@ -81,6 +73,21 @@
                                         </select>
                                         </div>
                                    </div>
+
+
+                                  <div class="form-group">
+                                        <label class="control-label col-md-2" for="article_id"><span style="color:crimson;font-size:32px;">*</span>Article: </label><br>
+                                        <div class="col-sm-10 col-md-8">
+                                        <select  class="selectpicker show-menu-arrow form-control" id="article_id" name="article_id" value="{{old('article_id')}}">
+                                              @if($articles)
+                                                 @foreach($articles as $el)
+                                                  <option value="{{$el->id}}">{{$el->name}}</option>
+                                                @endforeach
+                                             @endif
+                                        </select>
+                                        </div>
+                                   </div>
+
 
 
                                    <div class="form-group">
@@ -105,5 +112,4 @@
 
 @section('js')
          <script  src="{{ URL::asset('js/matiere.js')}}"> </script>
-           <script  src="{{ URL::asset('js/bootstrap-toggle.min.js')}}"> </script>
 @endsection

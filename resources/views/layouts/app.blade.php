@@ -35,8 +35,9 @@
                         <li class="active"><a href="/"><span class=" glyphicon  glyphicon-home"></span>  Home</a></li>
                         <li><a href="/articles"><span class=" glyphicon  glyphicon-apple"></span>   Articles</a></li>
                         <li><a href="/operators"><span class=" glyphicon  glyphicon-user"></span>  Operateurs</a></li>
-                        <li><a href="/opps"><span class=" glyphicon  glyphicon-fire"></span>  Operations</a></li>
+                        <li><a href="/opps"><span class=" glyphicon  glyphicon-fire"></span>  Production</a></li>
                         <li><a href="/postes"><span class=" glyphicon   glyphicon-lock"></span>  Postes</a></li>
+                        @yield('nav')
                     </ul>
                 </div><!-- /.nav-collapse -->
             </div><!-- /.container -->
