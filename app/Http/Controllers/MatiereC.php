@@ -29,7 +29,7 @@ class MatiereC extends Controller
         $opps=Opp::all();
         $articles=Article::where('typ','=','Consomable')->get();
         $postes=Poste::all();
-        return view('sp.sp')
+        return view('calls.matiere')
             ->with('articles',$articles)
             ->with('postes',$postes)
             ->with('opp',$opp)

@@ -9,7 +9,7 @@ $(".delete-modal").on('click',function() {
 
 $("#add").on('click',function(){
     $("#editS").modal('show');
-    var opp=$(".table").attr('data-id');
+    var opp=$("#table").attr('data-id');
     var el= "<input type=\"hidden\" value=\" "+opp+" \" name=\"opp_id\" />";
     $("#operation").text('Ajouter une matiere :');
     $(".method").after(el);

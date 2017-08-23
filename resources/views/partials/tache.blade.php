@@ -93,5 +93,4 @@
 
 @section('js')
          <script  src="{{ URL::asset('js/time.js')}}"> </script>
-           <script  src="{{ URL::asset('js/bootstrap-toggle.min.js')}}"> </script>
 @endsection

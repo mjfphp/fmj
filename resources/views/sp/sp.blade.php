@@ -70,10 +70,7 @@
 
 @endsection
 
-@if(!empty($times))
-@include('partials.tache')
-@endif
 
-@if(!empty($matieres))
-@include('partials.matiere')
-@endif
+@yield('partials')
+
+
