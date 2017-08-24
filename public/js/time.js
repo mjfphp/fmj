@@ -33,15 +33,4 @@ $(".edit-modal").on('click',function() {
             $(this).removeAttr('selected');
         }
     });
-
-
-     $('#editS #poste').find("option").each(function(){
-        if($(this).text() === el[0].innerText){
-            $(this).attr('selected','selected');
-        }else{
-            $(this).removeAttr('selected');
-        }
-    });
-
-
 });

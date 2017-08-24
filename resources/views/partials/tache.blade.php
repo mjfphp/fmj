@@ -85,18 +85,6 @@
                                    </div>
 
 
-                                   <div class="form-group">
-                                        <label class="control-label col-md-2" for="poste"><span style="color:crimson;font-size:32px;">*</span>Poste : </label><br>
-                                        <div class="col-sm-10 col-md-8">
-                                        <select  class="selectpicker show-menu-arrow form-control" id="poste" name="poste" value="{{old('poste')}}">
-                                              @if($operators)
-                                                 @foreach($operators as $el)
-                                                  <option value="{{$el->id}}">{{$el->poste}}</option>
-                                                @endforeach
-                                             @endif
-                                        </select>
-                                        </div>
-                                   </div>
 
                                     <div class="modal-footer">
                                        <button type="submit" class="btn btn-success add"> <span class="glyphicon glyphicon-check"></span> Modifier</button>

@@ -39,7 +39,8 @@ class TimesC extends Controller
         $time=Time::find($id);
         $time->description=$request->input('description');
         $time->vh=$request->input('vh');
-        $time->operator_id=$time->opp_id;
+        $time->opp_id=$time->opp_id;
+        $time->operator_id=$request->input('operator_id');
         $time->save();
         return redirect()->back();
     }
