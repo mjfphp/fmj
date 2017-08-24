@@ -51,9 +51,9 @@
 <br>
 <div class="row">
   <div class="col-md-1 col-xs-1" ></div>
-      <a href="/matieres/{{$opp->id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Matiére</a>   
+      <a href="/matieres/{{$opp->id}}" class="@if(isset($articles))  btn btn-primary btn-lg active @else btn btn-secondary btn-lg active @endif " role="button" aria-pressed="true">Matiére</a>
       <div class="col-md-1 col-xs-1"></div>
-      <a href="/times/{{$opp->id}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Temps</a>
+      <a href="/times/{{$opp->id}}" class="@if(!isset($articles))  btn btn-primary btn-lg active @else btn btn-secondary btn-lg active @endif" role="button" aria-pressed="true">Temps</a>
 
      <br>
 </div>
@@ -67,5 +67,7 @@
 
 
 @yield('partials')
+
+@endsection
 
 
