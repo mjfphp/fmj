@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('title')
 Operation de production
 @endsection
@@ -23,8 +24,9 @@ Operation de production
        <br>
            <thead>
                <tr>
-                   <th class="text-center">Nom</th>
+
                    <th class="text-center">Référence</th>
+                   <th class="text-center">Nom</th>
                    <th class="text-center">Produit finie</th>
                    <th class="text-center">Quantité </th>
                    <th class="text-center">Prix </th>
@@ -40,18 +42,18 @@ Operation de production
            </thead>
      @foreach($opps as $item)
      <tr class="item{{$item->id}}">
-          <td><a href="{{route('times.show',['id'=>$item->id])}}">{{$item->name}}</a></td>
+
           <td>{{$item->ref}}</td>
+          <td><a href="{{route('times.show',['id'=>$item->id])}}">{{$item->name}}</a></td>
           <td ><a href="{{route('articles.index',['id'=>$item->id])}}">
                  @if($item->article)
                    {{$item->article->name}}
                  @endif
           </td>
           <td>{{$item->qte}}</td>
-          <td>
-            @if($item->article)
-              {{$item->article->standarPrice}}
-            @endif</td>
+         <td>@if($item->article)
+                 {{$item->article->standarPrice}}
+             @endif</td>
           <td>{{$item->montant}}</td>
           <td>{{$item->etat}}</td>
           <td>{{$item->dateOp}}</td>
@@ -71,13 +73,11 @@ Operation de production
 
 
 @endsection
-
 @include('partials.delete')
 
 @section('modalE')
-
 <div id="editS" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                   <div class="modal-dialog " style="width:500px;">
+                                   <div class="modal-dialog " style="width:600px;">
                                            <div class="modal-content">
                                                <div class="modal-header">
                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -85,9 +85,17 @@ Operation de production
                                                </div>
                              <div class="modal-body">
                                    <form class="form-horizontal" method="post">
-                                          {{ csrf_field() }}
+                                          {{ csrf_field()}}
                                    <input name="_method" type="hidden" value="put">
 
+
+                                    
+                                    <div class="form-group">
+                                         <label class="control-label col-md-2" for="ref"><span style="color:crimson;font-size:32px;">*</span>Référence :</label><br>
+                                         <div class="col-sm-10 col-md-8">
+                                         <input type="text" class="form-control" id="ref" name="ref" value="{{old('ref')}}">
+                                         </div>
+                                     </div>
 
 
                                     <div class="form-group">
@@ -97,19 +105,7 @@ Operation de production
                                          </div>
                                      </div>
 
-                                     <div class="form-group">
-                                        <label class="control-label col-md-2" for="produitF"><span style="color:crimson;font-size:32px;">*</span>Produit finie :</label><br>
-                                        <div class="col-sm-10 col-md-8">
 
-                                        <select class="selectpicker show-menu-arrow form-control" value="{{old('type')}}"    id="produitF" name="article_id" value="{{old('produitF')}}"  autofocus required>
-                                            @if($articles)
-                                                 @foreach($articles as $article)
-                                                  <option value="{{$article->id}}">{{$article->name}}</option>
-                                                @endforeach
-                                            @endif
-                                           </select>
-                                        </div>
-                                    </div>
 
                                     <div class="form-group">
                                        <label class="control-label col-md-2" for="qte"><span style="color:crimson;font-size:32px;">*</span>Quantité :</label><br>
@@ -118,12 +114,19 @@ Operation de production
                                        </div>
                                    </div>
 
-                                  <div class="form-group">
-                                    <label class="control-label col-md-2" for="montant"><span style="color:crimson;font-size:32px;">*</span>Montant :</label><br>
-                                    <div class="col-sm-10 col-md-8">
-                                      <input type="number" step="0.01" class="form-control" id="montant" name="montant" value="{{old('montant')}}">
-                                      </div>
-                                      </div>
+
+
+
+
+                                      <div class="form-group">
+                                         <label class="control-label col-md-2" for="montant"><span style="color:crimson;font-size:32px;">*</span>Montant :</label><br>
+                                         <div class="col-sm-10 col-md-8">
+                                         <input type="number"  step ="0.01" class="form-control" id="montant" name="montant" value="{{old('montant')}}">
+                                         </div>
+                                     </div>
+
+
+                            
 
 
                                       <div class="form-group">
@@ -162,6 +165,8 @@ Operation de production
                                         </div>
                                         </div>
   </div>
+
+
 
 
 @endsection

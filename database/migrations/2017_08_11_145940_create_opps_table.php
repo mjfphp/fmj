@@ -11,18 +11,26 @@ class CreateOppsTable extends Migration
      *
      * @return void
      */
+
+
     public function up()
     {
         Schema::create('opps', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ref')->unique();
             $table->string('name');
-            $table->string('description')->nullable();
-            $table->date('dateOp');
-            $table->string('etat');
-            $table->float('montant');
             $table->integer('article_id')->unsigned();
             $table->float('qte');
+
+            $table->float('montant');
+             $table->string('etat');
+             $table->date('dateOp');
+            $table->string('description')->nullable();
+
+           
+ 
+            
+            
             $table->timestamps();
         });
     }

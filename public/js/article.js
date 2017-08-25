@@ -1,4 +1,3 @@
-
 var actions=function(i){
     var action=$(".delete-modal").attr('data-info');
     var id=$(".delete-modal").attr('id');

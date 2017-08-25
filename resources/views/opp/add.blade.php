@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('title', 'Ajouter Une Operation')
 
 @section('content')
@@ -55,10 +56,10 @@
 
  <div class="row">
 
-                              <div class="form-group @if($errors->has('produitF')) has-error @endif">
-                                 <label for="produitF" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Produit finie</label><br>
+                              <div class="form-group @if($errors->has('article_id')) has-error @endif">
+                                 <label for="article_id" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Produit finie</label><br>
                                   <div class="col-md-4">
-                                       <select class="selectpicker show-menu-arrow form-control" value="{{old('produitF')}}"    id="produitF" name="article_id" value="{{old('produitF')}}"  autofocus required>
+                                       <select class="selectpicker show-menu-arrow form-control" id="article_id" name="article_id" value="{{old('article_id')}}"  autofocus required>
                                                     @if($articles)
                                                     @foreach($articles as $article)
                                                               <option value="{{$article->id}}">{{$article->name}}</option>
@@ -66,8 +67,8 @@
                                                     @endif
                                        </select>
                                   </div>
-                                  @if($errors->has('produitF'))
-                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('produitF') }}</div>
+                                  @if($errors->has('article_id'))
+                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('article_id') }}</div>
                                   @endif
                                <div class="col-md-4"></div>
                               </div>
@@ -90,6 +91,10 @@
                                <div class="col-md-4"></div>
                               </div>
          </div>
+
+
+
+
 
 
 
@@ -153,7 +158,7 @@
                             </div>
                          <div class="col-md-4"></div>
                         </div>
-       </div>s
+       </div>
       
 
 
