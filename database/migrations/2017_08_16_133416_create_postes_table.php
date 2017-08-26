@@ -17,6 +17,7 @@ class CreatePostesTable extends Migration
             $table->increments('id');
             $table->string('ref')->unique();
             $table->string('intitule')->unique();
+            $table->float('taux');
             $table->timestamps();
         });
     }

@@ -44,6 +44,20 @@
                         @endif
                           <div class="col-md-4"></div>
                          </div>
+
+                         <br>
+        </div>
+        <div class="row">
+                         <div class="form-group @if($errors->has('taux')) has-error @endif">
+                            <label for="taux" class="col-md-3 control-label">taux :</label>
+                             <div class="col-md-4">
+                                 <input type="number"  step="0.1" placeholder="description" class="form-control" value="{{old('taux')}}" name="taux" autofocus required>
+                             </div>
+                             @if($errors->has('taux'))
+                                     <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('taux') }}</div>
+                        @endif
+                          <div class="col-md-4"></div>
+                         </div>
         </div>
 
 

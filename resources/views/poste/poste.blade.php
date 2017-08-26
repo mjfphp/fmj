@@ -24,6 +24,7 @@ Postes
              <tr>
                  <th class="text-center">Reference</th>
                  <th class="text-center">Intitule</th>
+                 <th class="text-center">Taux</th>
                   <th class="text-center">Actions</th>
              </tr>
        </thead>
@@ -32,6 +33,7 @@ Postes
             <tr class="item{{$item->id}}">
                 <td>{{$item->ref}}</td>
                 <td>{{$item->intitule}}</td>
+                <td>{{$item->taux}}</td>
                 <td><button class="edit-modal btn btn-info" id="{{$item->id}}" >
                          <span class="glyphicon glyphicon-edit"></span> Modifier
                     </button>
@@ -78,6 +80,16 @@ Postes
                                          </div>
                                     </div>
 
+                                       <div class="form-group @if($errors->has('taux')) has-error @endif">
+                                                                  <label for="taux" class="col-md-2 control-label">taux :</label>
+                                                                   <div class="col-md-8">
+                                                                       <input type="number"  step="0.1" placeholder="description" id="taux" class="form-control" value="{{old('taux')}}" name="taux" autofocus required>
+                                                                   </div>
+                                                                   @if($errors->has('taux'))
+                                                                           <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('taux') }}</div>
+                                                              @endif
+                                                                <div class="col-md-4"></div>
+                                        </div>
                                   <div class="modal-footer">
                                              <button type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-check"></span> Modifier</button>
                                              <button type="button" class="btn btn-warning" data-dismiss="modal">

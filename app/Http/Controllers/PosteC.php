@@ -27,6 +27,7 @@ class PosteC extends Controller
         $validator = Validator::make($request->all(), [
             'ref' => 'required|unique:postes',
             'intitule' => 'required|unique:postes',
+            'taux' => 'nullable|numeric'
         ]);
 
         if ($validator->fails()) {
@@ -38,21 +39,10 @@ class PosteC extends Controller
         $poste=new Poste();
         $poste->ref=$request->input('ref') ;
         $poste->intitule=$request->input('intitule');
+        $poste->taux=$request->input('taux');
         $poste->save();
 
         return redirect()->back();
-    }
-
-
-    public function show($id)
-    {
-
-    }
-
-
-    public function edit($id)
-    {
-
     }
 
 
@@ -61,6 +51,7 @@ class PosteC extends Controller
         $validator = Validator::make($request->all(), [
             'ref' => 'required|unique:postes,ref,'.$id,
             'intitule' => 'required|unique:postes,intitule,'.$id,
+            'taux' => 'nullable|numeric'
         ]);
 
         if ($validator->fails()) {
@@ -72,6 +63,7 @@ class PosteC extends Controller
         $poste=Poste::find($id);
         $poste->ref=$request->input('ref') ;
         $poste->intitule=$request->input('intitule');
+        $poste->taux=$request->input('taux');
         $poste->save();
 
         return redirect()->back();
