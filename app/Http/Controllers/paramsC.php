@@ -24,14 +24,24 @@ class paramsC extends Controller
             $param->b=15;
             $param->save();
         }
-        $param=param::all()->first();
+        $param=param::all()->last();
        return view('params.config')->with('param',$param);
     }
 
 
     public function store(Request $request)
     {
+        $param=new param();
+        $param->tfa=$request->input('tfa');
+        $param->dm=$request->input('dm');
+        $param->dh=$request->input('dh');
+        $param->ao=$request->input('ao');
+        $param->fg=$request->input('fg');
+        $param->it=$request->input('it');
+        $param->b=$request->input('b');
+        $param->save();
 
+        return redirect()->back();
     }
 
 

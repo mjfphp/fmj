@@ -24,7 +24,7 @@
             <div class="form-group @if($errors->has('dm')) has-error @endif">
                                 <label for="dm" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Divers Matieres : </label><br>
                                  <div class="col-md-4 input-group">
-                                     <input type="number"  placeholder="{{$param->dm}}" class="form-control" value=" {{old('dm')}}" name="dm" autofocus required>
+                                     <input type="number"  value="{{$param->dm}}" class="form-control" placeholder=" {{old('dm')}}" name="dm" autofocus required>
                                       <span class="input-group-addon">%</span>
                                  </div>
                                   @if($errors->has('dm'))
@@ -38,7 +38,7 @@
                  <div class="form-group @if($errors->has('dh')) has-error @endif">
                                            <label for="dh" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Divers horaires : </label><br>
                                             <div class="col-md-4">
-                                                <input type="number"  placeholder="{{$param->dh}}" class="form-control" value="{{old('dh')}}" name="dh" autofocus required>
+                                                <input type="number"  value="{{$param->dh}}" class="form-control" placeholder="{{old('dh')}}" name="dh" autofocus required>
                                             </div>
                                              @if($errors->has('dh'))
                                          <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('dh') }}</div>
@@ -51,7 +51,7 @@
                         <div class="form-group @if($errors->has('tfa')) has-error @endif">
                                             <label for="tfa" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>  Transport et frais attachés : </label><br>
                                              <div class="col-md-4">
-                                                 <input type="number"  placeholder="{{$param->tfa}}" class="form-control" value="{{old('tfa')}}" name="tfa" autofocus required>
+                                                 <input type="number"  value="{{$param->tfa}}" class="form-control" placeholder="{{old('tfa')}}" name="tfa" autofocus required>
                                              </div>
                                               @if($errors->has('tfa'))
                                           <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('tfa') }}</div>
@@ -64,7 +64,7 @@
                         <div class="form-group @if($errors->has('ao')) has-error @endif">
                                             <label for="ao" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>  Amortissement et outillage : </label><br>
                                              <div class="col-md-4">
-                                                 <input type="number"  placeholder="{{$param->ao}}" class="form-control" value="{{old('ao')}}" name="ao" autofocus required>
+                                                 <input type="number"  value="{{$param->ao}}" class="form-control" placeholder="{{old('ao')}}" name="ao" autofocus required>
                                              </div>
                                               @if($errors->has('ao'))
                                           <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('ao') }}</div>
@@ -77,7 +77,7 @@
                              <div class="form-group @if($errors->has('fg')) has-error @endif">
                                                  <label for="fg" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>  Frais Generaux : </label><br>
                                                   <div class="col-md-4">
-                                                      <input type="number"  placeholder="{{$param->fg}}" class="form-control" value="{{old('fg')}}" name="fg" autofocus required>
+                                                      <input type="number"  value="{{$param->fg}}" class="form-control" placeholder="{{old('fg')}}" name="fg" autofocus required>
                                                   </div>
                                                    @if($errors->has('fg'))
                                                <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('fg') }}</div>
@@ -90,7 +90,7 @@
                                             <div class="form-group @if($errors->has('it')) has-error @endif">
                                                                 <label for="it" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>  Impots et taxes : </label><br>
                                                                  <div class="col-md-4">
-                                                                     <input type="number"  placeholder="{{$param->it}}" class="form-control" value="{{old('it')}}" name="it" autofocus required>
+                                                                     <input type="number"  value="{{$param->it}}" class="form-control" placeholder="{{old('it')}}" name="it" autofocus required>
                                                                  </div>
                                                                   @if($errors->has('it'))
                                                               <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('it') }}</div>
@@ -103,7 +103,7 @@
                                          <div class="form-group @if($errors->has('b')) has-error @endif">
                                                   <label for="b" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>  Benefice : </label><br>
                                                      <div class="col-md-4">
-                                                        <input type="number"  placeholder="{{$param->b}}" class="form-control" value="{{old('b')}}" name="b" autofocus required>
+                                                        <input type="number"  value="{{$param->b}}" class="form-control" placeholder="{{old('b')}}" name="b" autofocus required>
                                                       </div>
                                                   @if($errors->has('b'))
                                                        <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('b') }}</div>

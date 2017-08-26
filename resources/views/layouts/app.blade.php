@@ -37,6 +37,7 @@
                         <li><a href="/operators"><span class=" glyphicon  glyphicon-user"></span>  Operateurs</a></li>
                         <li><a href="/opps"><span class=" glyphicon  glyphicon-fire"></span>  Production</a></li>
                         <li><a href="/postes"><span class=" glyphicon   glyphicon-lock"></span>  Postes</a></li>
+                        <li><a href="/params"><span class=" glyphicon   glyphicon-cog"></span>  Configuration</a></li>
                         @yield('nav')
                     </ul>
                 </div><!-- /.nav-collapse -->
