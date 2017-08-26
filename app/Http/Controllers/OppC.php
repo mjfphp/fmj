@@ -38,13 +38,16 @@ class OppC extends Controller
     {
 
          $validator = Validator::make($request->all(), [
-            'name' => 'required:articles',
+
             'ref' => 'required|unique:opps',
-            'description'=>'nullable',
-            'dateOp' => 'required',
-            'etat'=>'required',
-            'montant'=>'required',
+            'name' => 'required:articles',
+            
+            'article_id'=>'required',
             'qte'=>'required',
+            'montant'=>'required',
+            'etat'=>'required',
+            'dateOp' => 'required',
+            'description'=>'nullable',    
             
         ]);
 
@@ -56,14 +59,19 @@ class OppC extends Controller
         }
     
         $opp=new Opp;
-        $opp->name=$request->input('name') ;
         $opp->ref=$request->input('ref') ;
-        $opp->description=$request->input('description');
-        $opp->dateOp=$request->input('dateOp');
-        $opp->etat=$request->input('etat');
-        $opp->montant=$request->input('montant');
+        $opp->name=$request->input('name') ;
         $opp->article_id=$request->input('article_id');
         $opp->qte=$request->input('qte');
+        $opp->montant=$request->input('montant');
+        $opp->etat=$request->input('etat');
+        $opp->dateOp=$request->input('dateOp');
+        $opp->description=$request->input('description');
+        
+        
+        
+        
+        
         $opp->save();
         return redirect()->back();
 
@@ -85,18 +93,16 @@ class OppC extends Controller
     {
 
         $opp=Opp::find($id);
+
         if($opp){
 
-          $opp->name=$request->input('name') ;
-          $opp->ref=$request->input('ref') ;
-          $opp->article_id=$request->input('article_id');
-         
-          $opp->qte=$request->input('qte');
-           $opp->montant=$request->input('montant');
-           $opp->etat=$request->input('etat');
-          
-          $opp->dateOp=$request->input('dateOp');
-          $opp->description=$request->input('description');
+        $opp->ref=$request->input('ref') ;
+        $opp->name=$request->input('name') ;
+        $opp->qte=$request->input('qte');
+        $opp->montant=$request->input('montant');
+        $opp->etat=$request->input('etat');
+        $opp->dateOp=$request->input('dateOp');
+        $opp->description=$request->input('description');
           
           
           $opp->save();
