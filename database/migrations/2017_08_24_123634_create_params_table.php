@@ -11,8 +11,6 @@ class CreateParamsTable extends Migration
     {
         Schema::create('params', function (Blueprint $table) {
             $table->increments('id');
-            $table->float('th');//taux horaires
-            $table->float('tm');//taux horaires
             $table->float('dm');// divers matieres
             $table->float('dh');//divers horaires
             $table->float('tfa');// transport et frais attache

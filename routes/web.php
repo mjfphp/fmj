@@ -12,4 +12,5 @@ Route::resource('/operators','OperatorC');
 Route::resource('/postes','PosteC');
 Route::resource('/times','TimesC');
 Route::resource('/matieres','MatiereC');
+Route::resource('/params','paramsC');
 

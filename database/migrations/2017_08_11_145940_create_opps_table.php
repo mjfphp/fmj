@@ -21,7 +21,6 @@ class CreateOppsTable extends Migration
             $table->string('name');
             $table->integer('article_id')->unsigned();
             $table->float('qte');
-
             $table->float('montant');
              $table->string('etat');
              $table->date('dateOp');
