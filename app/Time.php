@@ -17,4 +17,9 @@ class Time extends Model
     {
         return $this->belongsTo('App\Operator','operator_id');
     }
+
+    public  function poste()
+    {
+        return $this->belongsTo('App\Poste','poste_id');
+    }
 }

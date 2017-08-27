@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Operator;
 use App\Opp;
+use App\Poste;
 use App\Time;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,7 @@ class TimesC extends Controller
         $time->description=$request->input('description');
         $time->vh=$request->input('vh');
         $time->operator_id=$request->input('operator_id');
+        $time->poste_id=$request->input('poste_id');
         $time->opp_id=$request->input('opp_id');
         $time->save();
         return redirect()->back();
@@ -27,9 +29,11 @@ class TimesC extends Controller
     public function show($id)
     {
         $opp=Opp::find($id);
+        $postes=Poste::all();
         $operators=Operator::all();
         return view('calls.tache')
             ->with('opp',$opp)
+            ->with('postes',$postes)
             ->with('operators',$operators);
     }
 
@@ -41,6 +45,7 @@ class TimesC extends Controller
         $time->vh=$request->input('vh');
         $time->opp_id=$time->opp_id;
         $time->operator_id=$request->input('operator_id');
+        $time->poste_id=$request->input('poste_id');
         $time->save();
         return redirect()->back();
     }

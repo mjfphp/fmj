@@ -26,6 +26,13 @@ $(".edit-modal").on('click',function() {
     $('#editS form').attr('action','/times/' + id);
     $('#editS #description').val(el[3].innerText);
     $('#editS #vh').val(el[2].innerText);
+    $('#editS #poste_id').find("option").each(function(){
+        if($(this).text() === el[1].innerText){
+            $(this).attr('selected','selected');
+        }else{
+            $(this).removeAttr('selected');
+        }
+    });
     $('#editS #operator_id').find("option").each(function(){
         if($(this).text() === el[1].innerText){
             $(this).attr('selected','selected');
