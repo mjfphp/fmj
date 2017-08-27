@@ -11,21 +11,12 @@
 @endsection
 
 @section('content')
-<br>
 
-<div class="row">
-       <div class="col-md-5 col-xs-5"></div>
-       <div class="col-md-4 col-xs-4"></div>
-       <button id="add" class="btn btn-success col-md-2 col-xs-2"><span class="glyphicon glyphicon-plus"></span> ajouter</button>
-       <div class="col-md-1 col-xs-1" ></div>
-       </div>
-       <h2 align="center"><strong>Suivi de production:</strong></h2> 
 
-<!-- <div class="row" style="white-space:nowrap">
-      
-</div>
- -->
-<br>
+       <h2 align="center"><strong>Suivi de production:</strong></h2>
+
+
+
 <div class="container">
 
   <h4><u><strong>Ordre de fabrication :</strong></u>&nbsp;{{ $opp->ref }}&nbsp;&nbsp;&nbsp;&nbsp;<strong><u>Date d'operation:</u></strong>&nbsp;{{ $opp->dateOp }}
@@ -35,32 +26,26 @@
                  @endif
 
 &nbsp;&nbsp;&nbsp;&nbsp;<strong><u>Quantité :</u></strong>&nbsp;{{ $opp->qte }}
-
-
-
-
-
-
-
-
-
-  </h4>
-
+</h4>
+<br>
 
 </div>
-<br>
-<div class="row">
-  <div class="col-md-1 col-xs-1" ></div>
-      <a href="/matieres/{{$opp->id}}" class="@if(isset($articles))  btn btn-primary btn-lg active @else btn btn-secondary btn-lg active @endif " role="button" aria-pressed="true">Matiére</a>
-      <div class="col-md-1 col-xs-1"></div>
-      <a href="/times/{{$opp->id}}" class="@if(!isset($articles))  btn btn-primary btn-lg active @else btn btn-secondary btn-lg active @endif" role="button" aria-pressed="true">Temps</a>
 
-     <br>
+
+<div class="row">
+        @if(!isset($posts))
+           <button id="add" class="btn btn-lg btn-success col-md-2 col-xs-2"><span class="glyphicon glyphicon-plus"></span> ajouter</button>
+        @else
+                   <a href="/cout/{{$opp->id}}/edit" class="  btn  btn-lg  btn-success     col-md-2 col-xs-2" role="button" aria-pressed="true"> <span class="glyphicon glyphicon-upload"></span>  Mettre à jour</a>
+        @endif
+                 <div class="col-md-1 col-xs-1"></div>
+      <a href="/matieres/{{$opp->id}}" class="@if(isset($operators) || isset($posts))  btn btn-lg btn-primary    @else btn  btn-lg btn-secondary  active @endif col-md-1 col-xs-1 " role="button" aria-pressed="true">Matiére</a>
+      &nbsp;&nbsp;<a href="/times/{{$opp->id}}" class="@if(isset($articles) || isset($posts))  btn btn-lg btn-primary   @else btn btn-lg btn-secondary  active @endif col-md-1 col-xs-1" role="button" aria-pressed="true">Temps</a>
+      <a href="/cout/{{$opp->id}}" class="@if(!isset($posts))  btn btn-lg btn-primary  active @else btn  btn-lg btn-secondary  active @endif col-md-1 col-xs-1" role="button" aria-pressed="true">Coùt</a>
 </div>
      
       
-<br>
-<br>
+
 
 
 

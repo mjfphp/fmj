@@ -25,11 +25,7 @@ class CreateOppsTable extends Migration
              $table->string('etat');
              $table->date('dateOp');
             $table->string('description')->nullable();
-
-           
- 
-            
-            
+            $table->integer('param_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

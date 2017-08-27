@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Article;
-use App\Matiere;
-use App\Operator;
-use App\Poste;
-use App\Time;
+
+use App\param;
+
 use Illuminate\Http\Request;
 use App\Opp;
 use Validator;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers;
 
 class OppC extends Controller
 {
@@ -57,7 +56,22 @@ class OppC extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-    
+
+        $n=Param::all()->count();
+        if(!$n)
+        {
+            $param=new param();
+            $param->tfa=10;
+            $param->dm=10;
+            $param->dh=15;
+            $param->ao=3;
+            $param->fg=15;
+            $param->it=20;
+            $param->b=15;
+            $param->save();
+        }
+        $param=param::all()->last();
+
         $opp=new Opp;
         $opp->ref=$request->input('ref') ;
         $opp->name=$request->input('name') ;
@@ -67,7 +81,8 @@ class OppC extends Controller
         $opp->etat=$request->input('etat');
         $opp->dateOp=$request->input('dateOp');
         $opp->description=$request->input('description');
-        
+        $opp->param_id=$param;
+
         
         
         

@@ -24,4 +24,9 @@ class Opp extends Model
         return $this->belongsTo('App\Article','article_id');
     }
 
+    public function conf()
+    {
+        return $this->belongsTo('App\param','param_id');
+    }
+
 }

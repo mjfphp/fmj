@@ -29,12 +29,6 @@ class Poste extends Model
     }
     public function ch($id)
     {
-        $times=Time::where('poste_id','=',$this->attributes['id'])->where('opp_id','=',$id)->get();
-        $s=0;
-        foreach($times as $t)
-            $s+=($t->vh);
-        return $s;
+       return  Time::where('poste_id', '=', $this->attributes['id'])->where('opp_id', '=', $id)->sum('vh');
     }
-
-
 }

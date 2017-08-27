@@ -13,6 +13,7 @@ Route::resource('/postes','PosteC');
 Route::resource('/times','TimesC');
 Route::resource('/matieres','MatiereC');
 Route::resource('/params','paramsC');
+Route::resource('/cout','Cc');
 
 Route::get('/test',function(){
       $opp=\App\Opp::find(1);
