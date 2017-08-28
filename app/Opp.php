@@ -29,4 +29,34 @@ class Opp extends Model
         return $this->belongsTo('App\param','param_id');
     }
 
+    public function sth()
+    {
+        $postes=Poste::all();
+        $s=0;
+        foreach($postes as $p)
+            $s+=$p->taux*$p->ch($this->attributes['id']);
+        $s*=(1+$this->conf->dh/100);
+        return $s;
+    }
+
+    public  function stm()
+    {
+        $postes=Poste::all();
+        $s=0;
+        foreach($postes as $p)
+            $s+=$p->cm($this->attributes['id']);
+        $s*=(1+$this->conf->dm/100);
+        return $s;
+    }
+
+    public function Total()
+    {
+        return $this->stm()+$this->sth();
+    }
+
+    public function stu()
+    {
+        return $this->Total()*(1+($this->conf->b+$this->conf->it+$this->conf->ao+$this->conf->tfa+$this->conf->fg)/100);
+    }
+
 }

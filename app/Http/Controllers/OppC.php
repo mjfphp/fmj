@@ -81,7 +81,7 @@ class OppC extends Controller
         $opp->etat=$request->input('etat');
         $opp->dateOp=$request->input('dateOp');
         $opp->description=$request->input('description');
-        $opp->param_id=$param;
+        $opp->param_id=$param->id;
 
         
         
