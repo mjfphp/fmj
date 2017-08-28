@@ -32,7 +32,6 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/"><span class=" glyphicon  glyphicon-home"></span>  Home</a></li>
                         <li><a href="/articles"><span class=" glyphicon  glyphicon-apple"></span>   Articles</a></li>
                         <li><a href="/operators"><span class=" glyphicon  glyphicon-user"></span>  Operateurs</a></li>
                         <li><a href="/opps"><span class=" glyphicon  glyphicon-fire"></span>  Production</a></li>

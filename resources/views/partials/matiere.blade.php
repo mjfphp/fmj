@@ -93,7 +93,7 @@
                                    <div class="form-group">
                                         <label class="control-label col-md-2" for="qte"><span style="color:crimson;font-size:32px;">*</span>Quantite: </label><br>
                                         <div class="col-sm-10 col-md-8">
-                                        <input type="number" step="0.01" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
+                                        <input type="number" step="0.0001" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
                                         </div>
                                    </div>
 

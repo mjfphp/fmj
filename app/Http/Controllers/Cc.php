@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Opp;
 use App\Poste;
+use App\param;
 use Illuminate\Http\Request;
 
 class Cc extends Controller

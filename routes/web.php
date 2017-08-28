@@ -3,7 +3,7 @@
 
 
 Route::get('/', function () {
-    return view('index');
+    return redirect('/opps');
 });
 
 Route::resource('/articles','ArticleC');
@@ -14,11 +14,3 @@ Route::resource('/times','TimesC');
 Route::resource('/matieres','MatiereC');
 Route::resource('/params','paramsC');
 Route::resource('/cout','Cc');
-
-Route::get('/test',function(){
-      $opp=\App\Opp::find(1);
-       echo "les postes : <br>";
-      $post=\App\Poste::all();
-       foreach($post as $p)
-           echo $p->intitule."  :    PT MATERIEL   ($) :   ".$p->cm($opp->id)." Heures : ".$p->ch(1)." P total ".$p->ch(1)*$p->taux."<br>";
-});

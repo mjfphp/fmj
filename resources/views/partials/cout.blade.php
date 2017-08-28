@@ -20,7 +20,7 @@
                                 <td>{{$item->cm($opp->id)}} $</td>
                                 <td>{{$item->ch($opp->id)}}</td>
                                 <td>{{$item->taux}}</td>
-                                <td>{{($item->ch($opp->id))*$item->taux}}</td>
+                                <td>{{($item->ch($opp->id))*$item->taux}} $</td>
                             </tr>
                             @endforeach
 
@@ -28,7 +28,7 @@
                             </table>
                                   </div>
                                   </div>
-                                  <center><h2>Details : </h2></center>
+
                                     <div class="table-responsive text-center">
                                             <table class="table table-bordered table-striped display"  border="0.5px" data-id="{{$opp->id}}" >
                             <tr>
@@ -46,7 +46,7 @@
                                       <td><strong>{{$opp->sth()}} $</strong></td>
                              </tr>
                              <tr style="background:#636363;color:#f5f5f5">
-                                    <td ><strong>  Total</strong></td>
+                                    <td ><strong>  Total (avant impots) </strong></td>
                                     <td> {{ $opp->Total() }}</td>
                              </tr>
                              <tr>
@@ -75,18 +75,23 @@
                                 <td>{{($opp->conf->b/100)*$opp->Total()}} $</td>
                              </tr>
                              <tr style="background:#c2bc33;color:#282828;font-size: 20px">
-                                <td ><strong> Sout Total unitaire  </strong></td>
+                                <td ><strong>  Total   </strong></td>
                                 <td>{{$opp->stu()}} </td>
                                 <td>{{(int) $opp->stu()}} $</td>
                              </tr>
-                             <tr style="background:#0dc220;color:#282828;font-size: 20px">
-                                <td ><strong>  Total  </strong></td>
-                                <td> Quantité : {{$opp->qte}} </td>
-                                <td>{{(int) $opp->stu()*$opp->qte}} $</td>
-                             </tr>
                              </table>
                              </div>
-
+                         <div class="row">
+                        <div class="col-xs-10 col-md-10"></div>
+                       <a href="/cout/{{$opp->id}}/edit" class="  btn  btn-lg  btn-success     col-md-2 col-xs-2" role="button" aria-pressed="true" > <span class="glyphicon glyphicon-upload"></span>  Mettre à jour</a>
+                       </div>
+                       <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;</div>
             @endif
+<script>
 
+</script>
+@endsection
+
+@section('js')
+      <script  src="{{ URL::asset('js/cout.js') }}"></script>
 @endsection
