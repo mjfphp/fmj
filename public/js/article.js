@@ -1,13 +1,9 @@
-var actions=function(i){
-    var action=$(".delete-modal").attr('data-info');
-    var id=$(".delete-modal").attr('id');
-    $(i).attr('action',action + id);
-}
 
 $(".edit-modal").on('click',function() {
     $('#editS').modal('show');
     var el = $(this).parent().prevAll();
-     actions('#editS form');
+    var id=$(this).attr('id');
+     $('#editS form').attr('action',"/articles/" + id);
     $('#editS #ref').val(el[7].innerText);
     $('#editS #name').val(el[6].innerText);
     $('#editS #description').val(el[5].innerText);

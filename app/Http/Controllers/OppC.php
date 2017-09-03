@@ -106,6 +106,25 @@ class OppC extends Controller
 
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+
+            'ref' => 'required|unique:opps,ref,'.$id,
+            'name' => 'required:articles',
+
+            'article_id'=>'required',
+            'qte'=>'required',
+            'montant'=>'required',
+            'etat'=>'required',
+            'dateOp' => 'required',
+            'description'=>'nullable',
+
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
 
         $opp=Opp::find($id);
 
