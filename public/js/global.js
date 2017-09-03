@@ -8,13 +8,11 @@ $(function () {
 });
 
 
-var actions=function(i){
-    var action=$(".delete-modal").attr('data-info');
-    var id=$(".delete-modal").attr('id');
-    $(i).attr('action',action  + id);
-}
 $(".delete-modal").on('click',function() {
     $('#deleteS').modal('show');
-    actions('#deleteS form');
+    var action=$(".delete-modal").attr('data-info');
+    var id=$(this).attr('id');
+    $('#deleteS form').attr('action',action + id);
 });
+
 
