@@ -6,10 +6,10 @@ Operation de production
 @section('content')
      
       <div class="row">
-       <div class="col-md-4">
-      <h2>Gestion de la production :</h2>
-       </div>
-       <div class="col-md-5"></div>
+     
+      <h2>Gestion de la production :</h2><br>
+     
+      
       <a href="{{route('opps.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>  Ajouter une operation</a>
 
       </div>

@@ -7,10 +7,10 @@ Operateurs
 @section('content')
 
       <div class="row">
-       <div class="col-md-4">
-      <h2>Gestion Des operateurs :</h2>
-       </div>
-       <div class="col-md-5"></div>
+       
+      <h2>Gestion Des operateurs :</h2><br>
+      
+       
       <a href="{{route('operators.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>Ajouter un operateur</a>
 
       </div>

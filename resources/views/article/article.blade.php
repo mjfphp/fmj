@@ -7,14 +7,15 @@ Articles
 @section('content')
 
 
-       <div class="container ">
+       
       <div class="row">
-      <div class="col-md-4">
-      <h2>   Gestion Des articles :</h2>
-      </div>
-       <div class="col-md-5"></div>
+      
+      <h2>   Gestion Des articles :</h2><br>
+      
+       
       <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>Ajouter un article</a>
-      </div>
+      
+      
       </div>
 
        <div class="container ">
