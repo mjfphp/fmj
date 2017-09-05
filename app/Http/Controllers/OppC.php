@@ -106,12 +106,11 @@ class OppC extends Controller
 
     public function update(Request $request, $id)
     {
+        
         $validator = Validator::make($request->all(), [
 
             'ref' => 'required|unique:opps,ref,'.$id,
             'name' => 'required:articles',
-
-            'article_id'=>'required',
             'qte'=>'required',
             'montant'=>'required',
             'etat'=>'required',
@@ -127,7 +126,6 @@ class OppC extends Controller
         }
 
         $opp=Opp::find($id);
-
         if($opp){
 
         $opp->ref=$request->input('ref') ;

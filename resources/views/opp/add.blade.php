@@ -56,7 +56,7 @@
 
  <div class="row">
 
-                              <div class="form-group @if($errors->has('article_id')) has-error @endif">
+                              <div class="form-group">
                                  <label for="article_id" class="col-md-3 control-label"><span style="color:crimson;font-size:32px;">*</span>Produit finie</label><br>
                                   <div class="col-md-4">
                                        <select class="selectpicker show-menu-arrow form-control" id="article_id" name="article_id" value="{{old('article_id')}}"  autofocus required>
@@ -67,9 +67,7 @@
                                                     @endif
                                        </select>
                                   </div>
-                                  @if($errors->has('article_id'))
-                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('article_id') }}</div>
-                                  @endif
+                                
                                <div class="col-md-4"></div>
                               </div>
                     </div>

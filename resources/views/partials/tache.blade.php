@@ -46,7 +46,7 @@
 
 @section('modalE')
                <div id="editS" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                          <div class="modal-dialog " style="width:500px;">
+                          <div class="modal-dialog " style="width:600px;">
                                <div class="modal-content">
                                      <div class="modal-header">
                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -58,21 +58,21 @@
                                    <input name="_method" type="hidden" value="PUT" class="method">
 
                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="description"><span style="color:crimson;font-size:32px;">*</span>description: </label><br>
+                                        <label class="control-label col-md-2" for="description"><span style="color:crimson;font-size:32px;">*</span>Description:</label><br>
                                         <div class="col-sm-10 col-md-8">
                                         <input type="text" class="form-control" id="description" name="description" value="{{old('description')}}">
                                         </div>
                                    </div>
 
                                  <div class="form-group">
-                                        <label class="control-label col-md-2" for="vh"><span style="color:crimson;font-size:32px;">*</span>Temps: </label><br>
+                                        <label class="control-label col-md-2" for="vh"><span style="color:crimson;font-size:32px;">*</span>Temps:</label><br>
                                         <div class="col-sm-10 col-md-8">
                                         <input type="text" class="form-control" id="vh" name="vh" value="{{old('vh')}}">
                                         </div>
                                    </div>
 
                                     <div class="form-group">
-                                             <label class="control-label col-md-2" for="poste_id"><span style="color:crimson;font-size:32px;">*</span>Poste : </label><br>
+                                             <label class="control-label col-md-2" for="poste_id"><span style="color:crimson;font-size:32px;">*</span>Poste:</label><br>
                                                    <div class="col-sm-10 col-md-8">
                                                    <select  class="selectpicker show-menu-arrow form-control" id="poste_id" name="poste_id" value="{{old('poste_id')}}">
                                                                                  @if($postes)
@@ -84,7 +84,7 @@
                                                                            </div>
                                                                       </div>
                                   <div class="form-group">
-                                        <label class="control-label col-md-2" for="operator_id"><span style="color:crimson;font-size:32px;">*</span>Operateur : </label><br>
+                                        <label class="control-label col-md-2" for="operator_id"><span style="color:crimson;font-size:32px;">*</span>Operateur:</label><br>
                                         <div class="col-sm-10 col-md-8">
                                         <select  class="selectpicker show-menu-arrow form-control" id="operator_id" name="operator_id" value="{{old('operator_id')}}">
                                               @if($operators)

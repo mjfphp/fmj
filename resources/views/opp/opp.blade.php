@@ -1,6 +1,4 @@
 @extends('layouts.app')
-
-
 @section('title')
 Operation de production
 @endsection
@@ -24,7 +22,6 @@ Operation de production
        <br>
            <thead>
                <tr>
-
                    <th class="text-center">Référence</th>
                    <th class="text-center">Nom</th>
                    <th class="text-center">Produit finie</th>
@@ -58,8 +55,8 @@ Operation de production
           <td>{{$item->etat}}</td>
           <td>{{$item->dateOp}}</td>
           <td>{{$item->description}}</td>
-           <td><button class="edit-modal btn btn-info" >
-                   <span class="glyphicon glyphicon-edit" id="{{$item->id}}"></span> Modifier
+           <td><button class="edit-modal btn btn-info" id="{{$item->id}}">
+                   <span class="glyphicon glyphicon-edit" ></span> Modifier
                </button>
                <button class="delete-modal btn btn-danger" id="{{$item->id}}" data-info="/opps/">
                    <span class="glyphicon glyphicon-trash"></span> Effacer
@@ -87,21 +84,28 @@ Operation de production
                                    <form class="form-horizontal" method="post">
                                           {{ csrf_field()}}
                                    <input name="_method" type="hidden" value="put">
+                                   <input name="id" type="hidden" id="oppId">
 
 
                                     
                                     <div class="form-group">
                                          <label class="control-label col-md-2" for="ref"><span style="color:crimson;font-size:32px;">*</span>Référence :</label><br>
-                                         <div class="col-sm-10 col-md-8">
+                                         <div class="col-sm-10 col-md-8 @if($errors->has('ref')) has-error @endif">
                                          <input type="text" class="form-control" id="ref" name="ref" value="{{old('ref')}}">
+                                         @if($errors->has('ref'))
+                                               <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('ref') }}</div>
+                           @endif
                                          </div>
                                      </div>
 
 
                                     <div class="form-group">
-                                         <label class="control-label col-md-2" for="name"><span style="color:crimson;font-size:32px;">*</span>Nom :</label><br>
-                                         <div class="col-sm-10 col-md-8">
+                                         <label class="control-label col-md-2" for="name"><span style="color:crimson;font-size:32px;">*</span>Nom :</label><br> 
+                                         <div class="col-sm-10 col-md-8 @if($errors->has('name')) has-error @endif">
                                          <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+                                          @if($errors->has('name'))
+                                               <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('name') }}</div>
+                           @endif
                                          </div>
                                      </div>
 
@@ -109,8 +113,12 @@ Operation de production
 
                                     <div class="form-group">
                                        <label class="control-label col-md-2" for="qte"><span style="color:crimson;font-size:32px;">*</span>Quantité :</label><br>
-                                       <div class="col-sm-10 col-md-8">
+                                       <div class="col-sm-10 col-md-8 @if($errors->has('qte')) has-error @endif">
                                        <input type="number" step="0.01" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
+                                          @if($errors->has('qte'))
+                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('qte') }}</div>
+                                  @endif
+
                                        </div>
                                    </div>
 
@@ -120,8 +128,11 @@ Operation de production
 
                                       <div class="form-group">
                                          <label class="control-label col-md-2" for="montant"><span style="color:crimson;font-size:32px;">*</span>Montant :</label><br>
-                                         <div class="col-sm-10 col-md-8">
+                                         <div class="col-sm-10 col-md-8 @if($errors->has('montant')) has-error @endif">
                                          <input type="number"  step ="0.01" class="form-control" id="montant" name="montant" value="{{old('montant')}}">
+                                           @if($errors->has('montant'))
+                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('montant') }}</div>
+                                  @endif
                                          </div>
                                      </div>
 
@@ -131,16 +142,22 @@ Operation de production
 
                                       <div class="form-group">
                                          <label class="control-label col-md-2" for="etat"><span style="color:crimson;font-size:32px;">*</span>etat :</label><br>
-                                         <div class="col-sm-10 col-md-8">
+                                         <div class="col-sm-10 col-md-8 @if($errors->has('etat')) has-error @endif">
                                          <input type="text" class="form-control" id="etat" name="etat" value="{{old('etat')}}">
+                                           @if($errors->has('etat'))
+                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('etat') }}</div>
+                                  @endif
                                          </div>
                                      </div>
 
 
                         <div class="form-group">
                           <label class="control-label col-md-2" for="dateOp"><span style="color:crimson;font-size:32px;">*</span>Date :</label><br>
-                          <div class="col-sm-10 col-md-8">
+                          <div class="col-sm-10 col-md-8 @if($errors->has('dateOp')) has-error @endif">
                             <input type="date" class="form-control" id="dateOp" name="dateOp" value="{{old('dateOp')}}">
+                             @if($errors->has('dateOp'))
+                                        <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('dateOp') }}</div>
+                    @endif
                               </div>
                           </div>
 
@@ -172,5 +189,13 @@ Operation de production
 @endsection
 
 @section('js')
+@if(count($errors))
+   <script>
+                              $('#editS').modal('show');
+                              $('#editS form').attr('action',"/articles/" + {{old('id')}});
+                              </script>
+
+@endif
+
    <script  src="{{ URL::asset('js/opp.js')}}"> </script>
 @endsection

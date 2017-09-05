@@ -4,6 +4,7 @@ $(".edit-modal").on('click',function() {
     var el = $(this).parent().prevAll();
     var id=$(this).attr('id');
      $('#editS form').attr('action',"/articles/" + id);
+     $('#articleId').attr('value',id);
     $('#editS #ref').val(el[7].innerText);
     $('#editS #name').val(el[6].innerText);
     $('#editS #description').val(el[5].innerText);

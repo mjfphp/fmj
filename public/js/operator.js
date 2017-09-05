@@ -3,6 +3,7 @@ $(".edit-modal").on('click',function() {
     var el = $(this).parent().prevAll();
     var id=$(this).attr('id');
     $("#editS form").attr('action',"/operators/" + id);
+     $('#operatorId').attr('value',id);
     $('#editS #imm').val(el[11].innerText);
     $('#editS #name').val(el[10].innerText);
     $('#editS #cin').val(el[9].innerText);

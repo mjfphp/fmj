@@ -64,7 +64,6 @@ Articles
 @endsection
 
 @include('partials.delete')
-
 @section('modalE')
                <div id="editS" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                    <div class="modal-dialog " style="width:800px;">
@@ -77,6 +76,7 @@ Articles
                                    <form class="form-horizontal" method="post">
                                           {{ csrf_field()}}
                                    <input name="_method" type="hidden" value="put">
+                                   <input name="id" type="hidden" id="articleId">
 
 
 
@@ -86,10 +86,7 @@ Articles
                                          <input type="text" class="form-control" id="ref" name="ref" value="{{old('ref')}}">
                                         @if($errors->has('ref'))
                               <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('ref') }}</div>
-                              <script>
-                              $('#editS').modal('show');
-                              </script>
-                           @endif
+                              @endif
                                          </div>
                                          <label class="control-label col-md-2" for="state">etat :</label>
                                          <div class="col-sm-5 col-md-4">
@@ -105,9 +102,7 @@ Articles
                                          <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
                                          @if($errors->has('name'))
                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('name') }}</div>
-                                     <script>
-                                         $('#editS').modal('show');
-                                      </script>
+                                     
                         @endif
                                          </div>
                                          <label class="control-label col-md-2" for="description">Description :</label>
@@ -141,9 +136,7 @@ Articles
                                         <input type="text" class="form-control" id="uomId" name="uomId" value="{{old('uomId')}}">
                                          @if($errors->has('uomId'))
                                                <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('uomId') }}</div>
-                                               <script>
-                                         $('#editS').modal('show');
-                                      </script>
+                       
                                     @endif
                                         </div>
 
@@ -174,5 +167,13 @@ Articles
 @endsection
 
 @section('js')
+@if(count($errors))
+   <script>
+                              $('#editS').modal('show');
+                              $('#editS form').attr('action',"/articles/" + {{old('id')}});
+                              </script>
+
+@endif
+
    <script  src="{{ URL::asset('js/article.js')}}"> </script>
 @endsection

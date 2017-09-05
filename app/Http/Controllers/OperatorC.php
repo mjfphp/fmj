@@ -76,6 +76,30 @@ class OperatorC extends Controller
 
     public function update(Request $request, $id)
     {
+
+
+      $validator = Validator::make($request->all(), [
+          'imm' => 'required|unique:operators,imm,'.$id,
+          'name' => 'required',
+          'cin' => 'required|unique:operators,cin,'.$id,
+          'n_phone' => 'required|unique:operators,n_phone,'.$id,
+          'n_pass'=>'nullable',
+          'birthDate'=>'nullable',
+          'ville'=>'nullable',
+          'debutC' => 'required',
+          'finC' => 'required',
+          'examMedical'=>'nullable',
+          'poste'=>'nullable',
+          'active' => 'required',
+      ]);
+
+
+      if ($validator->fails()) {
+          return redirect()->back()
+              ->withErrors($validator)
+              ->withInput();
+      }
+
       $operator=Operator::find($id);
       if($operator) {
         $operator->imm=$request->input('imm');

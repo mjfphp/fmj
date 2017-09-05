@@ -52,42 +52,48 @@ Postes
 
 @section('modalE')
                <div id="editS" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                          <div class="modal-dialog " style="width:500px;">
+                          <div class="modal-dialog " style="width:600px;">
                                <div class="modal-content">
                                      <div class="modal-header">
                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                         <h4 class="modal-title">Modifier <span id="id"></span>r</h4>
+                                         <h4 class="modal-title">Modifier <span id="id"></span></h4>
                                      </div>
                             <div class="modal-body">
                                 <form class="form-horizontal" method="post">
                                           {{ csrf_field()}}
                                    <input name="_method" type="hidden" value="PUT">
+                                   <input name="id" type="hidden" id="posteId">
 
 
 
 
                                     <div class="form-group">
                                          <label class="control-label col-md-2" for="ref"><span style="color:crimson;font-size:32px;">*</span>Reference: </label><br>
-                                         <div class="col-sm-10 col-md-8">
+                                         <div class="col-sm-10 col-md-8 @if($errors->has('ref')) has-error @endif">
                                          <input type="text" class="form-control" id="ref" name="ref" value="{{old('ref')}}">
+                                           @if($errors->has('ref'))
+                                     <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('ref') }}</div>
+                        @endif
                                          </div>
                                      </div>
 
                                      <div class="form-group">
                                          <label class="control-label col-md-2" for="intitule"><span style="color:crimson;font-size:32px;">*</span>intitule: </label><br>
-                                         <div class="col-sm-10 col-md-8">
+                                         <div class="col-sm-10 col-md-8 @if($errors->has('intitule')) has-error @endif">
                                          <input type="text" class="form-control" id="intitule" name="intitule" value="{{old('intitule')}}">
+                                          @if($errors->has('intitule'))
+                                     <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('intitule') }}</div>
+                        @endif
                                          </div>
                                     </div>
 
-                                       <div class="form-group @if($errors->has('taux')) has-error @endif">
+                                       <div class="form-group ">
                                                                   <label for="taux" class="col-md-2 control-label">taux :</label>
-                                                                   <div class="col-md-8">
+                                                                   <div class="col-md-8 ">
                                                                        <input type="number"  step="0.1" placeholder="description" id="taux" class="form-control" value="{{old('taux')}}" name="taux" autofocus required>
+                                                                      
                                                                    </div>
-                                                                   @if($errors->has('taux'))
-                                                                           <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('taux') }}</div>
-                                                              @endif
+                                                                   
                                                                 <div class="col-md-4"></div>
                                         </div>
                                   <div class="modal-footer">
@@ -104,5 +110,13 @@ Postes
 @endsection
 
 @section('js')
+@if(count($errors))
+   <script>
+                              $('#editS').modal('show');
+                              $('#editS form').attr('action',"/postes/" + {{old('id')}});
+                              </script>
+
+@endif
+
          <script  src="{{ URL::asset('js/poste.js')}}"> </script>
 @endsection

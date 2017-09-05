@@ -76,7 +76,7 @@ Operateurs
 
 @section('modalE')
                <div id="editS" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                   <div class="modal-dialog " style="width:900px;">
+                                   <div class="modal-dialog " style="width:1000px;">
                                            <div class="modal-content">
                                                <div class="modal-header">
                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -86,104 +86,114 @@ Operateurs
                                    <form class="form-horizontal" method="post">
                                           {{ csrf_field()}}
                                    <input name="_method" type="hidden" value="put">
-
-                                   <div class="form-group">
-                                       <label class="control-label col-md-2" for="name"><span style="color:crimson;font-size:32px;">*</span>Nom complet:</label><br>
-                                       <div class="col-sm-5 col-md-4">
-                                       <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
-                                       </div>
-
-                                       <label class="control-label col-md-2" for="ville">Ville :</label>
-                                       <div class="col-sm-5 col-md-4">
-                                       <input type="text" class="form-control" id="ville" name="ville" value="{{old('ville')}}">
-                                       </div>
-                                   </div>
-
-                                   <div class="form-group">
-                                       <label class="control-label col-md-2" for="n_phone"><span style="color:crimson;font-size:32px;">*</span>N° de télephone:</label><br>
-                                       <div class="col-sm-5 col-md-4"
->                                       <input type="number" class="form-control" id="n_phone" name="n_phone" value="{{old('n_phone')}}">
-                                       </div>
-
-                                       <label class="control-label col-md-2" for="poste">Poste :</label>
-                                       <div class="col-sm-5 col-md-4">
-                                       <input type="text" class="form-control" id="poste" name="poste" value="{{old('poste')}}">
-                                       </div>
+                                   <input name="id" type="hidden" id="operatorId">
 
 
-                                   </div>
 
-
-                                     <div class="form-group">
+ 
+                                   <div class="form-group ">
                                          <label class="control-label col-md-2" for="imm"><span style="color:crimson;font-size:32px;">*</span>Immatriculation:</label><br>
-                                         <div class="col-sm-5 col-md-4">
+
+                                         <div class="col-sm-5 col-md-4 @if($errors->has('imm')) has-error @endif">
                                          <input type="text" class="form-control" id="imm" name="imm" value="{{old('imm')}}">
+                                         @if($errors->has('imm'))
+                                               <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('imm') }}</div>
+                                               
+                           @endif
                                          </div>
+
+
                                          <label class="control-label col-md-2" for="birthDate">Date de naissance :</label>
                                          <div class="col-sm-5 col-md-4">
                                          <input type="date" class="form-control" id="birthDate" name="birthDate" value="{{old('birthDate')}}">
                                          </div>
 
-
                                      </div>
 
 
+                                   <div class="form-group">
+                                       <label class="control-label col-md-2" for="name"><span style="color:crimson;font-size:32px;">*</span>Nom complet:</label><br>
+                                       <div class="col-sm-5 col-md-4 @if($errors->has('name')) has-error @endif">
+                                       <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+                                        @if($errors->has('name'))
+                                         <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('name') }}</div>
+                     @endif
+                                       </div>
 
-
-
-
-
-
-                                      <div class="form-group">
-                                        <label class="control-label col-md-2" for="cin"><span style="color:crimson;font-size:32px;">*</span>CIN: </label><br>
-                                        <div class="col-sm-5 col-md-4">
-                                        <input type="text" class="form-control" id="cin" name="cin" value="{{old('cin')}}">
-                                        </div>
-
-
-                                         <label class="control-label col-md-2" for="n_pass">N° de passport:</label>
+                                       <label class="control-label col-md-2" for="n_pass">N° de passport:</label>
                                          <div class="col-sm-5 col-md-4">
                                          <input type="text" class="form-control" id="n_pass" name="n_pass" value="{{old('n_pass')}}">
                                          </div>
-                                     </div>
 
+                                         </div>
 
-                                     <div class="form-group">
-                                        <label class="control-label col-md-2" for="active"><span style="color:crimson;font-size:32px;">*</span>Active :</label><br>
-                                        <div class="col-sm-5 col-md-4">
-                                        <input type="text" class="form-control" id="active" name="active" value="{{old('active')}}">
-                                        </div>
+                                   <div class="form-group">
+                                       <label class="control-label col-md-2" for="n_phone"><span style="color:crimson;font-size:32px;">*</span>N° de télephone:</label><br>
+                                       <div class="col-sm-5 col-md-4  @if($errors->has('n_phone')) has-error @endif">
+                                       <input type="number" class="form-control" id="n_phone" name="n_phone" value="{{old('n_phone')}}">
+                                        @if($errors->has('n_phone'))
+                                       <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('n_phone') }}</div>
+                   @endif
+
+                                       </div>
+
 
                                         <label class="control-label col-md-2" for="examMedical">Examen médicale :</label>
                                         <div class="col-sm-5 col-md-4">
                                         <input type="text" class="form-control" id="examMedical" name="examMedical" value="{{old('examMedical')}}">
                                         </div>
+
+                                   </div>
+
+
+                                      <div class="form-group">
+                                        <label class="control-label col-md-2" for="cin"><span style="color:crimson;font-size:32px;">*</span>CIN: </label><br>
+                                        <div class="col-sm-5 col-md-4 @if($errors->has('cin')) has-error @endif">
+                                        <input type="text" class="form-control" id="cin" name="cin" value="{{old('cin')}}">
+                                        @if($errors->has('cin'))
+                                               <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('cin') }}</div>
+                           @endif
+                                        </div>
+
+                                        <label class="control-label col-md-2" for="ville">Ville :</label>
+                                       <div class="col-sm-5 col-md-4">
+                                       <input type="text" class="form-control" id="ville" name="ville" value="{{old('ville')}}">
+                                       </div>
+
+                                        </div>
+
+
+                                     <div class="form-group">
+                                        <label class="control-label col-md-2" for="active"><span style="color:crimson;font-size:32px;">*</span>Active :</label><br>
+                                        <div class="col-sm-5 col-md-4 @if($errors->has('active')) has-error @endif">
+                                        <input type="text" class="form-control" id="active" name="active" value="{{old('active')}}">
+                                         @if($errors->has('active'))
+                                          <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('active') }}</div>
+                                       @endif
+                                        </div>
+                                       <label class="control-label col-md-2" for="poste">Poste :</label>
+                                       <div class="col-sm-5 col-md-4">
+                                       <input type="text" class="form-control" id="poste" name="poste" value="{{old('poste')}}">
+                                       </div>
                                     </div>
-
-
 
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-2" for="debutC"></span>Début du contrat :</label>
-                                        <div class="col-sm-5 col-md-4">
+                                        <label for="debutC" class="col-md-2 control-label"><span style="color:crimson;font-size:32px;">*</span>Début du contrat :</label><br>
+                                        <div class="col-sm-5 col-md-4 @if($errors->has('debutC')) has-error @endif">
                                         <input type="text" class="form-control" id="debutC" name="debutC" value="{{old('debutC')}}">
+                                         @if($errors->has('debutC'))
+                                                <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('debutC') }}</div>
+                            @endif
                                         </div>
-                                        <label class="control-label col-md-2" for="finC"></span>Fin du contrat : </label>
-                                        <div class="col-sm-5 col-md-4">
+                                         <label for="finC" class="col-md-2 control-label" ><span class="glyphicon glyphicon-asterisk" style="color:crimson;vertical-align: text-top;font-size: 8px;"></span>Fin du contrat :</label>
+                                        <div class="col-sm-5 col-md-4 @if($errors->has('finC')) has-error @endif">
                                         <input type="text" class="form-control" id="finC" name="finC" value="{{old('finC')}}">
+                                         @if($errors->has('finC'))
+                                                <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('finC') }}</div>
+                                      @endif  
                                         </div>
                                     </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
                                       <div class="modal-footer">
@@ -202,5 +212,11 @@ Operateurs
 @endsection
 
 @section('js')
+@if(count($errors))
+ <script>
+    $('#editS').modal('show');
+    $("#editS form").attr('action',"/operators/" + {{old('id')}});
+  </script>
+@endif
    <script  src="{{ URL::asset('js/operator.js')}}"> </script>
 @endsection
