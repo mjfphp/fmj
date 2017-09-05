@@ -101,8 +101,8 @@ Operateurs
 
                                    <div class="form-group">
                                        <label class="control-label col-md-2" for="n_phone"><span style="color:crimson;font-size:32px;">*</span>N° de télephone:</label><br>
-                                       <div class="col-sm-5 col-md-4">
-                                       <input type="number" class="form-control" id="n_phone" name="n_phone" value="{{old('n_phone')}}">
+                                       <div class="col-sm-5 col-md-4"
+>                                       <input type="number" class="form-control" id="n_phone" name="n_phone" value="{{old('n_phone')}}">
                                        </div>
 
                                        <label class="control-label col-md-2" for="poste">Poste :</label>
