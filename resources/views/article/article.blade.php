@@ -91,7 +91,12 @@ Articles
                                          </div>
                                          <label class="control-label col-md-2" for="state">etat :</label>
                                          <div class="col-sm-5 col-md-4">
-                                         <input type="text" class="form-control" id="state" name="state" value="{{old('state')}}">
+                                         <select class="selectpicker show-menu-arrow form-control"  id="state" value="{{old('state')}}" name="state" type="text" autofocus required>
+                                                     <option value="En cours">En cours</option>
+                                                     <option value="A faire">A faire</option>
+                                                     <option value="Terminer">Terminer</option>
+                                                     <option value="Annuler">Annuler</option>
+                                       </select>
                                          </div>
 
                                      </div>
@@ -117,7 +122,7 @@ Articles
 
                                        <label class="control-label col-md-2" for="type"><span style="color:crimson;font-size:32px;">*</span>Type :</label><br>
                                        <div class="col-sm-5 col-md-4">
-                                        <select class="selectpicker show-menu-arrow form-control"  id="typ" value="{{old('type')}}" name="type" type="text"  placeholder="type" autofocus required>
+                                        <select class="selectpicker show-menu-arrow form-control"  id="typ" value="{{old('type')}}" name="type" type="text" autofocus required>
                                                      <option value="Consomable">Consomable</option>
                                                      <option value="Produit finie">Produit finie</option>
                                        </select>

@@ -38,15 +38,13 @@ class OppC extends Controller
 
          $validator = Validator::make($request->all(), [
 
-            'ref' => 'required|unique:opps',
-            'name' => 'required:articles',
-            
+            'ref' => 'required|unique:opps',  
             'article_id'=>'required',
             'qte'=>'required',
-            'montant'=>'required',
-            'etat'=>'required',
-            'dateOp' => 'required',
-            'description'=>'nullable',    
+            'etat'=>'nullable',
+            'dateD' => 'nullable',
+            'dateF' => 'nullable',
+            'description'=>'required',    
             
         ]);
 
@@ -74,12 +72,11 @@ class OppC extends Controller
 
         $opp=new Opp;
         $opp->ref=$request->input('ref') ;
-        $opp->name=$request->input('name') ;
         $opp->article_id=$request->input('article_id');
         $opp->qte=$request->input('qte');
-        $opp->montant=$request->input('montant');
         $opp->etat=$request->input('etat');
-        $opp->dateOp=$request->input('dateOp');
+        $opp->dateD=$request->input('dateD');
+        $opp->dateF=$request->input('dateF');
         $opp->description=$request->input('description');
         $opp->param_id=$param->id;
 
@@ -110,13 +107,13 @@ class OppC extends Controller
         $validator = Validator::make($request->all(), [
 
             'ref' => 'required|unique:opps,ref,'.$id,
-            'name' => 'required:articles',
+            'etat'=>'nullable',
+            'description'=>'required',
+            'dateD' => 'nullable',
             'qte'=>'required',
-            'montant'=>'required',
-            'etat'=>'required',
-            'dateOp' => 'required',
-            'description'=>'nullable',
-
+            'dateF' => 'nullable',
+            
+      
         ]);
 
         if ($validator->fails()) {
@@ -129,15 +126,12 @@ class OppC extends Controller
         if($opp){
 
         $opp->ref=$request->input('ref') ;
-        $opp->name=$request->input('name') ;
-        $opp->qte=$request->input('qte');
-        $opp->montant=$request->input('montant');
         $opp->etat=$request->input('etat');
-        $opp->dateOp=$request->input('dateOp');
         $opp->description=$request->input('description');
-
-          
-          $opp->save();
+        $opp->dateD=$request->input('dateD');
+        $opp->qte=$request->input('qte');
+        $opp->dateF=$request->input('dateF');  
+        $opp->save();
         }
 
         return redirect()->back();

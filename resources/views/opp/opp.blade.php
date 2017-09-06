@@ -23,13 +23,11 @@ Operation de production
            <thead>
                <tr>
                    <th class="text-center">Référence</th>
-                   <th class="text-center">Nom</th>
                    <th class="text-center">Produit finie</th>
                    <th class="text-center">Quantité </th>
-                   <th class="text-center">Prix </th>
-                   <th class="text-center">Montant</th>
                    <th class="text-center">etat</th>
-                   <th class="text-center">Date</th>
+                   <th class="text-center">Date début</th>
+                   <th class="text-center">Date fin</th>
                    <th class="text-center">Description</th>
                    <th class="text-center">Actions</th>
 
@@ -40,20 +38,16 @@ Operation de production
      @foreach($opps as $item)
      <tr class="item{{$item->id}}">
 
-          <td>{{$item->ref}}</td>
-          <td><a href="{{route('times.show',['id'=>$item->id])}}">{{$item->name}}</a></td>
+          <td><a href="{{route('times.show',['id'=>$item->id])}}">{{$item->ref}}</a></td>
           <td ><a href="{{route('articles.index',['id'=>$item->id])}}">
                  @if($item->article)
                    {{$item->article->name}}
                  @endif
           </td>
           <td>{{$item->qte}}</td>
-         <td>@if($item->article)
-                 {{$item->article->standarPrice}}
-             @endif</td>
-          <td>{{$item->montant}}</td>
           <td>{{$item->etat}}</td>
-          <td>{{$item->dateOp}}</td>
+          <td>{{$item->dateD}}</td>
+          <td>{{$item->dateF}}</td>
           <td>{{$item->description}}</td>
            <td><button class="edit-modal btn btn-info" id="{{$item->id}}">
                    <span class="glyphicon glyphicon-edit" ></span> Modifier
@@ -74,7 +68,7 @@ Operation de production
 
 @section('modalE')
 <div id="editS" class="modal  fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                   <div class="modal-dialog " style="width:600px;">
+                                   <div class="modal-dialog " style="width:800px;">
                                            <div class="modal-content">
                                                <div class="modal-header">
                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -90,59 +84,15 @@ Operation de production
                                     
                                     <div class="form-group">
                                          <label class="control-label col-md-2" for="ref"><span style="color:crimson;font-size:32px;">*</span>Référence :</label><br>
-                                         <div class="col-sm-10 col-md-8 @if($errors->has('ref')) has-error @endif">
+                                         <div class="col-sm-5 col-md-4 @if($errors->has('ref')) has-error @endif">
                                          <input type="text" class="form-control" id="ref" name="ref" value="{{old('ref')}}">
                                          @if($errors->has('ref'))
                                                <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('ref') }}</div>
                            @endif
                                          </div>
-                                     </div>
 
-
-                                    <div class="form-group">
-                                         <label class="control-label col-md-2" for="name"><span style="color:crimson;font-size:32px;">*</span>Nom :</label><br> 
-                                         <div class="col-sm-10 col-md-8 @if($errors->has('name')) has-error @endif">
-                                         <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
-                                          @if($errors->has('name'))
-                                               <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('name') }}</div>
-                           @endif
-                                         </div>
-                                     </div>
-
-
-
-                                    <div class="form-group">
-                                       <label class="control-label col-md-2" for="qte"><span style="color:crimson;font-size:32px;">*</span>Quantité :</label><br>
-                                       <div class="col-sm-10 col-md-8 @if($errors->has('qte')) has-error @endif">
-                                       <input type="number" step="0.01" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
-                                          @if($errors->has('qte'))
-                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('qte') }}</div>
-                                  @endif
-
-                                       </div>
-                                   </div>
-
-
-
-
-
-                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="montant"><span style="color:crimson;font-size:32px;">*</span>Montant :</label><br>
-                                         <div class="col-sm-10 col-md-8 @if($errors->has('montant')) has-error @endif">
-                                         <input type="number"  step ="0.01" class="form-control" id="montant" name="montant" value="{{old('montant')}}">
-                                           @if($errors->has('montant'))
-                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('montant') }}</div>
-                                  @endif
-                                         </div>
-                                     </div>
-
-
-                            
-
-
-                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="etat"><span style="color:crimson;font-size:32px;">*</span>etat :</label><br>
-                                         <div class="col-sm-10 col-md-8 @if($errors->has('etat')) has-error @endif">
+                                         <label class="control-label col-md-2" for="etat"></span>etat:</label> 
+                                         <div class="col-sm-5 col-md-4 @if($errors->has('etat')) has-error @endif">
                                          <input type="text" class="form-control" id="etat" name="etat" value="{{old('etat')}}">
                                            @if($errors->has('etat'))
                                                       <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('etat') }}</div>
@@ -151,24 +101,45 @@ Operation de production
                                      </div>
 
 
-                        <div class="form-group">
-                          <label class="control-label col-md-2" for="dateOp"><span style="color:crimson;font-size:32px;">*</span>Date :</label><br>
-                          <div class="col-sm-10 col-md-8 @if($errors->has('dateOp')) has-error @endif">
-                            <input type="date" class="form-control" id="dateOp" name="dateOp" value="{{old('dateOp')}}">
-                             @if($errors->has('dateOp'))
-                                        <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('dateOp') }}</div>
-                    @endif
-                              </div>
-                          </div>
-
 
 
                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="description">Description:</label>
-                                         <div class="col-sm-10 col-md-8">
+                                         <label class="control-label col-md-2" for="description"><span style="color:crimson;font-size:32px;">*</span>Description:</label><br>
+                                         <div class="col-sm-5 col-md-4">
                                          <input type="text" class="form-control" id="description" name="description" value="{{old('description')}}">
                                          </div>
-                                     </div>
+
+                                        <label class="control-label col-md-2" for="dateD">Date début :</label>
+                                        <div class="col-sm-5 col-md-4 @if($errors->has('dateD')) has-error @endif">
+                                        <input type="date" class="form-control" id="dateD" name="dateD" value="{{old('dateD')}}">
+                                        @if($errors->has('dateD'))
+                                        <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('dateD') }}</div>
+                                       @endif
+                                    
+                                      </div>
+                          
+                                  </div>
+
+
+                                    <div class="form-group">
+                                       <label class="control-label col-md-2" for="qte"><span style="color:crimson;font-size:32px;">*</span>Quantité :</label><br>
+                                       <div class="col-sm-5 col-md-4 @if($errors->has('qte')) has-error @endif">
+                                       <input type="number" step="0.01" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
+                                          @if($errors->has('qte'))
+                                                      <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('qte') }}</div>
+                                  @endif
+
+                                       </div>
+
+                                        <label class="control-label col-md-2" for="dateF">Date fin :</label>
+                                        <div class="col-sm-5 col-md-4 @if($errors->has('dateF')) has-error @endif">
+                                        <input type="date" class="form-control" id="dateF" name="dateF" value="{{old('dateF')}}">
+                                        @if($errors->has('dateF'))
+                                        <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('dateF') }}</div>
+                                        @endif
+                                      </div>
+                                  </div>
+
 
 
                                       <div class="modal-footer">
@@ -192,7 +163,7 @@ Operation de production
 @if(count($errors))
    <script>
                               $('#editS').modal('show');
-                              $('#editS form').attr('action',"/articles/" + {{old('id')}});
+                              $('#editS form').attr('action',"/opps/" + {{old('id')}});
                               </script>
 
 @endif

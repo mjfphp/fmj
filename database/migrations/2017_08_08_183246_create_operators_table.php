@@ -23,7 +23,7 @@ class CreateOperatorsTable extends Migration
             $table->date('birthDate')->nullable();
             $table->string('ville')->nullable();
             $table->date('debutC');
-            $table->date('finC');
+            $table->date('finC')->nullable();
             $table->string('examMedical')->nullable();
             $table->string('poste')->nullable();
             $table->boolean('active');

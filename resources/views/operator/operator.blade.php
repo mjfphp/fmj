@@ -186,11 +186,11 @@ Operateurs
                                                 <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('debutC') }}</div>
                             @endif
                                         </div>
-                                         <label for="finC" class="col-md-2 control-label" ><span class="glyphicon glyphicon-asterisk" style="color:crimson;vertical-align: text-top;font-size: 8px;"></span>Fin du contrat :</label>
+                                         <label for="finC" class="col-md-2 control-label" >Fin du contrat :</label>
                                         <div class="col-sm-5 col-md-4 @if($errors->has('finC')) has-error @endif">
                                         <input type="text" class="form-control" id="finC" name="finC" value="{{old('finC')}}">
                                          @if($errors->has('finC'))
-                                                <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('finC') }}</div>
+                                                <div class="error" style="color:red">{{ $errors->first('finC') }}</div>
                                       @endif  
                                         </div>
                                     </div>

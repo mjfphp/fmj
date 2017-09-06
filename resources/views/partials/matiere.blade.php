@@ -9,6 +9,9 @@
                 <th class="text-center">Poste</th>
                  <th class="text-center">Article</th>
                   <th class="text-center">Quantite</th>
+                  <th class="text-center">Prix</th>
+                  <th class="text-center">Unité de mesure</th>
+                  <th class="text-center">Sous total</th>
                   <th class="text-center">Actions</th>
              </tr>
        </thead>
@@ -28,6 +31,15 @@
                        </td>
                        
                        <td>{{$item->qte}}</td>
+                       <td>@if($item->article)
+                 {{$item->article->standarPrice}}
+             @endif</td>
+                      <td>@if($item->article)
+                 {{$item->article->uomId}}
+             @endif</td>
+             <td>@if($item->article)
+                 {{($item->article->standarPrice)*($item->qte)}}
+             @endif</td>
                        <td><button class="edit-modal btn btn-info" id="{{$item->id}}" >
                                 <span class="glyphicon glyphicon-edit"></span> Modifier
                            </button>
@@ -96,6 +108,9 @@
                                         <input type="number" step="0.0001" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
                                         </div>
                                    </div>
+
+                        
+ 
 
                                     <div class="modal-footer">
                                        <button type="submit" class="btn btn-success add"> <span class="glyphicon glyphicon-check"></span> Modifier</button>

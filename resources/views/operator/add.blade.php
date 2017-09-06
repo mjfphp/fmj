@@ -138,12 +138,12 @@
                             @endif
                             </div>
 
-                            <label for="finC" class="col-md-2 control-label"><span style="color:crimson;font-size:32px;">*</span>Fin du contrat :</label>
+                            <label for="finC" class="col-md-2 control-label">Fin du contrat :</label>
                                      <div class="col-md-4 @if($errors->has('finC')) has-error @endif">
                                          <input type="date"  placeholder="la date de fin du contrat" class="form-control" value="{{old('finC')}}" name="finC" autofocus required>
                                      
                                      @if($errors->has('finC'))
-                                                <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('finC') }}</div>
+                                                <div class="error" style="color:red">{{ $errors->first('finC') }}</div>
                                       @endif  
                                       </div>
                                 

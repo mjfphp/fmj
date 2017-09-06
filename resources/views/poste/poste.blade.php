@@ -76,7 +76,7 @@ Postes
                                      </div>
 
                                      <div class="form-group">
-                                         <label class="control-label col-md-2" for="intitule"><span style="color:crimson;font-size:32px;">*</span>intitule: </label><br>
+                                         <label class="control-label col-md-2" for="intitule"><span style="color:crimson;font-size:32px;">*</span>Intitule: </label><br>
                                          <div class="col-sm-10 col-md-8 @if($errors->has('intitule')) has-error @endif">
                                          <input type="text" class="form-control" id="intitule" name="intitule" value="{{old('intitule')}}">
                                           @if($errors->has('intitule'))
@@ -84,9 +84,10 @@ Postes
                         @endif
                                          </div>
                                     </div>
+                                    <br>
 
                                        <div class="form-group ">
-                                                                  <label for="taux" class="col-md-2 control-label">taux :</label>
+                                                                  <label for="taux" class="col-md-2 control-label">Taux :</label>
                                                                    <div class="col-md-8 ">
                                                                        <input type="number"  step="0.1" placeholder="description" id="taux" class="form-control" value="{{old('taux')}}" name="taux" autofocus required>
                                                                       

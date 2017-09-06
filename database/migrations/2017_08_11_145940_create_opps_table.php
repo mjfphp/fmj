@@ -18,13 +18,12 @@ class CreateOppsTable extends Migration
         Schema::create('opps', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ref')->unique();
-            $table->string('name');
             $table->integer('article_id')->unsigned();
             $table->float('qte');
-            $table->float('montant');
-             $table->string('etat');
-             $table->date('dateOp');
-            $table->string('description')->nullable();
+            $table->string('etat');
+            $table->date('dateD')->nullable();
+            $table->date('dateF')->nullable();
+            $table->string('description');
             $table->integer('param_id')->unsigned()->nullable();
             $table->timestamps();
         });
