@@ -14,8 +14,20 @@ $(".edit-modal").on('click',function() {
     $('#editS #debutC').val(el[4].innerText);
     $('#editS #finC').val(el[3].innerText);
     $('#editS #examMedical').val(el[2].innerText);
-    $('#editS #poste').val(el[1].innerText);
-    $('#editS #active').val(el[0].innerText);
+    $('#editS #poste_id').find("option").each(function(){
+        if($(this).text() === el[1].innerText){
+            $(this).attr('selected','selected');
+        }else{
+            $(this).removeAttr('selected');
+        }
+    });
+    $('#editS #active').find("option").each(function(){
+        if($(this).text() === el[0].innerText){
+            $(this).attr('selected','selected');
+        }else{
+            $(this).removeAttr('selected');
+        }
+    });
 });
 
 

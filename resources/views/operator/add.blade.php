@@ -109,17 +109,22 @@
 
                                    <div class="form-group ">
                                       <label for="active" class="col-md-2 control-label"><span style="color:crimson;font-size:32px;">*</span>Active :</label><br>
-                                       <div class="col-md-4 @if($errors->has('active')) has-error @endif">
-                                           <input type="text"  placeholder="Active" class="form-control" value="{{old('active')}}" name="active" autofocus required>
-                                       
-                                       @if($errors->has('active'))
-                                          <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('active') }}</div>
-                                       @endif
+                                       <div class="col-md-4 ">
+                                           <select  class="selectpicker show-menu-arrow form-control" id="active" name="active" value="{{old('active')}}">
+                                               <option value="0">desactive</option>
+                                               <option value="1">active</option>
+                                           </select>
                                         </div>
 
                                         <label for="poste" class="col-md-2 control-label">Poste :</label>
                                           <div class="col-md-4">
-                                              <input type="text"  placeholder="le poste de l'operateur" class="form-control" value="{{old('poste')}}" name="poste" >
+                                              <select  class="selectpicker show-menu-arrow form-control" id="poste_id" name="poste_id" value="{{old('poste_id')}}">
+                                                  @if($postes)
+                                                      @foreach($postes as $el)
+                                                          <option value="{{$el->id}}">{{$el->intitule}}</option>
+                                                      @endforeach
+                                                  @endif
+                                              </select>
                                           </div>
 
                                     

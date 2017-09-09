@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use Illuminate\Support\Facades\Session;
 use Validator;
 
 use App\Http\Controllers\Controller;
@@ -50,8 +51,7 @@ class ArticleC extends Controller
         $article->uomId=$request->input('uomId');
         $article->state=$request->input('state');
         $article->save();
-
-        return redirect()->back();
+        return redirect("/articles");
 
     }
 

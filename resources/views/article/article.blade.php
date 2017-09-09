@@ -9,8 +9,7 @@ Articles
 
        
       <div class="row">
-      
-      <h2>   Gestion Des articles :</h2><br>
+      <h2>   Gestion Des articles : </h2><br>
       
        
       <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>Ajouter un article</a>

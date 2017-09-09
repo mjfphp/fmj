@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Poste;
 use Illuminate\Http\Request;
 use App\Operator;
 use Validator;
@@ -13,13 +14,15 @@ class OperatorC extends Controller
     public function index()
     {
       $operators=Operator::all();
-      return view('operator.operator')->with('operators',$operators);
+        $postes=Poste::all();
+      return view('operator.operator')->with('operators',$operators)->withPostes($postes);
     }
 
 
     public function create()
     {
-        return view('operator.add');
+        $postes=Poste::all();
+        return view('operator.add')->withPostes($postes);
     }
 
 
@@ -38,7 +41,7 @@ class OperatorC extends Controller
           'debutC' => 'required',
           'finC' => 'nullable',
           'examMedical'=>'nullable',
-          'poste'=>'nullable',
+          'poste_id'=>'nullable',
           'active' => 'required',
       ]);
 
@@ -60,11 +63,11 @@ class OperatorC extends Controller
       $operator->debutC=$request->input('debutC');
       $operator->finC=$request->input('finC');
       $operator->examMedical=$request->input('examMedical');
-      $operator->poste=$request->input('poste');
+      $operator->poste_id=$request->input('poste_id');
       $operator->active=$request->input('active');
       $operator->save();
 
-      return redirect()->back();
+      return redirect('/operators');
     }
 
 
@@ -89,7 +92,7 @@ class OperatorC extends Controller
           'debutC' => 'required',
           'finC' => 'nullable',
           'examMedical'=>'nullable',
-          'poste'=>'nullable',
+          'poste_id'=>'nullable',
           'active' => 'required',
       ]);
 
@@ -112,7 +115,7 @@ class OperatorC extends Controller
         $operator->debutC=$request->input('debutC');
         $operator->finC=$request->input('finC');
         $operator->examMedical=$request->input('examMedical');
-        $operator->poste=$request->input('poste');
+        $operator->poste_id=$request->input('poste_id');
         $operator->active=$request->input('active');
         $operator->save();
       }

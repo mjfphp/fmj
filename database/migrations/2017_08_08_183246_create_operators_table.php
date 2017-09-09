@@ -25,7 +25,7 @@ class CreateOperatorsTable extends Migration
             $table->date('debutC');
             $table->date('finC')->nullable();
             $table->string('examMedical')->nullable();
-            $table->string('poste')->nullable();
+            $table->integer('poste_id')->unsigned()->nullable();
             $table->boolean('active');
             $table->timestamps();
         });

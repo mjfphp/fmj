@@ -8,9 +8,9 @@ class Operator extends Model
 {
     protected $table = "operators";
 
-    public function setActiveAttribute($value)
-{
-    $this->attributes['active'] = (int) $value;
-}
+   public  function poste(){
+
+       return $this->belongsTo('App\Poste','poste_id');
+   }
 
 }

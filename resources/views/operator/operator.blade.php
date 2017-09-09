@@ -53,8 +53,16 @@ Operateurs
                   <td>{{$item->debutC}}</td>
                   <td>{{$item->finC}}</td>
                   <td>{{$item->examMedical}}</td>
-                  <td>{{$item->poste}}</td>
-                  <td>{{$item->active}}</td>
+                  <td>@if($item->poste)
+                      {{$item->poste->intitule}}
+                          @endif
+                  </td>
+                  <td>@if($item->active)
+                       {{'Active'}}
+                       @else
+                      {{'Desactive'}}
+                          @endif
+                  </td>
 
          <td ><button class="edit-modal btn btn-info " id="{{$item->id}}">
                  <span class="glyphicon glyphicon-edit"></span> Modifier
@@ -166,14 +174,20 @@ Operateurs
                                      <div class="form-group">
                                         <label class="control-label col-md-2" for="active"><span style="color:crimson;font-size:32px;">*</span>Active :</label><br>
                                         <div class="col-sm-5 col-md-4 @if($errors->has('active')) has-error @endif">
-                                        <input type="text" class="form-control" id="active" name="active" value="{{old('active')}}">
-                                         @if($errors->has('active'))
-                                          <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('active') }}</div>
-                                       @endif
+                                            <select  class="selectpicker show-menu-arrow form-control" id="active" name="active" value="{{old('active')}}">
+                                                    <option value="0">desactive</option>
+                                                    <option value="1">active</option>
+                                            </select>
                                         </div>
                                        <label class="control-label col-md-2" for="poste">Poste :</label>
                                        <div class="col-sm-5 col-md-4">
-                                       <input type="text" class="form-control" id="poste" name="poste" value="{{old('poste')}}">
+                                           <select  class="selectpicker show-menu-arrow form-control" id="poste_id" name="poste_id" value="{{old('poste_id')}}">
+                                               @if($postes)
+                                                   @foreach($postes as $el)
+                                                       <option value="{{$el->id}}">{{$el->intitule}}</option>
+                                                   @endforeach
+                                               @endif
+                                           </select>
                                        </div>
                                     </div>
 
