@@ -21,7 +21,7 @@ class Poste extends Model
 
     public function cm($id)
     {
-        $matiere=Matiere::where('poste_id'.'=',$this->attributes['id'])->where('opp_id','=',$id)->get();
+        $matiere=Matiere::where('poste_id','=',$this->attributes['id'])->where('opp_id','=',$id)->get();
         $s=0;
         foreach($matiere as $m)
             $s+=($m->qte)*($m->article->standarPrice);
