@@ -13,8 +13,30 @@ Articles
       
        
       <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>Ajouter un article</a>
-      
-      
+          <div class="col-md-2 col-xs-2"></div>
+          @if(session('msg'))
+          <div class="col-md-3 col-xs-3 alert alert-danger" >
+                  {{ session('msg') }}
+          </div>
+          @endif
+
+          @if(session('ok'))
+              <div class="col-md-4 col-xs-4  alert alert-success" >
+                  {{ session('ok') }}
+              </div>
+          @endif
+          @if(session('okk'))
+              <div class="col-md-4 col-xs-4  alert alert-success" >
+                  {{ session('okk') }}
+              </div>
+          @endif
+
+          @if(session('id'))
+              <script>
+                  $(function(){
+                      $('.item'+session('id')).modal('show')
+              </script>
+          @endif
       </div>
 
        <div class="container ">

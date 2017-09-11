@@ -14,3 +14,5 @@ Route::resource('/times','TimesC');
 Route::resource('/matieres','MatiereC');
 Route::resource('/params','paramsC');
 Route::resource('/cout','Cc');
+
+

@@ -51,7 +51,7 @@ class ArticleC extends Controller
         $article->uomId=$request->input('uomId');
         $article->state=$request->input('state');
         $article->save();
-        return redirect("/articles");
+        return redirect("/articles")->with('ok',"L'article a étè bien ajouté");
 
     }
 
@@ -80,7 +80,8 @@ class ArticleC extends Controller
         if ($validator->fails()) {
             return redirect()->back()
                 ->withErrors($validator)
-                ->withInput();
+                ->withInput()
+                ->with('id',$id);
         }
 
         $article=Article::find($id);
@@ -97,7 +98,7 @@ class ArticleC extends Controller
         }
 
 
-        return redirect('/articles');
+        return redirect("/articles")->with('okk',"L'article a étè bien modifié");
     }
 
 
@@ -105,6 +106,10 @@ class ArticleC extends Controller
     {
         $article=Article::find($id);
         if($article)
+        {
+            if($article->opps->count() || $article->matieres->count())
+                  return redirect('/articles')->with('msg','impossible de le supprimer');
+        }
             $article->delete();
         return redirect()->back();
     }
