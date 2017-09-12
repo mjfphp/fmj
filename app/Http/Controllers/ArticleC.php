@@ -109,8 +109,10 @@ class ArticleC extends Controller
         {
             if($article->opps->count() || $article->matieres->count())
                   return redirect('/articles')->with('msg','impossible de le supprimer');
+            else
+                $article->delete();
         }
-            $article->delete();
+
         return redirect()->back();
     }
 

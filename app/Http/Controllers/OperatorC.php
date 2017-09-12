@@ -130,7 +130,12 @@ class OperatorC extends Controller
     {
       $operator=Operator::find($id);
       if($operator)
-          $operator->delete();
+      {
+          if($operator->times->count())
+              return redirect('/operators')->with('msg','impossible de le supprimer');
+          else
+              $operator->delete();
+      }
       return redirect()->back();
     }
 }

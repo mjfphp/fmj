@@ -13,4 +13,9 @@ class Operator extends Model
        return $this->belongsTo('App\Poste','poste_id');
    }
 
+   public function times()
+   {
+       return $this->hasMany('App\Time');
+   }
+
 }
