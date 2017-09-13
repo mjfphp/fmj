@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Article;
 
+use App\Matiere;
 use App\param;
 
+use App\Time;
 use Illuminate\Http\Request;
 use App\Opp;
 use Validator;
@@ -141,8 +143,13 @@ class OppC extends Controller
     public function destroy($id)
     {
       $opp=Opp::find($id);
-      if($opp)
-        $opp->delete();
+       $matieres=Matiere::where('opp_id','=',$id)->get();
+          foreach ($matieres as $m)
+              $m->delete();
+          $times=Time::where('opp_id','=',$id)->get();
+          foreach ($times as $m)
+              $m->delete();
+          $opp->delete();
       return redirect()->back();
     }
 }
