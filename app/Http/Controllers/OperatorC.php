@@ -67,7 +67,7 @@ class OperatorC extends Controller
       $operator->active=$request->input('active');
       $operator->save();
 
-      return redirect('/operators');
+      return redirect('/operators')->with('ok',"L'opérateur a étè bien ajouté");;
     }
 
 
@@ -121,7 +121,7 @@ class OperatorC extends Controller
       }
 
 
-      return redirect('/operators');
+      return redirect('/operators')->with('okk',"L'opérateur a étè bien modifié");
 
     }
 

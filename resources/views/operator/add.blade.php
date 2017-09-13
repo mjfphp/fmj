@@ -29,7 +29,7 @@
                        <div class="form-group ">
                           <label for="imm" class="col-md-2 control-label"><span style="color:crimson;font-size:32px;">*</span>Immatriculation :</label><br>
                            <div class="col-md-4 @if($errors->has('imm')) has-error @endif">
-                               <input type="text"  placeholder="l'immatriculation de l'operateur" class="form-control" value="{{old('imm')}}" name="imm" autofocus required>
+                               <input type="text"  placeholder="L'immatriculation de l'operateur" class="form-control" value="{{old('imm')}}" name="imm" autofocus required>
                            
                            @if($errors->has('imm'))
                                                <div class="error" style="color:red"><span class="glyphicon glyphicon-remove"></span> {{ $errors->first('imm') }}</div>

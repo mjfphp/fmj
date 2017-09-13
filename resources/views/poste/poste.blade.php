@@ -10,7 +10,28 @@ Postes
        
         <h2>Gestion des postes :</h2><br>
          <a href="{{route('postes.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>   Ajouter un poste</a>
-         </div>
+         <div class="col-md-2 col-xs-2"></div>
+          
+    
+          @if(session('ok'))
+              <div class="col-md-4 col-xs-4  alert alert-success" >
+                  {{ session('ok') }}
+              </div>
+          @endif
+          @if(session('okk'))
+              <div class="col-md-4 col-xs-4  alert alert-success" >
+                  {{ session('okk') }}
+              </div>
+          @endif
+
+          @if(session('id'))
+              <script>
+                  $(function(){
+                      $('.item'+session('id')).modal('show')
+              </script>
+          @endif
+      </div>
+
 
     <div class="container">
           <div class="table-responsive text-center">

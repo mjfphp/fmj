@@ -13,6 +13,7 @@ Articles
       
        
       <a href="{{route('articles.create')}}" class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-plus"></span>Ajouter un article</a>
+      
           <div class="col-md-2 col-xs-2"></div>
           @if(session('msg'))
           <div class="col-md-3 col-xs-3 alert alert-danger" >

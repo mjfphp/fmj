@@ -42,7 +42,7 @@ class PosteC extends Controller
         $poste->taux=$request->input('taux');
         $poste->save();
 
-        return redirect()->back();
+        return redirect("/postes")->with('ok',"Le poste a étè bien ajouté");;
     }
 
 
@@ -66,7 +66,7 @@ class PosteC extends Controller
         $poste->taux=$request->input('taux');
         $poste->save();
 
-        return redirect()->back();
+        return redirect("/postes")->with('okk',"Le poste a étè bien modifié");;
     }
 
 

@@ -85,7 +85,7 @@ class OppC extends Controller
         
         
         $opp->save();
-        return redirect()->back();
+        return redirect("/opps")->with('ok',"L'opération a étè bien ajouté");
 
     }
 
@@ -134,7 +134,7 @@ class OppC extends Controller
         $opp->save();
         }
 
-        return redirect()->back();
+        return redirect("/opps")->with('okk',"L'opération a étè bien modifié");
     }
 
 

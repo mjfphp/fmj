@@ -19,7 +19,7 @@ class MatiereC extends Controller
         $matiere->opp_id=$request->input('opp_id');
         $matiere->qte=$request->input('qte');
         $matiere->save();
-        return redirect()->back();
+        return redirect()->back()->with('ok',"La matiére a étè bien ajouté");
     }
 
     
@@ -44,7 +44,7 @@ class MatiereC extends Controller
         $matiere->opp_id=$matiere->opp_id;
         $matiere->qte=$request->input('qte');
         $matiere->save();
-        return redirect()->back();
+        return redirect()->back()->with('okk',"La matiére a étè bien modifié");
     }
 
 

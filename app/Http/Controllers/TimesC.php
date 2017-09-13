@@ -22,7 +22,7 @@ class TimesC extends Controller
         $time->poste_id=$request->input('poste_id');
         $time->opp_id=$request->input('opp_id');
         $time->save();
-        return redirect()->back();
+        return redirect()->back()->with('ok',"La tache a étè bien ajouté");
     }
 
 
@@ -47,7 +47,7 @@ class TimesC extends Controller
         $time->operator_id=$request->input('operator_id');
         $time->poste_id=$request->input('poste_id');
         $time->save();
-        return redirect()->back();
+        return redirect()->back()->with('okk',"La tache a étè bien modifié");
     }
 
     public function destroy($id)

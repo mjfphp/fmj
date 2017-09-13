@@ -1,4 +1,25 @@
 @section('table')
+<br>
+          <div class="col-md-4 col-xs-4"></div>
+         
+          @if(session('ok'))
+              <div class="col-md-4 col-xs-4  alert alert-success" >
+                  {{ session('ok') }}
+              </div>
+          @endif
+          @if(session('okk'))
+              <div class="col-md-4 col-xs-4  alert alert-success" >
+                  {{ session('okk') }}
+              </div>
+          @endif
+
+          @if(session('id'))
+              <script>
+                  $(function(){
+                      $('.item'+session('id')).modal('show')
+              </script>
+          @endif
+  </div>
  <div class="container" >
           <div class="table-responsive text-center">
           <table class="table table-bordered table-striped display" id="table" border="0.5px" data-id="{{$opp->id}}" >
