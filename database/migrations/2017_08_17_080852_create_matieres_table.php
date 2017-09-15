@@ -18,7 +18,7 @@ class CreateMatieresTable extends Migration
             $table->integer('article_id')->unsigned();
             $table->integer('poste_id')->unsigned();
             $table->integer('opp_id')->unsigned();
-            $table->integer('qte');
+            $table->double('qte');
             $table->timestamps();
         });
     }

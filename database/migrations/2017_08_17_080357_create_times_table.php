@@ -16,10 +16,11 @@ class CreateTimesTable extends Migration
         Schema::create('times', function (Blueprint $table) {
             $table->increments('id');
             $table->string('description');
-            $table->float('vh');
+            $table->double('vh');
             $table->integer('opp_id')->unsigned();
             $table->integer('operator_id')->unsigned();
             $table->integer('poste_id')->insigned();
+            $table->double('qte');
             $table->timestamps();
         });
     }

@@ -24,20 +24,22 @@ $(".edit-modal").on('click',function() {
     var el = $(this).parent().prevAll();
     var id=$(this).attr('id');
     $('#editS form').attr('action','/times/' + id);
-    $('#editS #description').val(el[3].innerText);
-    $('#editS #vh').val(el[2].innerText);
-    $('#editS #poste_id').find("option").each(function(){
-        if($(this).text() === el[1].innerText){
-            $(this).attr('selected','selected');
-        }else{
-            $(this).removeAttr('selected');
-        }
-    });
+    $('#editS #description').val(el[4].innerText);
+    $('#editS #vh').val(el[3].innerText);
+
     $('#editS #operator_id').find("option").each(function(){
+        if($(this).text() === el[2].innerText){
+            $(this).attr('selected','selected');
+        }else{
+            $(this).removeAttr('selected');
+        }
+    });
+        $('#editS #poste_id').find("option").each(function(){
         if($(this).text() === el[1].innerText){
             $(this).attr('selected','selected');
         }else{
             $(this).removeAttr('selected');
         }
     });
+        $('#editS #qte').val(el[0].innerText);
 });

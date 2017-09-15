@@ -21,6 +21,7 @@ class TimesC extends Controller
         $time->operator_id=$request->input('operator_id');
         $time->poste_id=$request->input('poste_id');
         $time->opp_id=$request->input('opp_id');
+        $time->qte=$qte->input('qte');
         $time->save();
         return redirect()->back()->with('ok',"La tache a étè bien ajouté");
     }
@@ -46,6 +47,7 @@ class TimesC extends Controller
         $time->opp_id=$time->opp_id;
         $time->operator_id=$request->input('operator_id');
         $time->poste_id=$request->input('poste_id');
+        $time->qte=$request->input('qte');
         $time->save();
         return redirect()->back()->with('okk',"La tache a étè bien modifié");
     }

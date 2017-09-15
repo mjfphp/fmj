@@ -31,6 +31,7 @@
                  <th class="text-center">temps(h)</th>
                   <th class="text-center">Operateur</th>
                   <th class="text-center">Poste</th>
+                  <th class="text-center">QU.</th>
                   <th class="text-center">actions</th>
              </tr>
        </thead>
@@ -49,6 +50,7 @@
                            {{$item->poste->intitule}}
                         @endif
                        </td>
+                       <td>{{$item->qte}}</td>
                        <td><button class="edit-modal btn btn-info" id="{{$item->id}}" >
                                 <span class="glyphicon glyphicon-edit"></span> Modifier
                            </button>
@@ -92,19 +94,7 @@
                                         </div>
                                    </div>
 
-                                    <div class="form-group">
-                                             <label class="control-label col-md-2" for="poste_id"><span style="color:crimson;font-size:32px;">*</span>Poste:</label><br>
-                                                   <div class="col-sm-10 col-md-8">
-                                                   <select  class="selectpicker show-menu-arrow form-control" id="poste_id" name="poste_id" value="{{old('poste_id')}}">
-                                                                                 @if($postes)
-                                                                                    @foreach($postes as $el)
-                                                                                     <option value="{{$el->id}}">{{$el->intitule}}</option>
-                                                                                   @endforeach
-                                                                                @endif
-                                                                           </select>
-                                                                           </div>
-                                                                      </div>
-                                  <div class="form-group">
+                                                                     <div class="form-group">
                                         <label class="control-label col-md-2" for="operator_id"><span style="color:crimson;font-size:32px;">*</span>Operateur:</label><br>
                                         <div class="col-sm-10 col-md-8">
                                         <select  class="selectpicker show-menu-arrow form-control" id="operator_id" name="operator_id" value="{{old('operator_id')}}">
@@ -117,6 +107,27 @@
                                         </div>
                                    </div>
 
+
+                                    <div class="form-group">
+                                             <label class="control-label col-md-2" for="poste_id"><span style="color:crimson;font-size:32px;">*</span>Poste:</label><br>
+                                                   <div class="col-sm-10 col-md-8">
+                                                   <select  class="selectpicker show-menu-arrow form-control" id="poste_id" name="poste_id" value="{{old('poste_id')}}">
+                                                                                 @if($postes)
+                                                                                    @foreach($postes as $el)
+                                                                                     <option value="{{$el->id}}">{{$el->intitule}}</option>
+                                                                                   @endforeach
+                                                                                @endif
+                                                                           </select>
+                                                                           </div>
+                                                                      </div>
+
+
+                                 <div class="form-group">
+                                        <label class="control-label col-md-2" for="qte"><span style="color:crimson;font-size:32px;">*</span>QU.:</label><br>
+                                        <div class="col-sm-10 col-md-8">
+                                        <input type="number" step= "0.0000001" class="form-control" id="qte" name="qte" value="{{old('qte')}}">
+                                        </div>
+                                   </div>
 
 
                                     <div class="modal-footer">
